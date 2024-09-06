@@ -20,7 +20,9 @@
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ble_slave" href="ble_slave.html" />
+    <link rel="prev" title="ble_discover" href="ble_discover.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,9 +45,26 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_adv.html">ble_adv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_scan.html">ble_scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_discover.html">ble_discover</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_pair</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble_pair"><code class="docutils literal notranslate"><span class="pre">ble_pair</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.init"><code class="docutils literal notranslate"><span class="pre">ble_pair.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.pinToTemporaryKey"><code class="docutils literal notranslate"><span class="pre">ble_pair.pinToTemporaryKey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.pairingMethodSelection"><code class="docutils literal notranslate"><span class="pre">ble_pair.pairingMethodSelection()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
 </ul>
 
@@ -63,6 +82,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">modules</a></li>
       <li class="breadcrumb-item active">ble_pair</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/modules/ble_pair.rst.txt" rel="nofollow"> View page source</a>
@@ -75,12 +95,82 @@
              
   <section id="ble-pair">
 <h1>ble_pair<a class="headerlink" href="#ble-pair" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_pair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE pairing module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>MODE: “master”</p></li>
+<li><p>PIN: “123456”</p></li>
+<li><p>ACTIVATE: “yes”</p></li>
+<li><p>ADDR_TYPE: “”</p></li>
+<li><p>ADDR: “”</p></li>
+<li><p>LTK: “”</p></li>
+<li><p>EDIV: “”</p></li>
+<li><p>RAND: “”</p></li>
+<li><p>IRK: “”</p></li>
+<li><p>CSRK: “”</p></li>
+<li><p>KEYBOARD: “no”</p></li>
+<li><p>YESNO: “no”</p></li>
+<li><p>DISPLAY: “yes”</p></li>
+<li><p>CT2: “no”</p></li>
+<li><p>MITM: “no”</p></li>
+<li><p>BONDING: “no”</p></li>
+<li><p>SECURE_CONNECTIONS: “no”</p></li>
+<li><p>KEYPRESS: “no”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.pinToTemporaryKey">
+<span class="sig-name descname"><span class="pre">pinToTemporaryKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.pinToTemporaryKey" title="Link to this definition"></a></dt>
+<dd><p>Convert the pin to temporary key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pin</strong> (<em>str</em>) – The pin to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The temporary key</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.pairingMethodSelection">
+<span class="sig-name descname"><span class="pre">pairingMethodSelection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.pairingMethodSelection" title="Link to this definition"></a></dt>
+<dd><p>Select the pairing method by io capabilities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The pairing method</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ble_discover.html" class="btn btn-neutral float-left" title="ble_discover" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ble_slave.html" class="btn btn-neutral float-right" title="ble_slave" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
