@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bt &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="wireless" href="wireless.html" />
+    <link rel="prev" title="ble" href="ble.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">libs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_utils/index.html">ble_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble.html">ble</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">bt</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#BtHCIDevice"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.__init__"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.init"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice._createSocket"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice._createSocket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.isUp"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.isUp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.send"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.send()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.recv"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.recv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice._internalCommand"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice._internalCommand()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getCurrentHandle"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getCurrentHandle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getConnections"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getConnections()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getAddressByHandle"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getAddressByHandle()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getCurrentConnection"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getCurrentConnection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.switchConnection"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.switchConnection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.isConnected"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.isConnected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.setLocalName"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.setLocalName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getLocalName"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getLocalName()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getManufacturer"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getManufacturer()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.isAddressChangeable"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.isAddressChangeable()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.getAddress"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.getAddress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BtHCIDevice.setAddress"><code class="docutils literal notranslate"><span class="pre">BtHCIDevice.setAddress()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#BluetoothEmitter"><code class="docutils literal notranslate"><span class="pre">BluetoothEmitter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BluetoothEmitter.__init__"><code class="docutils literal notranslate"><span class="pre">BluetoothEmitter.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BluetoothEmitter.convert"><code class="docutils literal notranslate"><span class="pre">BluetoothEmitter.convert()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#BluetoothReceiver"><code class="docutils literal notranslate"><span class="pre">BluetoothReceiver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BluetoothReceiver.__init__"><code class="docutils literal notranslate"><span class="pre">BluetoothReceiver.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BluetoothReceiver.convert"><code class="docutils literal notranslate"><span class="pre">BluetoothReceiver.convert()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BluetoothReceiver.stop"><code class="docutils literal notranslate"><span class="pre">BluetoothReceiver.stop()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wireless.html">wireless</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">libs</a></li>
+      <li class="breadcrumb-item active">bt</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/libs/bt.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bt">
+<h1>bt<a class="headerlink" href="#bt" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BtHCIDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BtHCIDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice" title="Link to this definition"></a></dt>
+<dd><p>This class is a device that can communicate with an HCI device to use Bluetooth.
+The interface is <code class="docutils literal notranslate"><span class="pre">hciX</span></code> where X is the number of the device</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.init" title="Link to this definition"></a></dt>
+<dd><p>This method init the bluetooth device by send HCI CMD</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice._createSocket">
+<span class="sig-name descname"><span class="pre">_createSocket</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice._createSocket" title="Link to this definition"></a></dt>
+<dd><p>This method create a bluetooth user socket (from <code class="docutils literal notranslate"><span class="pre">scapy.all.BluetoothUserSocket</span></code>) to communicate with the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the socket is created</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>BluetoothSocketError</strong> – If the socket can’t be created</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.isUp">
+<span class="sig-name descname"><span class="pre">isUp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.isUp" title="Link to this definition"></a></dt>
+<dd><p>This method check if the bluetooth device is ready</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.send" title="Link to this definition"></a></dt>
+<dd><p>This method use socket to send a packet to the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> (<em>scapy cmd packet</em>) – The packet to send</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.recv" title="Link to this definition"></a></dt>
+<dd><p>This method use socket to receive a packet from the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The packet received</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>scapy cmd packet</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>OSError</strong> – If the socket can’t find a socket</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice._internalCommand">
+<span class="sig-name descname"><span class="pre">_internalCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">noResponse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice._internalCommand" title="Link to this definition"></a></dt>
+<dd><p>This method send a command to the HCI device and wait for the response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cmd</strong> (<em>scapy cmd packet</em>) – The command to send</p></li>
+<li><p><strong>noResponse</strong> (<em>bool</em>) – If the command don’t need a response</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>scapy cmd packet</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>BluetoothCommandError</strong> – If the response is an error</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getCurrentHandle">
+<span class="sig-name descname"><span class="pre">getCurrentHandle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getCurrentHandle" title="Link to this definition"></a></dt>
+<dd><p>This method return the current handle.
+If no connection is established, it will return -1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current handle</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getConnections">
+<span class="sig-name descname"><span class="pre">getConnections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getConnections" title="Link to this definition"></a></dt>
+<dd><p>This method returns a list of couple, like (handle, address) for the current connections</p>
+<dl class="field-list">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The list of connections’ info</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list</p>
+</dd>
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">device</span><span class="o">.</span><span class="n">getConnections</span><span class="p">()</span>
+<span class="go">[{&#39;handle&#39;: 0, &#39;address&#39;: &#39;00:11:22:33:44:55&#39;}, {&#39;handle&#39;: 1, &#39;address&#39;: &#39;00:11:22:33:44:56&#39;}]</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getAddressByHandle">
+<span class="sig-name descname"><span class="pre">getAddressByHandle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getAddressByHandle" title="Link to this definition"></a></dt>
+<dd><p>This method returns the address of the device with the given handle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle</strong> (<em>int</em>) – The handle of the device</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The address of the device</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getCurrentConnection">
+<span class="sig-name descname"><span class="pre">getCurrentConnection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getCurrentConnection" title="Link to this definition"></a></dt>
+<dd><p>This method returns the address of the device with the current handle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The address of the device</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.switchConnection">
+<span class="sig-name descname"><span class="pre">switchConnection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.switchConnection" title="Link to this definition"></a></dt>
+<dd><p>This method switch the current connection to the device with the given address</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str</em>) – The address of the device</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the switch is successful</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.isConnected">
+<span class="sig-name descname"><span class="pre">isConnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.isConnected" title="Link to this definition"></a></dt>
+<dd><p>This method returns if the device is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the device is connected</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.setLocalName">
+<span class="sig-name descname"><span class="pre">setLocalName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.setLocalName" title="Link to this definition"></a></dt>
+<dd><p>This method set the local name of the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em>) – The name to set</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the name is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getLocalName">
+<span class="sig-name descname"><span class="pre">getLocalName</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getLocalName" title="Link to this definition"></a></dt>
+<dd><p>This method returns the local name of the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The local name</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getManufacturer">
+<span class="sig-name descname"><span class="pre">getManufacturer</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getManufacturer" title="Link to this definition"></a></dt>
+<dd><p>This method returns the manufacturer of the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The manufacturer</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.isAddressChangeable">
+<span class="sig-name descname"><span class="pre">isAddressChangeable</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.isAddressChangeable" title="Link to this definition"></a></dt>
+<dd><p>This method returns if the address of the HCI device can be changed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the address can be changed</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.getAddress">
+<span class="sig-name descname"><span class="pre">getAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.getAddress" title="Link to this definition"></a></dt>
+<dd><p>This method returns the address of the HCI device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The address</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BtHCIDevice.setAddress">
+<span class="sig-name descname"><span class="pre">setAddress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BtHCIDevice.setAddress" title="Link to this definition"></a></dt>
+<dd><p>This method set the BD address, if possible</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str</em>) – New BD address</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the address is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">device</span><span class="o">.</span><span class="n">setAddress</span><span class="p">(</span><span class="s1">&#39;00:11:22:33:44:55&#39;</span><span class="p">)</span>
+<span class="go">[INFO] Changing HCI Device (hci0) Address to: 00:11:22:33:44:55</span>
+<span class="go">[SUCCESS] BD Address successfully modified !</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">device</span><span class="o">.</span><span class="n">getAddress</span><span class="p">()</span>
+<span class="go">&#39;00:11:22:33:44:55&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BluetoothEmitter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BluetoothEmitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Emitter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothEmitter" title="Link to this definition"></a></dt>
+<dd><p>This class is an emitter for the bluetooth.
+It can instantiate a HCI device</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BluetoothEmitter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hci0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothEmitter.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BluetoothEmitter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothEmitter.convert" title="Link to this definition"></a></dt>
+<dd><p>This method convert a blues packet to a scapy packet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> (<em>libs.wireless_utils.packets.Packet</em>) – The packet to convert</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BluetoothReceiver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BluetoothReceiver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Receiver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothReceiver" title="Link to this definition"></a></dt>
+<dd><p>This class is a receiver for the bluetooth.
+It can instantiate a HCI device</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BluetoothReceiver.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hci0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothReceiver.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BluetoothReceiver.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothReceiver.convert" title="Link to this definition"></a></dt>
+<dd><p>This method convert a scapy packet to a blues packet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> (<em>scapy.all.packet</em>) – The packet to convert</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BluetoothReceiver.stop">
+<span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BluetoothReceiver.stop" title="Link to this definition"></a></dt>
+<dd><p>This method stop the receiver</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ble.html" class="btn btn-neutral float-left" title="ble" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wireless.html" class="btn btn-neutral float-right" title="wireless" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

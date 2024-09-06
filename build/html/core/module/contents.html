@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>module &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="scenario" href="../scenario/contents.html" />
+    <link rel="prev" title="loader" href="../loader/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">core</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../app/contents.html">app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../argParser/contents.html">argParser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../config/contents.html">config</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interpreter/contents.html">interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../loader/contents.html">loader</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#Module"><code class="docutils literal notranslate"><span class="pre">Module</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Module.__init__"><code class="docutils literal notranslate"><span class="pre">Module.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.out"><code class="docutils literal notranslate"><span class="pre">Module.out()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.ok"><code class="docutils literal notranslate"><span class="pre">Module.ok()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.nok"><code class="docutils literal notranslate"><span class="pre">Module.nok()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.init"><code class="docutils literal notranslate"><span class="pre">Module.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.prerun"><code class="docutils literal notranslate"><span class="pre">Module.prerun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.run"><code class="docutils literal notranslate"><span class="pre">Module.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.postrun"><code class="docutils literal notranslate"><span class="pre">Module.postrun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.execute"><code class="docutils literal notranslate"><span class="pre">Module.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.info"><code class="docutils literal notranslate"><span class="pre">Module.info()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.watchKeyboard"><code class="docutils literal notranslate"><span class="pre">Module.watchKeyboard()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.key"><code class="docutils literal notranslate"><span class="pre">Module.key()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Module.loadScenario"><code class="docutils literal notranslate"><span class="pre">Module.loadScenario()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#WirelessModule"><code class="docutils literal notranslate"><span class="pre">WirelessModule</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#WirelessModule.__init__"><code class="docutils literal notranslate"><span class="pre">WirelessModule.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WirelessModule.registerEmitter"><code class="docutils literal notranslate"><span class="pre">WirelessModule.registerEmitter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WirelessModule.registerReceiver"><code class="docutils literal notranslate"><span class="pre">WirelessModule.registerReceiver()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WirelessModule.getEmitter"><code class="docutils literal notranslate"><span class="pre">WirelessModule.getEmitter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#WirelessModule.getReceiver"><code class="docutils literal notranslate"><span class="pre">WirelessModule.getReceiver()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../scenario/contents.html">scenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../task/contents.html">task</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../taskManager/contents.html">taskManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../templates/contents.html">templates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../libs/index.html">libs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">core</a></li>
+      <li class="breadcrumb-item active">module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/core/module/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module">
+<h1>module<a class="headerlink" href="#module" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="Module">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Module</span></span><a class="headerlink" href="#Module" title="Link to this definition"></a></dt>
+<dd><p>This class defines the standard behavior of a module. It is the base class for all modules.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.__init__" title="Link to this definition"></a></dt>
+<dd><p>This constructor inits the module.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.out">
+<span class="sig-name descname"><span class="pre">out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">success</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Module.out" title="Link to this definition"></a></dt>
+<dd><p>This method help to format the output of the module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>success</strong> (<em>bool</em>) – True if the module has been executed successfully, False otherwise.</p></li>
+<li><p><strong>output</strong> (<em>dict</em><em> of </em><em>str</em>) – The output of the module.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted output of the module, like {“success”: success, “output”: output}</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.ok">
+<span class="sig-name descname"><span class="pre">ok</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Module.ok" title="Link to this definition"></a></dt>
+<dd><p>This method is a shortcut to call <a class="reference internal" href="#Module.out" title="Module.out"><code class="xref py py-meth docutils literal notranslate"><span class="pre">out()</span></code></a> with success=True.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>output</strong> (<em>dict</em><em> of </em><em>str</em>) – The output of the module.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The formatted output of the module, like {“success”: True, “output”: output}</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.nok">
+<span class="sig-name descname"><span class="pre">nok</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.nok" title="Link to this definition"></a></dt>
+<dd><p>This method is a shortcut to call <a class="reference internal" href="#Module.out" title="Module.out"><code class="xref py py-meth docutils literal notranslate"><span class="pre">out()</span></code></a> with success=False.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The formatted output of the module, like {“success”: False, “output”: {}}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.init" title="Link to this definition"></a></dt>
+<dd><p>It must be overloaded in order to define the parameters of module</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.prerun">
+<span class="sig-name descname"><span class="pre">prerun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.prerun" title="Link to this definition"></a></dt>
+<dd><p>It must be overloaded in order to define the actions to do before running the module</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.run" title="Link to this definition"></a></dt>
+<dd><p>It must be overloaded in order to define the actions to do when running the module</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.postrun">
+<span class="sig-name descname"><span class="pre">postrun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.postrun" title="Link to this definition"></a></dt>
+<dd><p>It must be overloaded in order to define the actions to do after running the module</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.execute" title="Link to this definition"></a></dt>
+<dd><p>This method is the main method to call to run the module. It calls <a class="reference internal" href="#Module.prerun" title="Module.prerun"><code class="xref py py-meth docutils literal notranslate"><span class="pre">prerun()</span></code></a>, <a class="reference internal" href="#Module.run" title="Module.run"><code class="xref py py-meth docutils literal notranslate"><span class="pre">run()</span></code></a> and <a class="reference internal" href="#Module.postrun" title="Module.postrun"><code class="xref py py-meth docutils literal notranslate"><span class="pre">postrun()</span></code></a> in the right order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KeyboardInterrupt</strong> – If the user wants to stop the execution of the module</p></li>
+<li><p><strong>EOFError</strong> – If the module is not correctly initialized</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.info">
+<span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.info" title="Link to this definition"></a></dt>
+<dd><p>This method helps to format the output of the module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The formatted output of the module, like {“name”: name, “type”: type, “description”: description, “dependencies”: dependencies}</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.watchKeyboard">
+<span class="sig-name descname"><span class="pre">watchKeyboard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.watchKeyboard" title="Link to this definition"></a></dt>
+<dd><p>This method allows to register a callback if a key is pressed by <code class="docutils literal notranslate"><span class="pre">on_release</span></code> method</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.key">
+<span class="sig-name descname"><span class="pre">key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Module.key" title="Link to this definition"></a></dt>
+<dd><p>This method is called when a key is pressed.
+It raises the scenario signal <code class="docutils literal notranslate"><span class="pre">onkey</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<em>str</em>) – The pressed key name</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Module.loadScenario">
+<span class="sig-name descname"><span class="pre">loadScenario</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Module.loadScenario" title="Link to this definition"></a></dt>
+<dd><p>This method helps to load a scenario and load key related signals</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the scenario is loaded</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ScenarioNotFoundError</strong> – If the scenario file is not found</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="WirelessModule">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">WirelessModule</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule" title="Link to this definition"></a></dt>
+<dd><p>This class defines the standard behavior of a wireless module. It inherits from <code class="docutils literal notranslate"><span class="pre">core.module.Module</span></code>.
+It adds a couple of Emitters and Receivers</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="WirelessModule.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule.__init__" title="Link to this definition"></a></dt>
+<dd><p>This constructor inits the module</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WirelessModule.registerEmitter">
+<span class="sig-name descname"><span class="pre">registerEmitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">technology</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emitter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule.registerEmitter" title="Link to this definition"></a></dt>
+<dd><p>This method allows to link an emitter for a specific technology.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>technology</strong> (<em>str</em>) – The technology of the emitter</p></li>
+<li><p><strong>emitter</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">libs.wireless.Emitter</span></code>) – The emitter to register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WirelessModule.registerReceiver">
+<span class="sig-name descname"><span class="pre">registerReceiver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule.registerReceiver" title="Link to this definition"></a></dt>
+<dd><p>This method allows to link a receiver for a specific technology</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>technology</strong> (<em>str</em>) – The technology of the receiver</p></li>
+<li><p><strong>receiver</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">libs.wireless.Receiver</span></code>) – The receiver to register</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WirelessModule.getEmitter">
+<span class="sig-name descname"><span class="pre">getEmitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule.getEmitter" title="Link to this definition"></a></dt>
+<dd><p>This method returns the emitter instance by <code class="docutils literal notranslate"><span class="pre">technology</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the emitter</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The emitter of the module</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">libs.wireless.Emitter</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="WirelessModule.getReceiver">
+<span class="sig-name descname"><span class="pre">getReceiver</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#WirelessModule.getReceiver" title="Link to this definition"></a></dt>
+<dd><p>This method returns the receiver instance by <code class="docutils literal notranslate"><span class="pre">technology</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the receiver</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The receiver of the module</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">libs.wireless.Receiver</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../loader/contents.html" class="btn btn-neutral float-left" title="loader" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../scenario/contents.html" class="btn btn-neutral float-right" title="scenario" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

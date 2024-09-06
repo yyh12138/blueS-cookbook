@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>dissectors &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="bt_utils" href="../../bt_utils/index.html" />
+    <link rel="prev" title="helpers" href="../helpers/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">dissectors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#PermissionsFlag"><code class="docutils literal notranslate"><span class="pre">PermissionsFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#UUID"><code class="docutils literal notranslate"><span class="pre">UUID</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CharacteristicDeclaration"><code class="docutils literal notranslate"><span class="pre">CharacteristicDeclaration</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#CharacteristicsDescriptor"><code class="docutils literal notranslate"><span class="pre">CharacteristicsDescriptor</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Service"><code class="docutils literal notranslate"><span class="pre">Service</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#InputOutputCapability"><code class="docutils literal notranslate"><span class="pre">InputOutputCapability</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#AuthReqFlag"><code class="docutils literal notranslate"><span class="pre">AuthReqFlag</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#KeyDistributionFlag"><code class="docutils literal notranslate"><span class="pre">KeyDistributionFlag</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">dissectors</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/dissectors/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="dissectors">
+<h1>dissectors<a class="headerlink" href="#dissectors" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="PermissionsFlag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">PermissionsFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PermissionsFlag" title="Link to this definition"></a></dt>
+<dd><p>This class provides the permissions flag dissector.
+The permissions can be: <code class="docutils literal notranslate"><span class="pre">Indicate</span></code>, <code class="docutils literal notranslate"><span class="pre">Write</span></code>, <code class="docutils literal notranslate"><span class="pre">Read</span></code>, <code class="docutils literal notranslate"><span class="pre">Notify</span></code>, <code class="docutils literal notranslate"><span class="pre">Broadcast</span></code>, <code class="docutils literal notranslate"><span class="pre">Write</span> <span class="pre">Without</span> <span class="pre">Response</span></code>, <code class="docutils literal notranslate"><span class="pre">Authenticated</span> <span class="pre">Signed</span> <span class="pre">Writes</span></code>, <code class="docutils literal notranslate"><span class="pre">Extended</span> <span class="pre">Properties</span></code></p>
+<p>permissions &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PermissionsFlag</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;0a&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">permissions</span>
+<span class="go">[&#39;Write&#39;, &#39;Read&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">PermissionsFlag</span><span class="p">(</span><span class="n">permissions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Write&quot;</span><span class="p">,</span> <span class="s2">&quot;Read&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">data</span>
+<span class="go">&quot;0a&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="PermissionsFlag.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PermissionsFlag.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the permissions flag in content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="PermissionsFlag.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PermissionsFlag.build" title="Link to this definition"></a></dt>
+<dd><p>Build the permissions flag in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="UUID">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">UUID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#UUID" title="Link to this definition"></a></dt>
+<dd><p>This class provides the UUID dissector.
+The uuid can be displayed: <code class="docutils literal notranslate"><span class="pre">16-bit</span></code>, <code class="docutils literal notranslate"><span class="pre">128-bit</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code> based on <code class="docutils literal notranslate"><span class="pre">libs.bt_utils.assigned_numbers.ASSIGNED_NUMBERS</span></code></p>
+<p>name/UUID16/UUID128 in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">UUID</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;1800&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&quot;Generic Access&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">UUID</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;Generic Access&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;1800&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="UUID.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UUID.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the UUID in <code class="docutils literal notranslate"><span class="pre">content[&quot;UUID16&quot;]</span></code>, <code class="docutils literal notranslate"><span class="pre">content[&quot;UUID128&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">content[&quot;name&quot;]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="UUID.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#UUID.build" title="Link to this definition"></a></dt>
+<dd><p>Build the UUID in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="CharacteristicDeclaration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CharacteristicDeclaration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicDeclaration" title="Link to this definition"></a></dt>
+<dd><p>This class provides the characteristic declaration dissector.
+The characteristic declaration can be displayed: <code class="docutils literal notranslate"><span class="pre">UUID</span></code>, <code class="docutils literal notranslate"><span class="pre">permissionsFlag</span></code>, <code class="docutils literal notranslate"><span class="pre">valueHandle</span></code></p>
+<p>UUID/permissionsFlag/valueHandle in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicDeclaration</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;2a00000302&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">valueHandle</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicDeclaration</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;2a00000302&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">permissionsFlag</span><span class="o">.</span><span class="n">permissions</span>
+<span class="go">[&#39;Read&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicDeclaration</span><span class="p">(</span><span class="n">UUID</span><span class="p">(</span><span class="s2">&quot;Device Name&quot;</span><span class="p">),</span> <span class="n">PermissionsFlag</span><span class="p">([</span><span class="s2">&quot;Read&quot;</span><span class="p">]),</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;2a00000302&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="CharacteristicDeclaration.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicDeclaration.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the characteristic declaration in <code class="docutils literal notranslate"><span class="pre">content[&quot;UUID&quot;]</span></code>, <code class="docutils literal notranslate"><span class="pre">content[&quot;permissionsFlag&quot;]</span></code> and <code class="docutils literal notranslate"><span class="pre">content[&quot;valueHandle&quot;]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CharacteristicDeclaration.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicDeclaration.build" title="Link to this definition"></a></dt>
+<dd><p>Build the characteristic declaration in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="CharacteristicsDescriptor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CharacteristicsDescriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicsDescriptor" title="Link to this definition"></a></dt>
+<dd><p>This class provides the characteristics descriptor dissector.
+The characteristics descriptor can be displayed: <code class="docutils literal notranslate"><span class="pre">UUID</span></code></p>
+<p>UUID content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicsDescriptor</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;2901&quot;</span><span class="p">))</span>
+<span class="go">&quot;0000&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicsDescriptor</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;2902&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">UUID</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&quot;Client Characteristic Configuration&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CharacteristicsDescriptor</span><span class="p">(</span><span class="n">UUID</span><span class="p">(</span><span class="s2">&quot;Client Characteristic Configuration&quot;</span><span class="p">),</span> <span class="s2">&quot;0000&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;29020000&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="CharacteristicsDescriptor.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicsDescriptor.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the characteristics descriptor in <code class="docutils literal notranslate"><span class="pre">content[&quot;UUID&quot;]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CharacteristicsDescriptor.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CharacteristicsDescriptor.build" title="Link to this definition"></a></dt>
+<dd><p>Build the characteristics descriptor in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Service">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Service</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Service" title="Link to this definition"></a></dt>
+<dd><p>This class provides the service dissector.
+The service can be displayed: <code class="docutils literal notranslate"><span class="pre">UUID</span></code></p>
+<p>UUID/startHandle/endHandle in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Service</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;1800&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">UUID</span>
+<span class="go">UUID(128bits:00001800-0000-1000-8000-00805f9b34fb, 16bits:0x1800, name:Generic Access )</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Service</span><span class="p">(</span><span class="n">UUID</span><span class="o">=</span><span class="n">UUID</span><span class="p">(</span><span class="n">UUID16</span><span class="o">=</span><span class="mh">0x1800</span><span class="p">))</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;1800&quot;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Service.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Service.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the service in <code class="docutils literal notranslate"><span class="pre">content[&quot;UUID&quot;]</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Service.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Service.build" title="Link to this definition"></a></dt>
+<dd><p>Build the service in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="InputOutputCapability">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">InputOutputCapability</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#InputOutputCapability" title="Link to this definition"></a></dt>
+<dd><p>This class provides the input output capability dissector.
+The input output capability can be displayed: <code class="docutils literal notranslate"><span class="pre">display</span></code>, <code class="docutils literal notranslate"><span class="pre">yesno</span></code>, <code class="docutils literal notranslate"><span class="pre">Keyboard</span></code></p>
+<p>display/yesno/keyboard in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">InputOutputCapability</span><span class="p">(</span><span class="n">display</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">yesno</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">keyboard</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;04&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">InputOutputCapability</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;04&quot;</span><span class="p">))</span>
+<span class="go">Input Output Capability(0x4,keyboard:yes|yesno:no|display:yes)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="InputOutputCapability.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InputOutputCapability.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the input output capability in content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="InputOutputCapability.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#InputOutputCapability.build" title="Link to this definition"></a></dt>
+<dd><p>Build the input output capability in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="AuthReqFlag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AuthReqFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#AuthReqFlag" title="Link to this definition"></a></dt>
+<dd><p>This class provides the authentication request flag dissector.
+The authentication request flag can be displayed: <code class="docutils literal notranslate"><span class="pre">bonding</span></code>, <code class="docutils literal notranslate"><span class="pre">mitm</span></code>, <code class="docutils literal notranslate"><span class="pre">secureConnections</span></code>, <code class="docutils literal notranslate"><span class="pre">keypress</span></code>, <code class="docutils literal notranslate"><span class="pre">ct2</span></code></p>
+<p>bonding/MITM/secureConnections/keypress/CT2 in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">AuthReqFlag</span><span class="p">(</span><span class="n">bonding</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">mitm</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;05&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">AuthReqFlag</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;05&quot;</span><span class="p">))</span>
+<span class="go">AuthReq Flag(0x5,bonding:yes|mitm:yes|secureConnections:no|keypress:no|ct2:no)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="AuthReqFlag.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AuthReqFlag.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the authentication request flag in content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="AuthReqFlag.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#AuthReqFlag.build" title="Link to this definition"></a></dt>
+<dd><p>Build the authentication request flag in data</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="KeyDistributionFlag">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">KeyDistributionFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Dissector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#KeyDistributionFlag" title="Link to this definition"></a></dt>
+<dd><p>This class provides the key distribution flag dissector.
+The key distribution flag can be displayed: <code class="docutils literal notranslate"><span class="pre">encKey</span></code>, <code class="docutils literal notranslate"><span class="pre">idKey</span></code>, <code class="docutils literal notranslate"><span class="pre">signKey</span></code>, <code class="docutils literal notranslate"><span class="pre">linkKey</span></code></p>
+<p>encKey/idKey/signKey/linkKey in content &lt;===&gt; data</p>
+<dl class="field-list">
+<dt class="field-odd">Example<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">KeyDistributionFlag</span><span class="p">(</span><span class="n">idKey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">encKey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&quot;03&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">KeyDistributionFlag</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;03&quot;</span><span class="p">))</span>
+<span class="go">Key Distribution Flag(0x3,encKey:yes|idKey:yes|signKey:no|linkKey:no)</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="KeyDistributionFlag.dissect">
+<span class="sig-name descname"><span class="pre">dissect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#KeyDistributionFlag.dissect" title="Link to this definition"></a></dt>
+<dd><p>Dissect the key distribution flag in content</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="KeyDistributionFlag.build">
+<span class="sig-name descname"><span class="pre">build</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#KeyDistributionFlag.build" title="Link to this definition"></a></dt>
+<dd><p>Build the key distribution flag in data</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../helpers/contents.html" class="btn btn-neutral float-left" title="helpers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../bt_utils/index.html" class="btn btn-neutral float-right" title="bt_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

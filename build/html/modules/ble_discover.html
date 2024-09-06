@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ble_discover &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ble_pair" href="ble_pair.html" />
+    <link rel="prev" title="ble_connect" href="ble_connect.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_adv.html">ble_adv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_scan.html">ble_scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_discover</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble_discover"><code class="docutils literal notranslate"><span class="pre">ble_discover</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.init"><code class="docutils literal notranslate"><span class="pre">ble_discover.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.checkCapabilities"><code class="docutils literal notranslate"><span class="pre">ble_discover.checkCapabilities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.exportAttributes"><code class="docutils literal notranslate"><span class="pre">ble_discover.exportAttributes()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.exportGATT"><code class="docutils literal notranslate"><span class="pre">ble_discover.exportGATT()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.receive"><code class="docutils literal notranslate"><span class="pre">ble_discover.receive()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.serviceToString"><code class="docutils literal notranslate"><span class="pre">ble_discover.serviceToString()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.servicesDiscovery"><code class="docutils literal notranslate"><span class="pre">ble_discover.servicesDiscovery()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.allServicesDiscovery"><code class="docutils literal notranslate"><span class="pre">ble_discover.allServicesDiscovery()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.characteristicsDiscovery"><code class="docutils literal notranslate"><span class="pre">ble_discover.characteristicsDiscovery()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.attributesDiscovery"><code class="docutils literal notranslate"><span class="pre">ble_discover.attributesDiscovery()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.characteristicDescriptorDiscovery"><code class="docutils literal notranslate"><span class="pre">ble_discover.characteristicDescriptorDiscovery()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.printCharacteristics"><code class="docutils literal notranslate"><span class="pre">ble_discover.printCharacteristics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.applyFilter"><code class="docutils literal notranslate"><span class="pre">ble_discover.applyFilter()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_discover.run"><code class="docutils literal notranslate"><span class="pre">ble_discover.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ble_pair.html">ble_pair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">modules</a></li>
+      <li class="breadcrumb-item active">ble_discover</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/ble_discover.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble-discover">
+<h1>ble_discover<a class="headerlink" href="#ble-discover" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_discover">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_discover</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover" title="Link to this definition"></a></dt>
+<dd><p>This class provides the BLE discovery</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE discovery</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>START_HANDLE: “0X0001”</p></li>
+<li><p>END_HANDLE: “0xFFFF”</p></li>
+<li><p>WHAT: “all”</p></li>
+<li><p>FILTER: “”</p></li>
+<li><p>FILTER_BY: “”</p></li>
+<li><p>ATT_FILE: “”</p></li>
+<li><p>GATT_FILE: “/tmp/gatt.cfg”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.checkCapabilities">
+<span class="sig-name descname"><span class="pre">checkCapabilities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.checkCapabilities" title="Link to this definition"></a></dt>
+<dd><p>Check the capabilities of the BLE discovery by using <code class="docutils literal notranslate"><span class="pre">libs.wireless_utils.device.Device.hasCapabilities()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the BLE discovery is supported</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.exportAttributes">
+<span class="sig-name descname"><span class="pre">exportAttributes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.exportAttributes" title="Link to this definition"></a></dt>
+<dd><p>Export the attributes of the BLE discovery and write in file
+:param dict attributes: The attributes to export</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.exportGATT">
+<span class="sig-name descname"><span class="pre">exportGATT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datas</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.exportGATT" title="Link to this definition"></a></dt>
+<dd><p>Export the GATT datas of the BLE discovery and write in file
+:param dict datas: The GATT datas to export</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.receive">
+<span class="sig-name descname"><span class="pre">receive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retry</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.receive" title="Link to this definition"></a></dt>
+<dd><p>This method receives the blues packets from queue by using <code class="docutils literal notranslate"><span class="pre">libs.wireless.Receiver.next()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>types</strong> (<em>list</em>) – The types of the packets to receive</p></li>
+<li><p><strong>retry</strong> (<em>int</em>) – The number of retry to receive the packets</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The received packets</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>libs.wireless_utils.packets.Packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.serviceToString">
+<span class="sig-name descname"><span class="pre">serviceToString</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.serviceToString" title="Link to this definition"></a></dt>
+<dd><p>Convert the service to string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>service</strong> (<em>dict</em>) – The service to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The service converted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.servicesDiscovery">
+<span class="sig-name descname"><span class="pre">servicesDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">startHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.servicesDiscovery" title="Link to this definition"></a></dt>
+<dd><p>Discover the services</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>str</em>) – The UUID of the services to discover</p></li>
+<li><p><strong>startHandle</strong> (<em>int</em>) – The start handle of the services to discover</p></li>
+<li><p><strong>endHandle</strong> (<em>int</em>) – The end handle of the services to discover</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The discovered services</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of services (<code class="docutils literal notranslate"><span class="pre">libs.ble_utils.dissectors.Service</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.allServicesDiscovery">
+<span class="sig-name descname"><span class="pre">allServicesDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.allServicesDiscovery" title="Link to this definition"></a></dt>
+<dd><p>Discover all the services by running primary services and secondary services discovery function</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHandle</strong> (<em>int</em>) – The start handle of the services to discover</p></li>
+<li><p><strong>endHandle</strong> (<em>int</em>) – The end handle of the services to discover</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The discovered services</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of services (<code class="docutils literal notranslate"><span class="pre">libs.ble_utils.dissectors.Service</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.characteristicsDiscovery">
+<span class="sig-name descname"><span class="pre">characteristicsDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.characteristicsDiscovery" title="Link to this definition"></a></dt>
+<dd><p>Discover the characteristics</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHandle</strong> (<em>int</em>) – The start handle of the characteristics to discover</p></li>
+<li><p><strong>endHandle</strong> (<em>int</em>) – The end handle of the characteristics to discover</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The discovered characteristics</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict (values like <code class="docutils literal notranslate"><span class="pre">libs.ble_utils.dissectors.CharacteristicDeclaration</span></code>…)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.attributesDiscovery">
+<span class="sig-name descname"><span class="pre">attributesDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.attributesDiscovery" title="Link to this definition"></a></dt>
+<dd><p>Discover the attributes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHandle</strong> (<em>int</em>) – The start handle of the attributes to discover</p></li>
+<li><p><strong>endHandle</strong> (<em>int</em>) – The end handle of the attributes to discover</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The discovered attributes</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.characteristicDescriptorDiscovery">
+<span class="sig-name descname"><span class="pre">characteristicDescriptorDiscovery</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.characteristicDescriptorDiscovery" title="Link to this definition"></a></dt>
+<dd><p>Discover the characteristics descriptors</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startHandle</strong> (<em>int</em>) – The start handle of the characteristics descriptors to discover</p></li>
+<li><p><strong>endHandle</strong> (<em>int</em>) – The end handle of the characteristics descriptors to discover</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The discovered characteristics descriptors</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict (values like <code class="docutils literal notranslate"><span class="pre">libs.ble_utils.dissectors.CharacteristicsDescriptor</span></code>…)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.printCharacteristics">
+<span class="sig-name descname"><span class="pre">printCharacteristics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">characteristics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Characteristics'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.printCharacteristics" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.applyFilter">
+<span class="sig-name descname"><span class="pre">applyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">attributes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.applyFilter" title="Link to this definition"></a></dt>
+<dd><p>Apply the filter on the attributes. The <code class="docutils literal notranslate"><span class="pre">FILTER_BY</span></code> is used to filter the attributes (<code class="docutils literal notranslate"><span class="pre">type</span></code> or <code class="docutils literal notranslate"><span class="pre">value</span></code>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>attributes</strong> (<em>list</em>) – The attributes to filter</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The filtered attributes</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_discover.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_discover.run" title="Link to this definition"></a></dt>
+<dd><p>Run the BLE discovery</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the BLE discovery is ok, see <code class="docutils literal notranslate"><span class="pre">core.module.Module.ok()</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ble_connect.html" class="btn btn-neutral float-left" title="ble_connect" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ble_pair.html" class="btn btn-neutral float-right" title="ble_pair" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

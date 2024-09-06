@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ble &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="bt" href="bt.html" />
+    <link rel="prev" title="packetQueue" href="wireless_utils/packetQueue/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">libs</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_utils/index.html">ble_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#BLEHCIDevice"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.getCurrentConnectionMode"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.getCurrentConnectionMode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.init"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.getMode"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.getMode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setAddress"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setAddress()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setChannelMap"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setChannelMap()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setScan"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setScan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setAdvertising"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setAdvertising()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.updateConnectionParameters"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.updateConnectionParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setScanningParameters"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setScanningParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.setAdvertisingParameters"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.setAdvertisingParameters()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.getAddressMode"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.getAddressMode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEHCIDevice.encryptLink"><code class="docutils literal notranslate"><span class="pre">BLEHCIDevice.encryptLink()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#BLEEmitter"><code class="docutils literal notranslate"><span class="pre">BLEEmitter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLEEmitter.__init__"><code class="docutils literal notranslate"><span class="pre">BLEEmitter.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEEmitter.convert"><code class="docutils literal notranslate"><span class="pre">BLEEmitter.convert()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#BLEReceiver"><code class="docutils literal notranslate"><span class="pre">BLEReceiver</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLEReceiver.__init__"><code class="docutils literal notranslate"><span class="pre">BLEReceiver.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEReceiver.convert"><code class="docutils literal notranslate"><span class="pre">BLEReceiver.convert()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wireless.html">wireless</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">libs</a></li>
+      <li class="breadcrumb-item active">ble</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/libs/ble.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble">
+<h1>ble<a class="headerlink" href="#ble" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEHCIDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEHCIDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bt.BtHCIDevice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice" title="Link to this definition"></a></dt>
+<dd><p>This class is a device that can communicate with an HCI device to use Bluetooth Low Energy.
+The interface is <code class="docutils literal notranslate"><span class="pre">hciX</span></code> where X is the number of the device</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.getCurrentConnectionMode">
+<span class="sig-name descname"><span class="pre">getCurrentConnectionMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.getCurrentConnectionMode" title="Link to this definition"></a></dt>
+<dd><p>This method return the current connection mode, <code class="docutils literal notranslate"><span class="pre">ranodm</span></code> or <code class="docutils literal notranslate"><span class="pre">public</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current connection mode</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.init" title="Link to this definition"></a></dt>
+<dd><p>This method init the bluetooth device by send HCI CMD</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.getMode">
+<span class="sig-name descname"><span class="pre">getMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.getMode" title="Link to this definition"></a></dt>
+<dd><p>This method return the current mode of bluez.
+There are three mode: <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">SCANNING</span></code> and <code class="docutils literal notranslate"><span class="pre">ADVERTISING</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current mode</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setAddress">
+<span class="sig-name descname"><span class="pre">setAddress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setAddress" title="Link to this definition"></a></dt>
+<dd><p>This method set the BD address of bluez, if possible</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – New BD address</p></li>
+<li><p><strong>random</strong> (<em>bool</em>) – If the address is random</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the address is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setChannelMap">
+<span class="sig-name descname"><span class="pre">setChannelMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channelMap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x1fffffffff</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setChannelMap" title="Link to this definition"></a></dt>
+<dd><p>This method set the channel map of bluez</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channelMap</strong> (<em>int</em>) – The new channel map</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the channel map is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setScan">
+<span class="sig-name descname"><span class="pre">setScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">passive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setScan" title="Link to this definition"></a></dt>
+<dd><p>This method set the scan mode of bluez</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enable</strong> (<em>bool</em>) – If the scan is enable</p></li>
+<li><p><strong>passive</strong> (<em>bool</em>) – If the scan is passive, like no <code class="docutils literal notranslate"><span class="pre">SCAN_REQ</span></code></p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the scan is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setAdvertising">
+<span class="sig-name descname"><span class="pre">setAdvertising</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setAdvertising" title="Link to this definition"></a></dt>
+<dd><p>This method set the advertising mode of bluez.
+You have to set advertising params (:py:meth:: <cite>setAdvertisingParameters</cite>) before advertising</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – If the advertising is enable</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the advertising is set</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.updateConnectionParameters">
+<span class="sig-name descname"><span class="pre">updateConnectionParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">minInterval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxInterval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minCe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxCe</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0xFFFF</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.updateConnectionParameters" title="Link to this definition"></a></dt>
+<dd><p>This method update the connection parameters of bluez.
+It is used when bluez receives a <code class="docutils literal notranslate"><span class="pre">BLEConnectionParameterUpdateRequest</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>minInterval</strong> (<em>int</em>) – The new minimum connection interval</p></li>
+<li><p><strong>maxInterval</strong> (<em>int</em>) – The new maximum connection interval</p></li>
+<li><p><strong>latency</strong> (<em>int</em>) – The new connection latency</p></li>
+<li><p><strong>timeout</strong> (<em>int</em>) – The new connection timeout</p></li>
+<li><p><strong>minCe</strong> (<em>int</em>) – The new minimum event length</p></li>
+<li><p><strong>maxCe</strong> (<em>int</em>) – The new maximum event length</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setScanningParameters">
+<span class="sig-name descname"><span class="pre">setScanningParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setScanningParameters" title="Link to this definition"></a></dt>
+<dd><p>This method set the scanning parameters of bluez.
+It is used when bluez receives a <code class="docutils literal notranslate"><span class="pre">BLEScanRequest</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.setAdvertisingParameters">
+<span class="sig-name descname"><span class="pre">setAdvertisingParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ADV_IND'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destAddr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'00:00:00:00:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">210</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">daType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'public'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">oaType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'public'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.setAdvertisingParameters" title="Link to this definition"></a></dt>
+<dd><p>This method set the advertising parameters of bluez.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – The type of advertising</p></li>
+<li><p><strong>destAddr</strong> (<em>str</em>) – The destination address</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – The advertising data</p></li>
+<li><p><strong>intervalMin</strong> (<em>int</em>) – The minimum advertising interval</p></li>
+<li><p><strong>intervalMax</strong> (<em>int</em>) – The maximum advertising interval</p></li>
+<li><p><strong>daType</strong> (<em>str</em>) – The destination address type (public or random)</p></li>
+<li><p><strong>oaType</strong> (<em>str</em>) – The origan address type (public or random)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.getAddressMode">
+<span class="sig-name descname"><span class="pre">getAddressMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.getAddressMode" title="Link to this definition"></a></dt>
+<dd><p>This method return the current address mode of bluez, <code class="docutils literal notranslate"><span class="pre">random</span></code> or <code class="docutils literal notranslate"><span class="pre">public</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current address mode</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEHCIDevice.encryptLink">
+<span class="sig-name descname"><span class="pre">encryptLink</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rand</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'\x00\x00\x00\x00\x00\x00\x00\x00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ediv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ltk</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'\x00'</span> <span class="pre">*</span> <span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEHCIDevice.encryptLink" title="Link to this definition"></a></dt>
+<dd><p>This method encrypt the link with the given parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rand</strong> (<em>bytes</em>) – The random number</p></li>
+<li><p><strong>ediv</strong> (<em>int</em>) – The EDIV</p></li>
+<li><p><strong>ltk</strong> (<em>bytes</em>) – The LTK</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the link is encrypted</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEEmitter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEEmitter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Emitter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEEmitter" title="Link to this definition"></a></dt>
+<dd><p>This class is an emitter that can emit BLE packets</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEEmitter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hci0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEEmitter.__init__" title="Link to this definition"></a></dt>
+<dd><p>This method create a BLE Device as an emitter by interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEEmitter.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEEmitter.convert" title="Link to this definition"></a></dt>
+<dd><p>This method convert the blues packet to scapy packet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>bytes</em>) – The packet to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The scapy packet</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>scapy.all.packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEReceiver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEReceiver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Receiver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEReceiver" title="Link to this definition"></a></dt>
+<dd><p>This class is a receiver that can receive BLE packets</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEReceiver.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hci0'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEReceiver.__init__" title="Link to this definition"></a></dt>
+<dd><p>This method create a BLE Device as a receiver by interface</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>interface</strong> (<em>str</em>) – The interface of the device</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEReceiver.convert">
+<span class="sig-name descname"><span class="pre">convert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEReceiver.convert" title="Link to this definition"></a></dt>
+<dd><p>This method convert the scapy packet to blues packet</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>bytes</em>) – The packet to convert</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The scapy packet</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>scapy.all.packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wireless_utils/packetQueue/contents.html" class="btn btn-neutral float-left" title="packetQueue" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bt.html" class="btn btn-neutral float-right" title="bt" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

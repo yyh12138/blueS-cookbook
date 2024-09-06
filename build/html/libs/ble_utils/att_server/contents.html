@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>att_server &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="packets" href="../packets/contents.html" />
+    <link rel="prev" title="ble_utils" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">att_server</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ATT_Attribute"><code class="docutils literal notranslate"><span class="pre">ATT_Attribute</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ATT_Database"><code class="docutils literal notranslate"><span class="pre">ATT_Database</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ATT_Server"><code class="docutils literal notranslate"><span class="pre">ATT_Server</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#GATT_Server"><code class="docutils literal notranslate"><span class="pre">GATT_Server</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">att_server</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/att_server/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="att-server">
+<h1>att_server<a class="headerlink" href="#att-server" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ATT_Attribute">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ATT_Attribute</span></span><a class="headerlink" href="#ATT_Attribute" title="Link to this definition"></a></dt>
+<dd><p>This class describes an ATT attribute</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Attribute.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Attribute.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the attribute</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>bytes</em><em> or </em><em>hex</em><em> or </em><em>string</em>) – The type of the attribute</p></li>
+<li><p><strong>permissions</strong> (<em>int</em><em> or </em><em>list</em><em> or </em><em>string</em>) – The permissions of the attribute</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Attribute.__str__">
+<span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Attribute.__str__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A string representation of the ATT attribute</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ATT_Database">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ATT_Database</span></span><a class="headerlink" href="#ATT_Database" title="Link to this definition"></a></dt>
+<dd><p>This class describes an ATT database.
+It can manipulate the ATT attributes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.__init__" title="Link to this definition"></a></dt>
+<dd><p>Init the attributes list</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.show" title="Link to this definition"></a></dt>
+<dd><p>Print the ATT list, like [<code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">Attribute</span> <span class="pre">value</span></code>]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.showService">
+<span class="sig-name descname"><span class="pre">showService</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.showService" title="Link to this definition"></a></dt>
+<dd><p>Print the services list, like [<code class="docutils literal notranslate"><span class="pre">Start</span> <span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">End</span> <span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">UUID16</span></code>, <code class="docutils literal notranslate"><span class="pre">UUID128</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.showCharacteristics">
+<span class="sig-name descname"><span class="pre">showCharacteristics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">startHandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endHandle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'Characteristics'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.showCharacteristics" title="Link to this definition"></a></dt>
+<dd><p>Print the characteristics list, like [<code class="docutils literal notranslate"><span class="pre">Declaration</span> <span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">Value</span> <span class="pre">handle</span></code>, <code class="docutils literal notranslate"><span class="pre">UUID16</span></code>, <code class="docutils literal notranslate"><span class="pre">UUID128</span></code>, <code class="docutils literal notranslate"><span class="pre">Name</span></code>, <code class="docutils literal notranslate"><span class="pre">Permissions</span></code>, <code class="docutils literal notranslate"><span class="pre">Value</span></code>, <code class="docutils literal notranslate"><span class="pre">Descriptors</span></code>]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.showGATT">
+<span class="sig-name descname"><span class="pre">showGATT</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.showGATT" title="Link to this definition"></a></dt>
+<dd><p>Print the GATT list, actually run the <code class="docutils literal notranslate"><span class="pre">showServices</span></code> and <code class="docutils literal notranslate"><span class="pre">showCharacteristics</span></code> methods</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.setAttribute">
+<span class="sig-name descname"><span class="pre">setAttribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.setAttribute" title="Link to this definition"></a></dt>
+<dd><p>Add an attribute to the database</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the attribute</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>bytes</em><em> or </em><em>hex</em><em> or </em><em>string</em>) – The type of the attribute</p></li>
+<li><p><strong>permissions</strong> (<em>int</em><em> or </em><em>list</em><em> or </em><em>string</em>) – The permissions of the attribute</p></li>
+</ul>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="n">ATT_Database</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">setAttribute</span><span class="p">(</span><span class="n">handle</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="sa">b</span><span class="s1">&#39;</span><span class="se">\x00\x18</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;Primary Service&quot;</span><span class="p">,</span> <span class="n">permissions</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Read&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.getNextHandle">
+<span class="sig-name descname"><span class="pre">getNextHandle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.getNextHandle" title="Link to this definition"></a></dt>
+<dd><p>Get the next handle available in the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The next handle available</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.read" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given handle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like (<code class="docutils literal notranslate"><span class="pre">existing</span></code>, <code class="docutils literal notranslate"><span class="pre">writable</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, bool, btyes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.write" title="Link to this definition"></a></dt>
+<dd><p>This method writes the value of the attribute with the given handle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to write</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value to write</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like (<code class="docutils literal notranslate"><span class="pre">existing</span></code>, <code class="docutils literal notranslate"><span class="pre">writable</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, bool, bytes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.readByType">
+<span class="sig-name descname"><span class="pre">readByType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.readByType" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>string</em>) – The type of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like [{“attributeHandle”: 1, “value”: b”x00x18”}, {…}]</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.readByGroupType">
+<span class="sig-name descname"><span class="pre">readByGroupType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.readByGroupType" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given group type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>string</em>) – The type of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like [{“attributeHandle”: 1, “endGroupHandle”: 2, “value”: b”x00x18”}, {…}]</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.findInformation">
+<span class="sig-name descname"><span class="pre">findInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.findInformation" title="Link to this definition"></a></dt>
+<dd><p>This method finds the information of the attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like [{“attributeHandle”: 1, “type”: b”x01”}, {…}]</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Database.findByTypeValue">
+<span class="sig-name descname"><span class="pre">findByTypeValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Database.findByTypeValue" title="Link to this definition"></a></dt>
+<dd><p>This method finds the attribute by type and value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>string</em>) – The type of the attribute to read</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the attribute, like [{“attributeHandle”: 1, “endGroupHandle”: 2}, {…}]</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list of dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ATT_Server">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ATT_Server</span></span><a class="headerlink" href="#ATT_Server" title="Link to this definition"></a></dt>
+<dd><p>This class implements an ATT server, and uses <code class="docutils literal notranslate"><span class="pre">ATT_Database</span></code> to store the attributes</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">database</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mtu</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">23</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>database</strong> (<em>libs.ble_utils.attserver.ATT_Database</em>) – The database to use</p></li>
+<li><p><strong>mtu</strong> (<em>int</em>) – The MTU size</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.addAttribute">
+<span class="sig-name descname"><span class="pre">addAttribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.addAttribute" title="Link to this definition"></a></dt>
+<dd><p>Add an attribute to the database by using the <code class="docutils literal notranslate"><span class="pre">setAttribute</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the attribute</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>bytes</em><em> or </em><em>hex</em><em> or </em><em>string</em>) – The type of the attribute</p></li>
+<li><p><strong>permissions</strong> (<em>int</em><em> or </em><em>list</em><em> or </em><em>string</em>) – The permissions of the attribute</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.setMtu">
+<span class="sig-name descname"><span class="pre">setMtu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mtu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.setMtu" title="Link to this definition"></a></dt>
+<dd><p>Set the MTU size</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mtu</strong> (<em>int</em>) – The MTU size</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.read" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given handle by using the <code class="docutils literal notranslate"><span class="pre">read</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to read</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> or <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, bytes or int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.readBlob">
+<span class="sig-name descname"><span class="pre">readBlob</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.readBlob" title="Link to this definition"></a></dt>
+<dd><p>This method implements the read blob request by using the <code class="docutils literal notranslate"><span class="pre">read</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to read</p></li>
+<li><p><strong>offset</strong> (<em>int</em>) – The offset of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> or <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, bytes or int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.writeCommand">
+<span class="sig-name descname"><span class="pre">writeCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.writeCommand" title="Link to this definition"></a></dt>
+<dd><p>This method implements the write command by using the <code class="docutils literal notranslate"><span class="pre">write</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to write</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value to write</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, None)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.writeRequest">
+<span class="sig-name descname"><span class="pre">writeRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handle</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.writeRequest" title="Link to this definition"></a></dt>
+<dd><p>This method implements the write request by using the <code class="docutils literal notranslate"><span class="pre">write</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the attribute to write</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value to write</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, int)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.readByType">
+<span class="sig-name descname"><span class="pre">readByType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.readByType" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given type by using the <code class="docutils literal notranslate"><span class="pre">readByType</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>string</em>) – The type of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> or <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, list of dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.readByGroupType">
+<span class="sig-name descname"><span class="pre">readByGroupType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.readByGroupType" title="Link to this definition"></a></dt>
+<dd><p>This method reads the value of the attribute with the given group type by using the <code class="docutils literal notranslate"><span class="pre">readByGroupType</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+<li><p><strong>type</strong> (<em>int</em><em> or </em><em>string</em>) – The type of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> or <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, list of dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ATT_Server.findInformation">
+<span class="sig-name descname"><span class="pre">findInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ATT_Server.findInformation" title="Link to this definition"></a></dt>
+<dd><p>This method finds the information of the attribute by using the <code class="docutils literal notranslate"><span class="pre">findInformation</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> (<em>int</em>) – The start handle of the attribute to read</p></li>
+<li><p><strong>end</strong> (<em>int</em>) – The end handle of the attribute to read</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(<code class="docutils literal notranslate"><span class="pre">success</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code> or <code class="docutils literal notranslate"><span class="pre">error</span> <span class="pre">code</span></code>)</p>
+</dd>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bool, list of dict)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="GATT_Server">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">GATT_Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ATT_Server</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GATT_Server" title="Link to this definition"></a></dt>
+<dd><p>This class inherits from <code class="docutils literal notranslate"><span class="pre">ATT_Server</span></code> and provides the GATT server</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="GATT_Server.addPrimaryService">
+<span class="sig-name descname"><span class="pre">addPrimaryService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Read']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GATT_Server.addPrimaryService" title="Link to this definition"></a></dt>
+<dd><p>Add a primary service to the database by using the <code class="docutils literal notranslate"><span class="pre">setAttribute</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>int</em><em> or </em><em>bytes</em><em> or </em><em>hex</em><em> or </em><em>string</em>) – The UUID of the service</p></li>
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the service</p></li>
+<li><p><strong>permissions</strong> (<em>int</em><em> or </em><em>list</em><em> or </em><em>string</em>) – The permissions of the service</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GATT_Server.addSecondaryService">
+<span class="sig-name descname"><span class="pre">addSecondaryService</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Read']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GATT_Server.addSecondaryService" title="Link to this definition"></a></dt>
+<dd><p>Add a secondary service to the database by using the <code class="docutils literal notranslate"><span class="pre">setAttribute</span></code> method of the database</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>int</em><em> or </em><em>bytes</em><em> or </em><em>hex</em><em> or </em><em>string</em>) – The UUID of the service</p></li>
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the service</p></li>
+<li><p><strong>permissions</strong> (<em>int</em><em> or </em><em>list</em><em> or </em><em>string</em>) – The permissions of the service</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GATT_Server.addCharacteristic">
+<span class="sig-name descname"><span class="pre">addCharacteristic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">declarationHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">valueHandle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Read',</span> <span class="pre">'Write']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GATT_Server.addCharacteristic" title="Link to this definition"></a></dt>
+<dd><p>This method adds a characteristic to the database by using the <code class="docutils literal notranslate"><span class="pre">addAttribute</span></code> method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>bytes</em>) – The UUID of the descriptor</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the descriptor</p></li>
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the descriptor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="GATT_Server.addDescriptor">
+<span class="sig-name descname"><span class="pre">addDescriptor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uuid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">permissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['Read',</span> <span class="pre">'Write',</span> <span class="pre">'Notify']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#GATT_Server.addDescriptor" title="Link to this definition"></a></dt>
+<dd><p>This method adds a descriptor to the database by using the <code class="docutils literal notranslate"><span class="pre">addAttribute</span></code> method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>uuid</strong> (<em>bytes</em>) – The UUID of the descriptor</p></li>
+<li><p><strong>value</strong> (<em>bytes</em>) – The value of the descriptor</p></li>
+<li><p><strong>handle</strong> (<em>int</em>) – The handle of the descriptor</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="ble_utils" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../packets/contents.html" class="btn btn-neutral float-right" title="packets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

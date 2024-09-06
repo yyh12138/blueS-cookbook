@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>packets &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="helpers" href="../helpers/contents.html" />
+    <link rel="prev" title="att_server" href="../att_server/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">packets</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLESniffingParameters"><code class="docutils literal notranslate"><span class="pre">BLESniffingParameters</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEPacket"><code class="docutils literal notranslate"><span class="pre">BLEPacket</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEControlPDU"><code class="docutils literal notranslate"><span class="pre">BLEControlPDU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEEncryptedPacket"><code class="docutils literal notranslate"><span class="pre">BLEEncryptedPacket</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEEmptyPDU"><code class="docutils literal notranslate"><span class="pre">BLEEmptyPDU</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEExchangeMTURequest"><code class="docutils literal notranslate"><span class="pre">BLEExchangeMTURequest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEExchangeMTUResponse"><code class="docutils literal notranslate"><span class="pre">BLEExchangeMTUResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEConnect"><code class="docutils literal notranslate"><span class="pre">BLEConnect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEConnectResponse"><code class="docutils literal notranslate"><span class="pre">BLEConnectResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEDisconnect"><code class="docutils literal notranslate"><span class="pre">BLEDisconnect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEConnectionCancel"><code class="docutils literal notranslate"><span class="pre">BLEConnectionCancel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEAdvertisement"><code class="docutils literal notranslate"><span class="pre">BLEAdvertisement</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEAdvInd"><code class="docutils literal notranslate"><span class="pre">BLEAdvInd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEAdvDirectInd"><code class="docutils literal notranslate"><span class="pre">BLEAdvDirectInd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEAdvNonConnInd"><code class="docutils literal notranslate"><span class="pre">BLEAdvNonConnInd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEScanRequest"><code class="docutils literal notranslate"><span class="pre">BLEScanRequest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEScanResponse"><code class="docutils literal notranslate"><span class="pre">BLEScanResponse</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEConnectRequest"><code class="docutils literal notranslate"><span class="pre">BLEConnectRequest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEFindInformationRequest"><code class="docutils literal notranslate"><span class="pre">BLEFindInformationRequest</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEFindInformationResponse"><code class="docutils literal notranslate"><span class="pre">BLEFindInformationResponse</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">packets</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/packets/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="packets">
+<h1>packets<a class="headerlink" href="#packets" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLESniffingParameters">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLESniffingParameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.AdditionalInformations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLESniffingParameters" title="Link to this definition"></a></dt>
+<dd><p>This class attach the BLE packets by sniffer</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLESniffingParameters.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rssi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rssi_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rssi_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rssi_avg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rssi_count</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clk_100ns</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clk_high</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">frequency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rawPacket</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLESniffingParameters.__init__" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rssi</strong> (<em>float</em>) – RSSI value</p></li>
+<li><p><strong>rssi_min</strong> (<em>float</em>) – Minimum RSSI value</p></li>
+<li><p><strong>rssi_max</strong> (<em>float</em>) – Maximum RSSI value</p></li>
+<li><p><strong>rssi_avg</strong> (<em>float</em>) – Average RSSI value</p></li>
+<li><p><strong>rssi_count</strong> (<em>int</em>) – RSSI count</p></li>
+<li><p><strong>clk_100ns</strong> (<em>float</em>) – Clock 100ns value</p></li>
+<li><p><strong>clk_high</strong> (<em>float</em>) – Clock hight value</p></li>
+<li><p><strong>direction</strong> (<em>str</em>) – Direction of the received packet (<code class="docutils literal notranslate"><span class="pre">&quot;master-&gt;slave&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;slave-&gt;master&quot;</span></code>)</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – Channel of the received packet</p></li>
+<li><p><strong>frequency</strong> (<em>float</em>) – Frequency of the received packet</p></li>
+<li><p><strong>rawPacket</strong> (<em>str</em>) – Raw packet</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEPacket">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEPacket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEPacket" title="Link to this definition"></a></dt>
+<dd><p>blues BLE packet. It is the base class for all blues BLE packets</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEControlPDU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEControlPDU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEControlPDU" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEEncryptedPacket">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEEncryptedPacket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEEncryptedPacket" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init encrypted data and connection handle</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEEmptyPDU">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEEmptyPDU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEEmptyPDU" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEExchangeMTURequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEExchangeMTURequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEExchangeMTURequest" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init mtu and connection handle</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEExchangeMTUResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEExchangeMTUResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEExchangeMTUResponse" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init mtu and connection handle</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEConnect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEConnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEConnect" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init dstAddr, srcAddr, type (responserType), initiatorType</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEConnectResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEConnectResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEConnectResponse" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init dstAddr, srcAddr, type, success, role (role of initiator), interval</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEDisconnect">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEDisconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEDisconnect" title="Link to this definition"></a></dt>
+<dd><p>This class needs to connection handle</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEConnectionCancel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEConnectionCancel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEConnectionCancel" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEAdvertisement">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEAdvertisement</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEAdvertisement" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init addr, type (<code class="docutils literal notranslate"><span class="pre">ADV_IND</span></code>, …), addrType, data, intervalMin, intervalMax</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEAdvertisement.getRawDatas">
+<span class="sig-name descname"><span class="pre">getRawDatas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEAdvertisement.getRawDatas" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Raw datas</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEAdvInd">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEAdvInd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEAdvInd" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init addr, addrType, data</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEAdvDirectInd">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEAdvDirectInd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEAdvDirectInd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEAdvNonConnInd">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEAdvNonConnInd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEAdvNonConnInd" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEScanRequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEScanRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEScanRequest" title="Link to this definition"></a></dt>
+<dd><p>This class (<code class="docutils literal notranslate"><span class="pre">SCAN_REQ</span></code>) needs to init srcAddr, arcAddrType, dstAddr, dstAddrType</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEScanResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEScanResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEScanResponse" title="Link to this definition"></a></dt>
+<dd><p>This class (<code class="docutils literal notranslate"><span class="pre">SCAN_RSP</span></code>) needs to init addr, addrType, data</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEConnectRequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEConnectRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEAdvertisement</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEConnectRequest" title="Link to this definition"></a></dt>
+<dd><p>This class (<code class="docutils literal notranslate"><span class="pre">CONNECT_REQ</span></code>) needs to init srcAddr, srcAddrType, dstAddr, dstAddrType, intervalMin, intervalMax, latency, timeout, channelMap, hop, sca</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEFindInformationRequest">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEFindInformationRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEFindInformationRequest" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init connection handle, startHandle, endHandle</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEFindInformationResponse">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEFindInformationResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEFindInformationResponse" title="Link to this definition"></a></dt>
+<dd><p>This class needs to init connection handle, format, data, attributes</p>
+</dd></dl>
+
+<p>There are many other ble-related classes in the module, but they are not documented here.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../att_server/contents.html" class="btn btn-neutral float-left" title="att_server" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../helpers/contents.html" class="btn btn-neutral float-right" title="helpers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
