@@ -10,3 +10,4 @@ modules
    ble_discover
    ble_pair
    ble_slave
+   ble_no_pairing_mitm
