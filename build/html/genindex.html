@@ -432,7 +432,11 @@
 </li>
       <li><a href="modules/ble_discover.html#ble_discover">ble_discover (built-in class)</a>
 </li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm">ble_no_pairing_mitm (built-in class)</a>
+</li>
       <li><a href="modules/ble_pair.html#ble_pair">ble_pair (built-in class)</a>
+</li>
+      <li><a href="modules/ble_scan.html#ble_scan">ble_scan (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvDirectInd">BLEAdvDirectInd (built-in class)</a>
 </li>
@@ -469,6 +473,8 @@
       <li><a href="libs/ble_utils/packets/contents.html#BLEFindInformationResponse">BLEFindInformationResponse (built-in class)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice">BLEHCIDevice (built-in class)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#BLEMitmStage">BLEMitmStage (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEPacket">BLEPacket (built-in class)</a>
 </li>
@@ -636,8 +642,12 @@
 </li>
         <li><a href="modules/ble_discover.html#ble_discover.checkCapabilities">(ble_discover method)</a>
 </li>
+        <li><a href="modules/ble_scan.html#ble_scan.checkCapabilities">(ble_scan method)</a>
+</li>
       </ul></li>
       <li><a href="libs/wireless.html#Receiver.clean">clean() (Receiver method)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.cloneStage">cloneStage() (ble_no_pairing_mitm method)</a>
 </li>
       <li><a href="libs/wireless_utils/device/contents.html#Device.close">close() (Device method)</a>
 </li>
@@ -654,6 +664,8 @@
         <li><a href="core/config/contents.html#Config.__init__">built-in function</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Config.dataExists()
 
@@ -661,8 +673,6 @@
         <li><a href="core/config/contents.html#Config.dataExists">built-in function</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Config.generateData()
 
@@ -720,6 +730,8 @@
       <li><a href="libs/wireless_utils/device/contents.html#Device">Device (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#dewhiten">dewhiten()</a>
+</li>
+      <li><a href="modules/ble_scan.html#ble_scan.displayDevices">displayDevices() (ble_scan method)</a>
 </li>
       <li><a href="libs/io.html#displayPacket">displayPacket()</a>
 </li>
@@ -779,14 +791,18 @@
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.findByTypeValue">findByTypeValue() (ATT_Database method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.findInformation">findInformation() (ATT_Database method)</a>
 
       <ul>
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.findInformation">(ATT_Server method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToMaster">forwardToMaster() (ble_no_pairing_mitm method)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToSlave">forwardToSlave() (ble_no_pairing_mitm method)</a>
+</li>
       <li><a href="libs/ble_utils/helpers/contents.html#frequentToChannel">frequentToChannel()</a>
 </li>
   </ul></td>
@@ -866,7 +882,11 @@
 </li>
         <li><a href="modules/ble_discover.html#ble_discover.init">(ble_discover method)</a>
 </li>
+        <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.init">(ble_no_pairing_mitm method)</a>
+</li>
         <li><a href="modules/ble_pair.html#ble_pair.init">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_scan.html#ble_scan.init">(ble_scan method)</a>
 </li>
         <li><a href="libs/ble.html#BLEHCIDevice.init">(BLEHCIDevice method)</a>
 </li>
@@ -953,6 +973,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_pair.html#ble_pair.keyDistribution">keyDistribution() (ble_pair method)</a>
+</li>
       <li><a href="libs/ble_utils/dissectors/contents.html#KeyDistributionFlag">KeyDistributionFlag (built-in class)</a>
 </li>
   </ul></td>
@@ -1081,12 +1103,20 @@
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.readByGroupType">(ATT_Server method)</a>
 </li>
       </ul></li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeRequest">readByGroupTypeRequest() (ble_no_pairing_mitm method)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeResponse">readByGroupTypeResponse() (ble_no_pairing_mitm method)</a>
+</li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.readByType">readByType() (ATT_Database method)</a>
 
       <ul>
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.readByType">(ATT_Server method)</a>
 </li>
       </ul></li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRequest">readRequest() (ble_no_pairing_mitm method)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRespnse">readRespnse() (ble_no_pairing_mitm method)</a>
+</li>
       <li><a href="modules/ble_discover.html#ble_discover.receive">receive() (ble_discover method)</a>
 </li>
       <li><a href="libs/wireless.html#Receiver">Receiver (built-in class)</a>
@@ -1105,6 +1135,8 @@
 </li>
       <li><a href="core/module/contents.html#WirelessModule.registerEmitter">registerEmitter() (WirelessModule method)</a>
 </li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.registerEvents">registerEvents() (ble_no_pairing_mitm method)</a>
+</li>
       <li><a href="core/module/contents.html#WirelessModule.registerReceiver">registerReceiver() (WirelessModule method)</a>
 </li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.restart">restart() (PacketQueue method)</a>
@@ -1120,6 +1152,12 @@
 </li>
         <li><a href="modules/ble_discover.html#ble_discover.run">(ble_discover method)</a>
 </li>
+        <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.run">(ble_no_pairing_mitm method)</a>
+</li>
+        <li><a href="modules/ble_pair.html#ble_pair.run">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_scan.html#ble_scan.run">(ble_scan method)</a>
+</li>
         <li><a href="libs/wireless_utils/callback/contents.html#Callback.run">(Callback method)</a>
 </li>
         <li><a href="core/module/contents.html#Module.run">(Module method)</a>
@@ -1133,6 +1171,10 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_scan.html#ble_scan.scan">scan() (ble_scan method)</a>
+</li>
+      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.scanStage">scanStage() (ble_no_pairing_mitm method)</a>
+</li>
       <li><a href="core/scenario/contents.html#Scenario">Scenario (built-in class)</a>
 </li>
       <li><a href="core/scenario/contents.html#Scenario.scenarioSignal">scenarioSignal() (Scenario method)</a>
@@ -1177,8 +1219,6 @@
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.show">show() (ATT_Database method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showCharacteristics">showCharacteristics() (ATT_Database method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showGATT">showGATT() (ATT_Database method)</a>
@@ -1186,6 +1226,28 @@
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showService">showService() (ATT_Database method)</a>
 </li>
       <li><a href="libs/wireless.html#Receiver.skip">skip() (Receiver method)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_pair.html#ble_pair.slaveEncryptionInformation">slaveEncryptionInformation() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityAddressInformation">slaveIdentityAddressInformation() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityInformation">slaveIdentityInformation() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slaveMasterIdentification">slaveMasterIdentification() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slavePairingConfirm">slavePairingConfirm() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slavePairingFailed">slavePairingFailed() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slavePairingRandom">slavePairingRandom() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slavePairingRequest">slavePairingRequest() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slavePairingResponse">slavePairingResponse() (ble_pair method)</a>
+</li>
+      <li><a href="modules/ble_pair.html#ble_pair.slaveSigningInformation">slaveSigningInformation() (ble_pair method)</a>
 </li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.start">start() (PacketQueue method)</a>
 </li>
@@ -1288,9 +1350,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/wireless_utils/callback/contents.html#Callback.update">update() (Callback method)</a>
 </li>
+      <li><a href="libs/ble.html#BLEHCIDevice.updateConnectionParameters">updateConnectionParameters() (BLEHCIDevice method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="libs/ble.html#BLEHCIDevice.updateConnectionParameters">updateConnectionParameters() (BLEHCIDevice method)</a>
+      <li><a href="modules/ble_scan.html#ble_scan.updateDevices">updateDevices() (ble_scan method)</a>
 </li>
       <li><a href="libs/ble_utils/dissectors/contents.html#UUID">UUID (built-in class)</a>
 </li>

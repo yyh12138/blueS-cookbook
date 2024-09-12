@@ -58,11 +58,24 @@
 <li class="toctree-l4"><a class="reference internal" href="#ble_pair.init"><code class="docutils literal notranslate"><span class="pre">ble_pair.init()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ble_pair.pinToTemporaryKey"><code class="docutils literal notranslate"><span class="pre">ble_pair.pinToTemporaryKey()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ble_pair.pairingMethodSelection"><code class="docutils literal notranslate"><span class="pre">ble_pair.pairingMethodSelection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slavePairingFailed"><code class="docutils literal notranslate"><span class="pre">ble_pair.slavePairingFailed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slavePairingRequest"><code class="docutils literal notranslate"><span class="pre">ble_pair.slavePairingRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slavePairingResponse"><code class="docutils literal notranslate"><span class="pre">ble_pair.slavePairingResponse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slavePairingConfirm"><code class="docutils literal notranslate"><span class="pre">ble_pair.slavePairingConfirm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slavePairingRandom"><code class="docutils literal notranslate"><span class="pre">ble_pair.slavePairingRandom()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slaveEncryptionInformation"><code class="docutils literal notranslate"><span class="pre">ble_pair.slaveEncryptionInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slaveMasterIdentification"><code class="docutils literal notranslate"><span class="pre">ble_pair.slaveMasterIdentification()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slaveIdentityInformation"><code class="docutils literal notranslate"><span class="pre">ble_pair.slaveIdentityInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slaveIdentityAddressInformation"><code class="docutils literal notranslate"><span class="pre">ble_pair.slaveIdentityAddressInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.slaveSigningInformation"><code class="docutils literal notranslate"><span class="pre">ble_pair.slaveSigningInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.keyDistribution"><code class="docutils literal notranslate"><span class="pre">ble_pair.keyDistribution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_pair.run"><code class="docutils literal notranslate"><span class="pre">ble_pair.run()</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_no_pairing_mitm.html">ble_no_pairing_mitm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
@@ -98,7 +111,8 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ble_pair">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair" title="Link to this definition"></a></dt>
-<dd><dl class="py method">
+<dd><p>This class provides the BLE LP pairing</p>
+<dl class="py method">
 <dt class="sig sig-object py" id="ble_pair.init">
 <span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.init" title="Link to this definition"></a></dt>
 <dd><p>Initialize the BLE pairing module</p>
@@ -156,6 +170,96 @@
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slavePairingFailed">
+<span class="sig-name descname"><span class="pre">slavePairingFailed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slavePairingFailed" title="Link to this definition"></a></dt>
+<dd><p>If the pairing failed, print the error</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>pkt</strong> (<em>libs.ble_utils.packet.Packet</em>) – The blues packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slavePairingRequest">
+<span class="sig-name descname"><span class="pre">slavePairingRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slavePairingRequest" title="Link to this definition"></a></dt>
+<dd><p>This method sends the master pairing request</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slavePairingResponse">
+<span class="sig-name descname"><span class="pre">slavePairingResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slavePairingResponse" title="Link to this definition"></a></dt>
+<dd><p>This method chooses pairing method and generate the master random and TK</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slavePairingConfirm">
+<span class="sig-name descname"><span class="pre">slavePairingConfirm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slavePairingConfirm" title="Link to this definition"></a></dt>
+<dd><p>This method sends master pairing random pkt</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slavePairingRandom">
+<span class="sig-name descname"><span class="pre">slavePairingRandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slavePairingRandom" title="Link to this definition"></a></dt>
+<dd><p>This method checks the slave confirm and generates LTK</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slaveEncryptionInformation">
+<span class="sig-name descname"><span class="pre">slaveEncryptionInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slaveEncryptionInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print LTK received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slaveMasterIdentification">
+<span class="sig-name descname"><span class="pre">slaveMasterIdentification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slaveMasterIdentification" title="Link to this definition"></a></dt>
+<dd><p>This method print EDIV and RAND received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slaveIdentityInformation">
+<span class="sig-name descname"><span class="pre">slaveIdentityInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slaveIdentityInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print IRK received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slaveIdentityAddressInformation">
+<span class="sig-name descname"><span class="pre">slaveIdentityAddressInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slaveIdentityAddressInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print address received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.slaveSigningInformation">
+<span class="sig-name descname"><span class="pre">slaveSigningInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.slaveSigningInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print CSRK received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.keyDistribution">
+<span class="sig-name descname"><span class="pre">keyDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'initiator'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.keyDistribution" title="Link to this definition"></a></dt>
+<dd><p>This method sends key: <code class="docutils literal notranslate"><span class="pre">LTK</span></code>, <code class="docutils literal notranslate"><span class="pre">IRK</span></code>, <code class="docutils literal notranslate"><span class="pre">CSRK</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Param<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str type: The role distributes the keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_pair.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_pair.run" title="Link to this definition"></a></dt>
+<dd><p>Run the LP pairing</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the BLE connection is ok, see <code class="docutils literal notranslate"><span class="pre">core.module.Module.ok()</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
 </dd>
 </dl>
 </dd></dl>

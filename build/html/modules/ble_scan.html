@@ -50,11 +50,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">modules</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="ble_adv.html">ble_adv</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_scan</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_scan</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble_scan"><code class="docutils literal notranslate"><span class="pre">ble_scan</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.init"><code class="docutils literal notranslate"><span class="pre">ble_scan.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.checkCapabilities"><code class="docutils literal notranslate"><span class="pre">ble_scan.checkCapabilities()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.scan"><code class="docutils literal notranslate"><span class="pre">ble_scan.scan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.updateDevices"><code class="docutils literal notranslate"><span class="pre">ble_scan.updateDevices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.displayDevices"><code class="docutils literal notranslate"><span class="pre">ble_scan.displayDevices()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_scan.run"><code class="docutils literal notranslate"><span class="pre">ble_scan.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble_discover.html">ble_discover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble_pair.html">ble_pair</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_no_pairing_mitm.html">ble_no_pairing_mitm</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
@@ -87,6 +99,74 @@
              
   <section id="ble-scan">
 <h1>ble_scan<a class="headerlink" href="#ble-scan" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_scan">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan" title="Link to this definition"></a></dt>
+<dd><p>This class provides the BLE scan</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE scan</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>TARGET: “”</p></li>
+<li><p>TIMEOUT: “10”</p></li>
+<li><p>DISPLAY: “address, name, company, flags, data”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.checkCapabilities">
+<span class="sig-name descname"><span class="pre">checkCapabilities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.checkCapabilities" title="Link to this definition"></a></dt>
+<dd><p>Check the capabilities of the BLE connection by using <code class="docutils literal notranslate"><span class="pre">libs.wireless_utils.device.Device.hasCapabilities()</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the BLE connection is supported</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.scan">
+<span class="sig-name descname"><span class="pre">scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.scan" title="Link to this definition"></a></dt>
+<dd><p>If the packet is <code class="docutils literal notranslate"><span class="pre">SCAN_RSP</span></code> or <code class="docutils literal notranslate"><span class="pre">SCAN_IND</span></code>, put the packet instance in the queue</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.updateDevices">
+<span class="sig-name descname"><span class="pre">updateDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.updateDevices" title="Link to this definition"></a></dt>
+<dd><p>This method updates the devices list and display</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.displayDevices">
+<span class="sig-name descname"><span class="pre">displayDevices</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.displayDevices" title="Link to this definition"></a></dt>
+<dd><p>Display the devices list, label is in <code class="docutils literal notranslate"><span class="pre">address</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">company</span></code>, <code class="docutils literal notranslate"><span class="pre">flags</span></code>, <code class="docutils literal notranslate"><span class="pre">data</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_scan.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_scan.run" title="Link to this definition"></a></dt>
+<dd><p>Run the BLE scan</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>If the BLE connection is ok, see <code class="docutils literal notranslate"><span class="pre">core.module.Module.ok()</span></code></p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
