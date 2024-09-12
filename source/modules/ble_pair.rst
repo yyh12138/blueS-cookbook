@@ -90,7 +90,7 @@ ble_pair
             
     .. py:method:: keyDistribution(type="initiator")
 
-        This method sends key
+        This method sends key: ``LTK``, ``IRK``, ``CSRK``
 
         :param: str type: The role distributes the keys
 
