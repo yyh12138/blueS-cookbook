@@ -8,3 +8,5 @@ ble_utils
    packets/contents
    helpers/contents
    dissectors/contents
+   crypto/contents
+   sc_crypto/contents
