@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sc_crypto &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="bt_utils" href="../../bt_utils/index.html" />
+    <link rel="prev" title="crypto" href="../crypto/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dissectors/contents.html">dissectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crypto/contents.html">crypto</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">sc_crypto</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#CryptoUtils"><code class="docutils literal notranslate"><span class="pre">CryptoUtils</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLECryptoSC"><code class="docutils literal notranslate"><span class="pre">BLECryptoSC</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#SCCryptoInstance"><code class="docutils literal notranslate"><span class="pre">SCCryptoInstance</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">sc_crypto</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/sc_crypto/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sc-crypto">
+<h1>sc_crypto<a class="headerlink" href="#sc-crypto" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="CryptoUtils">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">CryptoUtils</span></span><a class="headerlink" href="#CryptoUtils" title="Link to this definition"></a></dt>
+<dd><p>This class provides a set of crypto tools</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="CryptoUtils.generateRandom">
+<span class="sig-name descname"><span class="pre">generateRandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CryptoUtils.generateRandom" title="Link to this definition"></a></dt>
+<dd><p>This method generates a random number of a given size.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – Size of the random number</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Random number</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CryptoUtils</span><span class="o">.</span><span class="n">generateRandom</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&#39;e7bbc9&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CryptoUtils.getRandomAddress">
+<span class="sig-name descname"><span class="pre">getRandomAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#CryptoUtils.getRandomAddress" title="Link to this definition"></a></dt>
+<dd><p>This method generates a random address.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Random address</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="CryptoUtils.reverseOrder">
+<span class="sig-name descname"><span class="pre">reverseOrder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#CryptoUtils.reverseOrder" title="Link to this definition"></a></dt>
+<dd><p>This method reverses the order of the bytes.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>bytes</em>) – Value to reverse</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Reversed value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CryptoUtils</span><span class="o">.</span><span class="n">reverseOrder</span><span class="p">(</span><span class="sa">b</span><span class="s2">&quot;</span><span class="se">\x01\x02\x03</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&#39;030201&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLECryptoSC">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLECryptoSC</span></span><a class="headerlink" href="#BLECryptoSC" title="Link to this definition"></a></dt>
+<dd><p>This class provides a set of cryptographic functions that are used in the BLE protocol for secure connections</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECryptoSC.f4">
+<span class="sig-name descname"><span class="pre">f4</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECryptoSC.f4" title="Link to this definition"></a></dt>
+<dd><p>This method calculates the confirm value by f4 function.
+A sends to B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> (<em>bytes</em>) – PKax (256 bits)</p></li>
+<li><p><strong>V</strong> (<em>bytes</em>) – PKbx value (256 bits)</p></li>
+<li><p><strong>X</strong> (<em>bytes</em>) – Na/ra/Nai for numeric comparison (128 bits)</p></li>
+<li><p><strong>Z</strong> (<em>bytes</em>) – 0/0/rai for numeric comparison (8 bits)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>confirm value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECryptoSC.f5">
+<span class="sig-name descname"><span class="pre">f5</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECryptoSC.f5" title="Link to this definition"></a></dt>
+<dd><p>This method calculates the keys’ value by f5 function.
+A sends to B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>bytes</em>) – DHKey (256 bits)</p></li>
+<li><p><strong>N1</strong> (<em>bytes</em>) – A Nonce (128 bits)</p></li>
+<li><p><strong>N2</strong> (<em>bytes</em>) – B Nonce (128 bits)</p></li>
+<li><p><strong>A1</strong> (<em>bytes</em>) – A address (56 bits)</p></li>
+<li><p><strong>A2</strong> (<em>bytes</em>) – B address (56 bits)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(MacKey, LTK)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECryptoSC.f6">
+<span class="sig-name descname"><span class="pre">f6</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">W</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">IOcap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECryptoSC.f6" title="Link to this definition"></a></dt>
+<dd><p>This method calculates the DHKey value by f6 function.
+A sends to B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>W</strong> (<em>bytes</em>) – A MacKey (256 bits)</p></li>
+<li><p><strong>N1</strong> (<em>bytes</em>) – A Nonce (128 bits)</p></li>
+<li><p><strong>N2</strong> (<em>bytes</em>) – B Nonce (128 bits)</p></li>
+<li><p><strong>R</strong> (<em>bytes</em>) – 0/ra/rb (128 bits)</p></li>
+<li><p><strong>IOcap</strong> (<em>bytes</em>) – IO capabilities (24 bits)</p></li>
+<li><p><strong>A1</strong> (<em>bytes</em>) – A address (56 bits)</p></li>
+<li><p><strong>A2</strong> (<em>bytes</em>) – B address (56 bits)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>DH Key</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECryptoSC.g2">
+<span class="sig-name descname"><span class="pre">g2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECryptoSC.g2" title="Link to this definition"></a></dt>
+<dd><p>This method calculates the numeric comparison value by g2 function.
+A sends to B</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> (<em>bytes</em>) – PKax (256 bits)</p></li>
+<li><p><strong>V</strong> (<em>bytes</em>) – PKbx (256 bits)</p></li>
+<li><p><strong>X</strong> (<em>bytes</em>) – Na (128 bits)</p></li>
+<li><p><strong>Y</strong> (<em>bytes</em>) – Nb (128 bits)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>numeric comparison value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="SCCryptoInstance">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SCCryptoInstance</span></span><a class="headerlink" href="#SCCryptoInstance" title="Link to this definition"></a></dt>
+<dd><p>This class provides a instance with some parameters for secure connections</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.__init__" title="Link to this definition"></a></dt>
+<dd><p>This method initializes some SC pairing parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateDHKeyPair">
+<span class="sig-name descname"><span class="pre">generateDHKeyPair</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateDHKeyPair" title="Link to this definition"></a></dt>
+<dd><p>This method generates a DH key pair and returns the X and Y coordinate for the public key.
+A sends to B
+:return: X and Y corrdinates for public key
+:rtype: tuple of (orderPubKeyX, orderPubKeyY)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateDHSharedSecret">
+<span class="sig-name descname"><span class="pre">generateDHSharedSecret</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">V</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateDHSharedSecret" title="Link to this definition"></a></dt>
+<dd><p>This method generates a DH shared secret. It adds DHKey to the instance.
+A sends to B.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>U</strong> (<em>bytes</em>) – PKbx (256 bits)</p></li>
+<li><p><strong>V</strong> (<em>bytes</em>) – PKby (256 bits)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateLocalNonce">
+<span class="sig-name descname"><span class="pre">generateLocalNonce</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateLocalNonce" title="Link to this definition"></a></dt>
+<dd><p>This method generates a local nonce. It adds Na to the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>local nonce</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateConfirmValue">
+<span class="sig-name descname"><span class="pre">generateConfirmValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keyX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteKeyX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localNonce</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'\x00'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateConfirmValue" title="Link to this definition"></a></dt>
+<dd><p>This method generates a confirm value. It adds local confirm to the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>rbi</strong> (<em>bytes</em>) – passkey bytes</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>confirm value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.verifyConfirmValue">
+<span class="sig-name descname"><span class="pre">verifyConfirmValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orderRemoteNonce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orderConfirm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyX</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rbi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">b'\x00'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.verifyConfirmValue" title="Link to this definition"></a></dt>
+<dd><p>This method verifies the confirm value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>orderRemoteNonce</strong> (<em>bytes</em>) – remote nonce</p></li>
+<li><p><strong>orderConfirm</strong> (<em>bytes</em>) – remote confirm</p></li>
+<li><p><strong>rbi</strong> (<em>bytes</em>) – passkey bytes</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>If the confirm value is correct</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateCompareValueInitiator">
+<span class="sig-name descname"><span class="pre">generateCompareValueInitiator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orderRemoteNonce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateCompareValueInitiator" title="Link to this definition"></a></dt>
+<dd><p>This method generates a compare value for the final step of the SC numeric comparison</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orderRemoteNonce</strong> (<em>bytes</em>) – remote nonce (128 bits)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>6-digit compare value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.generateCompareValueResponder">
+<span class="sig-name descname"><span class="pre">generateCompareValueResponder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">orderRemoteNonce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.generateCompareValueResponder" title="Link to this definition"></a></dt>
+<dd><p>This method generates a compare value for the final step of the SC numeric comparison</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>orderRemoteNonce</strong> (<em>bytes</em>) – remote nonce (128 bits)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>6-digit compare value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.deriveLTKInitiator">
+<span class="sig-name descname"><span class="pre">deriveLTKInitiator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orderRemoteNonce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.deriveLTKInitiator" title="Link to this definition"></a></dt>
+<dd><p>This method derives the LTK and MacKey</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>localAddress</strong> (<em>bytes</em>) – local address</p></li>
+<li><p><strong>remoteAddress</strong> (<em>bytes</em>) – remote address</p></li>
+<li><p><strong>localAddressType</strong> (<em>int</em>) – local address type</p></li>
+<li><p><strong>remoteAddressType</strong> (<em>int</em>) – remote address type</p></li>
+<li><p><strong>orderRemoteNonce</strong> (<em>bytes</em>) – remote nonce</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SCCryptoInstance.deriveLTKResponder">
+<span class="sig-name descname"><span class="pre">deriveLTKResponder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">localAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">localAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remoteAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">orderRemoteNonce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SCCryptoInstance.deriveLTKResponder" title="Link to this definition"></a></dt>
+<dd><p>This method derives the LTK and MacKey</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>localAddress</strong> (<em>bytes</em>) – local address</p></li>
+<li><p><strong>remoteAddress</strong> (<em>bytes</em>) – remote address</p></li>
+<li><p><strong>localAddressType</strong> (<em>int</em>) – local address type</p></li>
+<li><p><strong>remoteAddressType</strong> (<em>int</em>) – remote address type</p></li>
+<li><p><strong>orderRemoteNonce</strong> (<em>bytes</em>) – remote nonce</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../crypto/contents.html" class="btn btn-neutral float-left" title="crypto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../bt_utils/index.html" class="btn btn-neutral float-right" title="bt_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

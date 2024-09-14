@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ble_sc_pair &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ble_sc_pair</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/ble_sc_pair.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble-sc-pair">
+<h1>ble_sc_pair<a class="headerlink" href="#ble-sc-pair" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_sc_pair">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_sc_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair" title="Link to this definition"></a></dt>
+<dd><p>This class implements the BLE Secure Connections Pairing feature</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.init" title="Link to this definition"></a></dt>
+<dd><p>This method initializes the BLE Secure Connections Pairing feature</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>MODE: “master”</p></li>
+<li><p>PIN: “000000”</p></li>
+<li><p>ACTIVE: “yes”</p></li>
+<li><p>ADDR_TYPE: “public”</p></li>
+<li><p>ADDR: “”</p></li>
+<li><p>KEYBOARD: “no”</p></li>
+<li><p>YESNO: “no”</p></li>
+<li><p>DISPLAY: “yes”</p></li>
+<li><p>CT2: “no”</p></li>
+<li><p>MITM: “no”</p></li>
+<li><p>BONDING: “no”</p></li>
+<li><p>KEYPRESS: “no”</p></li>
+<li><p>TARGET: “”</p></li>
+<li><p>CONNECTION_TYPE: “random”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.run" title="Link to this definition"></a></dt>
+<dd><p>This method runs the BLE Secure Connections Pairing feature before <code class="docutils literal notranslate"><span class="pre">ble_connect</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.pairingMethodSelection">
+<span class="sig-name descname"><span class="pre">pairingMethodSelection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.pairingMethodSelection" title="Link to this definition"></a></dt>
+<dd><p>This method selects the pairing method by devices IO capabilities and print</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slaveSecurityRequest">
+<span class="sig-name descname"><span class="pre">slaveSecurityRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slaveSecurityRequest" title="Link to this definition"></a></dt>
+<dd><p>This method receives the security request from slave and sends security request to master</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePairingResponse">
+<span class="sig-name descname"><span class="pre">slavePairingResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePairingResponse" title="Link to this definition"></a></dt>
+<dd><p>This method receives the pairing response from slave and sends public key to master</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePublicKey">
+<span class="sig-name descname"><span class="pre">slavePublicKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePublicKey" title="Link to this definition"></a></dt>
+<dd><p>This method receives the public key from slave and sends confirm to master if pairing method is PasskeyEntry</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePairingConfirm">
+<span class="sig-name descname"><span class="pre">slavePairingConfirm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePairingConfirm" title="Link to this definition"></a></dt>
+<dd><p>This methods receives the confirm from slave and sends random to master.
+It generates Nonce</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePairingRandom">
+<span class="sig-name descname"><span class="pre">slavePairingRandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePairingRandom" title="Link to this definition"></a></dt>
+<dd><p>This method receives the random from slave and verify confirm value.
+It sends DHKeyCheck</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePairingDHKeyCheck">
+<span class="sig-name descname"><span class="pre">slavePairingDHKeyCheck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePairingDHKeyCheck" title="Link to this definition"></a></dt>
+<dd><p>This method receives the DHKeyCheck from slave and verify DHKey.
+It sends start encryption.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slavePairingFailed">
+<span class="sig-name descname"><span class="pre">slavePairingFailed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slavePairingFailed" title="Link to this definition"></a></dt>
+<dd><p>This method print the error if the pairing failed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slaveIdentityInformation">
+<span class="sig-name descname"><span class="pre">slaveIdentityInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slaveIdentityInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print IRK received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slaveIdentityAddressInformation">
+<span class="sig-name descname"><span class="pre">slaveIdentityAddressInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slaveIdentityAddressInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print address received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slaveSigningInformation">
+<span class="sig-name descname"><span class="pre">slaveSigningInformation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slaveSigningInformation" title="Link to this definition"></a></dt>
+<dd><p>This method print CSRK received</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.slaveKeyEncryptionChange">
+<span class="sig-name descname"><span class="pre">slaveKeyEncryptionChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.slaveKeyEncryptionChange" title="Link to this definition"></a></dt>
+<dd><p>This method means encryption finished successfully</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_sc_pair.keyDistribution">
+<span class="sig-name descname"><span class="pre">keyDistribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'initiator'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_sc_pair.keyDistribution" title="Link to this definition"></a></dt>
+<dd><p>This method sends key: <code class="docutils literal notranslate"><span class="pre">IRK</span></code>, <code class="docutils literal notranslate"><span class="pre">CSRK</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Param<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str type: The role distributes the keys</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

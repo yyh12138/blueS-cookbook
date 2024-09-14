@@ -112,6 +112,8 @@
 </li>
         <li><a href="libs/ble.html#BLEEmitter.__init__">(BLEEmitter method)</a>
 </li>
+        <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.__init__">(BLELinkLayerCrypto method)</a>
+</li>
         <li><a href="libs/ble.html#BLEReceiver.__init__">(BLEReceiver method)</a>
 </li>
         <li><a href="libs/ble_utils/packets/contents.html#BLESniffingParameters.__init__">(BLESniffingParameters method)</a>
@@ -137,6 +139,8 @@
         <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.__init__">(PacketQueue method)</a>
 </li>
         <li><a href="libs/wireless.html#Receiver.__init__">(Receiver method)</a>
+</li>
+        <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.__init__">(SCCryptoInstance method)</a>
 </li>
         <li><a href="core/scenario/contents.html#Scenario.__init__">(Scenario method)</a>
 </li>
@@ -436,6 +440,8 @@
 </li>
       <li><a href="modules/ble_pair.html#ble_pair">ble_pair (built-in class)</a>
 </li>
+      <li><a href="modules/ble_sc_pair.html#ble_sc_pair">ble_sc_pair (built-in class)</a>
+</li>
       <li><a href="modules/ble_scan.html#ble_scan">ble_scan (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvDirectInd">BLEAdvDirectInd (built-in class)</a>
@@ -456,6 +462,10 @@
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEControlPDU">BLEControlPDU (built-in class)</a>
 </li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto">BLECrypto (built-in class)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#BLECryptoSC">BLECryptoSC (built-in class)</a>
+</li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEDisconnect">BLEDisconnect (built-in class)</a>
 </li>
       <li><a href="libs/ble.html#BLEEmitter">BLEEmitter (built-in class)</a>
@@ -473,6 +483,8 @@
       <li><a href="libs/ble_utils/packets/contents.html#BLEFindInformationResponse">BLEFindInformationResponse (built-in class)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice">BLEHCIDevice (built-in class)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto">BLELinkLayerCrypto (built-in class)</a>
 </li>
       <li><a href="modules/ble_no_pairing_mitm.html#BLEMitmStage">BLEMitmStage (built-in class)</a>
 </li>
@@ -514,6 +526,8 @@
         <li><a href="libs/ble_utils/dissectors/contents.html#UUID.build">(UUID method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     built-in function
 
@@ -621,6 +635,8 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.c1">c1() (BLECrypto method)</a>
+</li>
       <li><a href="libs/wireless_utils/callback/contents.html#Callback">Callback (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#channelToFrequent">channelToFrequent()</a>
@@ -719,7 +735,11 @@
 </li>
       <li><a href="libs/wireless.html#Receiver.convertRawToBluesPacket">convertRawToBluesPacket() (Receiver method)</a>
 </li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.crackTemporaryKey">crackTemporaryKey() (BLECrypto method)</a>
+</li>
       <li><a href="libs/ble_utils/helpers/contents.html#crc24">crc24()</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#CryptoUtils">CryptoUtils (built-in class)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -727,9 +747,17 @@
 <h2 id="D">D</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.decrypt">decrypt() (BLELinkLayerCrypto method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.deriveLTKInitiator">deriveLTKInitiator() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.deriveLTKResponder">deriveLTKResponder() (SCCryptoInstance method)</a>
+</li>
       <li><a href="libs/wireless_utils/device/contents.html#Device">Device (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#dewhiten">dewhiten()</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.displayDetails">displayDetails() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="modules/ble_scan.html#ble_scan.displayDevices">displayDevices() (ble_scan method)</a>
 </li>
@@ -765,14 +793,20 @@
 <h2 id="E">E</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.e">e() (BLECrypto method)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.em1">em1() (BLECrypto method)</a>
+</li>
       <li><a href="libs/wireless.html#Emitter">Emitter (built-in class)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.encrypt">encrypt() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.encryptLink">encryptLink() (BLEHCIDevice method)</a>
 </li>
-      <li><a href="libs/io.html#enterPinCode">enterPinCode()</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/io.html#enterPinCode">enterPinCode()</a>
+</li>
       <li><a href="core/module/contents.html#Module.execute">execute() (Module method)</a>
 </li>
       <li><a href="libs/utils.html#exitBlues">exitBlues()</a>
@@ -787,18 +821,24 @@
 <h2 id="F">F</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#BLECryptoSC.f4">f4() (BLECryptoSC method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#BLECryptoSC.f5">f5() (BLECryptoSC method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#BLECryptoSC.f6">f6() (BLECryptoSC method)</a>
+</li>
       <li><a href="libs/io.html#fail">fail()</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.findByTypeValue">findByTypeValue() (ATT_Database method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.findInformation">findInformation() (ATT_Database method)</a>
 
       <ul>
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.findInformation">(ATT_Server method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToMaster">forwardToMaster() (ble_no_pairing_mitm method)</a>
 </li>
       <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToSlave">forwardToSlave() (ble_no_pairing_mitm method)</a>
@@ -811,8 +851,28 @@
 <h2 id="G">G</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#BLECryptoSC.g2">g2() (BLECryptoSC method)</a>
+</li>
       <li><a href="libs/ble_utils/att_server/contents.html#GATT_Server">GATT_Server (built-in class)</a>
 </li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateCompareValueInitiator">generateCompareValueInitiator() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateCompareValueResponder">generateCompareValueResponder() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateConfirmValue">generateConfirmValue() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateDHKeyPair">generateDHKeyPair() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateDHSharedSecret">generateDHSharedSecret() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.generateLocalNonce">generateLocalNonce() (SCCryptoInstance method)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.generateRandom">generateRandom() (BLECrypto method)</a>
+
+      <ul>
+        <li><a href="libs/ble_utils/sc_crypto/contents.html#CryptoUtils.generateRandom">(CryptoUtils method)</a>
+</li>
+      </ul></li>
       <li><a href="libs/wireless_utils/device/contents.html#Device.get">get() (Device method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.getAddress">getAddress() (BtHCIDevice method)</a>
@@ -825,15 +885,17 @@
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.getCurrentConnection">getCurrentConnection() (BtHCIDevice method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble.html#BLEHCIDevice.getCurrentConnectionMode">getCurrentConnectionMode() (BLEHCIDevice method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.getCurrentHandle">getCurrentHandle() (BtHCIDevice method)</a>
 </li>
       <li><a href="core/module/contents.html#WirelessModule.getEmitter">getEmitter() (WirelessModule method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/utils.html#getHomeDir">getHomeDir()</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.getInstance">getInstance() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.getLocalName">getLocalName() (BtHCIDevice method)</a>
 </li>
@@ -844,7 +906,11 @@
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.getNextHandle">getNextHandle() (ATT_Database method)</a>
 </li>
       <li><a href="libs/utils.html#getRandomAddress">getRandomAddress()</a>
+
+      <ul>
+        <li><a href="libs/ble_utils/sc_crypto/contents.html#CryptoUtils.getRandomAddress">(CryptoUtils method)</a>
 </li>
+      </ul></li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvertisement.getRawDatas">getRawDatas() (BLEAdvertisement method)</a>
 </li>
       <li><a href="core/module/contents.html#WirelessModule.getReceiver">getReceiver() (WirelessModule method)</a>
@@ -869,6 +935,10 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.incrementMasterCount">incrementMasterCount() (BLELinkLayerCrypto method)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.incrementSlaveCount">incrementSlaveCount() (BLELinkLayerCrypto method)</a>
+</li>
       <li><a href="libs/io.html#info">info()</a>
 
       <ul>
@@ -885,6 +955,8 @@
         <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.init">(ble_no_pairing_mitm method)</a>
 </li>
         <li><a href="modules/ble_pair.html#ble_pair.init">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.init">(ble_sc_pair method)</a>
 </li>
         <li><a href="modules/ble_scan.html#ble_scan.init">(ble_scan method)</a>
 </li>
@@ -910,6 +982,8 @@
         <li><a href="core/interpreter/contents.html#Interpreter.__init__">built-in function</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Interpreter.evaluateCommand()
 
@@ -917,8 +991,6 @@
         <li><a href="core/interpreter/contents.html#Interpreter.evaluateCommand">built-in function</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Interpreter.evaluateScript()
 
@@ -971,10 +1043,14 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core/module/contents.html#Module.key">key() (Module method)</a>
 </li>
+      <li><a href="modules/ble_pair.html#ble_pair.keyDistribution">keyDistribution() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.keyDistribution">(ble_sc_pair method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="modules/ble_pair.html#ble_pair.keyDistribution">keyDistribution() (ble_pair method)</a>
-</li>
       <li><a href="libs/ble_utils/dissectors/contents.html#KeyDistributionFlag">KeyDistributionFlag (built-in class)</a>
 </li>
   </ul></td>
@@ -1066,7 +1142,11 @@
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue">PacketQueue (built-in class)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.pairingMethodSelection">pairingMethodSelection() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.pairingMethodSelection">(ble_sc_pair method)</a>
 </li>
+      </ul></li>
       <li><a href="libs/ble_utils/dissectors/contents.html#PermissionsFlag">PermissionsFlag (built-in class)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.pinToTemporaryKey">pinToTemporaryKey() (ble_pair method)</a>
@@ -1080,6 +1160,8 @@
       <li><a href="modules/ble_discover.html#ble_discover.printCharacteristics">printCharacteristics() (ble_discover method)</a>
 </li>
       <li><a href="libs/io.html#progress">progress()</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.provideLTK">provideLTK() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="libs/wireless_utils/device/contents.html#Device.publish">publish() (Device method)</a>
 </li>
@@ -1129,10 +1211,10 @@
         <li><a href="libs/wireless_utils/device/contents.html#Device.recv">(Device method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/wireless.html#Receiver.recvive">recvive() (Receiver method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core/module/contents.html#WirelessModule.registerEmitter">registerEmitter() (WirelessModule method)</a>
 </li>
       <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.registerEvents">registerEvents() (ble_no_pairing_mitm method)</a>
@@ -1142,6 +1224,8 @@
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.restart">restart() (PacketQueue method)</a>
 </li>
       <li><a href="core/taskManager/contents.html#TaskManager.restartTask">restartTask() (TaskManager method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#CryptoUtils.reverseOrder">reverseOrder() (CryptoUtils method)</a>
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#rssiToDbm">rssiToDbm()</a>
 </li>
@@ -1155,6 +1239,8 @@
         <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.run">(ble_no_pairing_mitm method)</a>
 </li>
         <li><a href="modules/ble_pair.html#ble_pair.run">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.run">(ble_sc_pair method)</a>
 </li>
         <li><a href="modules/ble_scan.html#ble_scan.run">(ble_scan method)</a>
 </li>
@@ -1171,9 +1257,13 @@
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLECrypto.s1">s1() (BLECrypto method)</a>
+</li>
       <li><a href="modules/ble_scan.html#ble_scan.scan">scan() (ble_scan method)</a>
 </li>
       <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.scanStage">scanStage() (ble_no_pairing_mitm method)</a>
+</li>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance">SCCryptoInstance (built-in class)</a>
 </li>
       <li><a href="core/scenario/contents.html#Scenario">Scenario (built-in class)</a>
 </li>
@@ -1211,11 +1301,15 @@
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.setLocalName">setLocalName() (BtHCIDevice method)</a>
 </li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.setMasterValues">setMasterValues() (BLELinkLayerCrypto method)</a>
+</li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.setMtu">setMtu() (ATT_Server method)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.setScan">setScan() (BLEHCIDevice method)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.setScanningParameters">setScanningParameters() (BLEHCIDevice method)</a>
+</li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.setSlaveValues">setSlaveValues() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.show">show() (ATT_Database method)</a>
 </li>
@@ -1227,28 +1321,64 @@
 </li>
       <li><a href="libs/wireless.html#Receiver.skip">skip() (Receiver method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ble_pair.html#ble_pair.slaveEncryptionInformation">slaveEncryptionInformation() (ble_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityAddressInformation">slaveIdentityAddressInformation() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveIdentityAddressInformation">(ble_sc_pair method)</a>
 </li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityInformation">slaveIdentityInformation() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveIdentityInformation">(ble_sc_pair method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveKeyEncryptionChange">slaveKeyEncryptionChange() (ble_sc_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slaveMasterIdentification">slaveMasterIdentification() (ble_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slavePairingConfirm">slavePairingConfirm() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingConfirm">(ble_sc_pair method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingDHKeyCheck">slavePairingDHKeyCheck() (ble_sc_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slavePairingFailed">slavePairingFailed() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingFailed">(ble_sc_pair method)</a>
 </li>
+      </ul></li>
       <li><a href="modules/ble_pair.html#ble_pair.slavePairingRandom">slavePairingRandom() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingRandom">(ble_sc_pair method)</a>
 </li>
+      </ul></li>
       <li><a href="modules/ble_pair.html#ble_pair.slavePairingRequest">slavePairingRequest() (ble_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slavePairingResponse">slavePairingResponse() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingResponse">(ble_sc_pair method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slavePublicKey">slavePublicKey() (ble_sc_pair method)</a>
+</li>
+      <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveSecurityRequest">slaveSecurityRequest() (ble_sc_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slaveSigningInformation">slaveSigningInformation() (ble_pair method)</a>
+
+      <ul>
+        <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveSigningInformation">(ble_sc_pair method)</a>
 </li>
+      </ul></li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.start">start() (PacketQueue method)</a>
 </li>
       <li><a href="libs/utils.html#startTask">startTask()</a>
@@ -1342,6 +1472,8 @@
         <li><a href="libs/wireless_utils/packets/contents.html#WaitPacket.toString">(WaitPacket method)</a>
 </li>
       </ul></li>
+      <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.tryToDecrypt">tryToDecrypt() (BLELinkLayerCrypto method)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -1365,6 +1497,10 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/io.html#VerbosityLevels">VerbosityLevels (built-in class)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.verifyConfirmValue">verifyConfirmValue() (SCCryptoInstance method)</a>
 </li>
   </ul></td>
 </tr></table>

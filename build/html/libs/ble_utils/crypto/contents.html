@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>crypto &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="sc_crypto" href="../sc_crypto/contents.html" />
+    <link rel="prev" title="dissectors" href="../dissectors/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dissectors/contents.html">dissectors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">crypto</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLECrypto"><code class="docutils literal notranslate"><span class="pre">BLECrypto</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLELinkLayerCrypto"><code class="docutils literal notranslate"><span class="pre">BLELinkLayerCrypto</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../sc_crypto/contents.html">sc_crypto</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">crypto</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/crypto/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="crypto">
+<h1>crypto<a class="headerlink" href="#crypto" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLECrypto">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLECrypto</span></span><a class="headerlink" href="#BLECrypto" title="Link to this definition"></a></dt>
+<dd><p>This class provides a set of cryptographic functions that are used in the BLE protocol.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.crackTemporaryKey">
+<span class="sig-name descname"><span class="pre">crackTemporaryKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initiatorAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">responderAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confirm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.crackTemporaryKey" title="Link to this definition"></a></dt>
+<dd><p>This method calculates the temporary key that is used in the pairing process.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r</strong> (<em>bytes</em>) – Random number</p></li>
+<li><p><strong>preq</strong> (<em>bytes</em>) – Pairing request</p></li>
+<li><p><strong>pres</strong> (<em>bytes</em>) – Pairing response</p></li>
+<li><p><strong>iat</strong> (<em>bytes</em>) – Initiator address type</p></li>
+<li><p><strong>initiatorAddress</strong> (<em>str</em>) – Initiator address</p></li>
+<li><p><strong>rat</strong> (<em>bytes</em>) – Responder address type</p></li>
+<li><p><strong>responderAddress</strong> (<em>str</em>) – Responder address</p></li>
+<li><p><strong>confirm</strong> (<em>bytes</em>) – Confirm value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>PIN code</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span> <span class="o">=</span> <span class="nb">bytes</span><span class="o">.</span><span class="n">fromhex</span><span class="p">(</span><span class="s2">&quot;abb692ebfd4601f4aad3aea40f7da5fc&quot;</span><span class="p">)[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">            &gt;&gt;&gt; pairingRequest = bytes.fromhex(&quot;01030005100001&quot;)[::-1]</span>
+<span class="go">            &gt;&gt;&gt; pairingResponse = bytes.fromhex(&quot;02000005100001&quot;)[::-1]</span>
+<span class="go">            &gt;&gt;&gt; initiatorAddress = &quot;08:3E:8E:E1:0B:3E&quot;</span>
+<span class="go">            &gt;&gt;&gt; initiatorAddressType = b&quot;\x00&quot;</span>
+<span class="go">            &gt;&gt;&gt; responderAddress = &quot;78:C5:E5:6E:DD:E8&quot;</span>
+<span class="go">            &gt;&gt;&gt; responderAddressType = b&quot;\x00&quot;</span>
+<span class="go">            &gt;&gt;&gt; confirm = bytes.fromhex(&quot;febb983ed78020e13d685bc8418d2c5d&quot;)[::-1]</span>
+<span class="go">            &gt;&gt;&gt; BLECrypto.crackTemporaryKey(random,pairingRequest,pairingResponse, initiatorAddressType,initiatorAddress,responderAddressType,responderAddress,confirm)</span>
+<span class="go">            0</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.generateRandom">
+<span class="sig-name descname"><span class="pre">generateRandom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.generateRandom" title="Link to this definition"></a></dt>
+<dd><p>This method generates a random number of a given size.</p>
+<dl class="field-list">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>size</strong> (<em>int</em>) – Size of the random number</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Random number</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+<dt class="field-even">Example<span class="colon">:</span></dt>
+<dd class="field-even"><div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BLECrypto</span><span class="o">.</span><span class="n">generateRandom</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">hex</span><span class="p">()</span>
+<span class="go">&#39;e7bbc9&#39;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.e">
+<span class="sig-name descname"><span class="pre">e</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">plaintext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.e" title="Link to this definition"></a></dt>
+<dd><p>This method encrypts a plaintext using a key, implements the security function :math: <cite>E</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>bytes</em>) – encrypted key</p></li>
+<li><p><strong>plaintext</strong> (<em>bytes</em>) – Plaintext</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Encrypted text</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.em1">
+<span class="sig-name descname"><span class="pre">em1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ciphertext</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.em1" title="Link to this definition"></a></dt>
+<dd><p>This method encrypts a plaintext using a key, implements the security function :math: <cite>E_{-1}</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>bytes</em>) – encrypted key</p></li>
+<li><p><strong>ciphertext</strong> (<em>bytes</em>) – encrypted text</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Decrypted text</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.s1">
+<span class="sig-name descname"><span class="pre">s1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randMaster</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">randSlave</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.s1" title="Link to this definition"></a></dt>
+<dd><p>This method implements the security function :math: <cite>S1</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>bytes</em>) – encrypted key</p></li>
+<li><p><strong>randMaster</strong> (<em>bytes</em>) – Random number of the master</p></li>
+<li><p><strong>randSlave</strong> (<em>bytes</em>) – Random number of the slave</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generated text</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLECrypto.c1">
+<span class="sig-name descname"><span class="pre">c1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rand</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payloadRequest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">payloadResponse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initiatorAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initiatorAddress</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">responderAddressType</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">responderAddress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLECrypto.c1" title="Link to this definition"></a></dt>
+<dd><p>This method implements the security function :math: <cite>C1</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>bytes</em>) – encrypted key</p></li>
+<li><p><strong>rand</strong> (<em>bytes</em>) – Random number</p></li>
+<li><p><strong>payloadRequest</strong> (<em>bytes</em>) – Payload request</p></li>
+<li><p><strong>payloadResponse</strong> (<em>bytes</em>) – Payload response</p></li>
+<li><p><strong>initiatorAddressType</strong> (<em>bytes</em>) – Initiator address type, b”x00” for public address and b”x01” for random address</p></li>
+<li><p><strong>initiatorAddress</strong> (<em>str</em>) – Initiator address</p></li>
+<li><p><strong>responderAddressType</strong> (<em>bytes</em>) – Responder address type</p></li>
+<li><p><strong>responderAddress</strong> (<em>str</em>) – Responder address</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>generated confirm value</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>..py:method:: c1m1(key, rand, payloadRequest, payloadResponse, initiatorAddressType, initiatorAddress, responderAddressType, responderAddress)</p>
+<blockquote>
+<div><p>This method implements the security function :math: <cite>C1_{-1}</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">param bytes key<span class="colon">:</span></dt>
+<dd class="field-odd"><p>encrypted key</p>
+</dd>
+<dt class="field-even">param bytes rand<span class="colon">:</span></dt>
+<dd class="field-even"><p>Random number</p>
+</dd>
+<dt class="field-odd">param bytes payloadRequest<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Payload request</p>
+</dd>
+<dt class="field-even">param bytes payloadResponse<span class="colon">:</span></dt>
+<dd class="field-even"><p>Payload response</p>
+</dd>
+<dt class="field-odd">param bytes initiatorAddressType<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Initiator address type, b”x00” for public address and b”x01” for random address</p>
+</dd>
+<dt class="field-even">param str initiatorAddress<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initiator address</p>
+</dd>
+<dt class="field-odd">param bytes responderAddressType<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Responder address type</p>
+</dd>
+<dt class="field-even">param str responderAddress<span class="colon">:</span></dt>
+<dd class="field-even"><p>Responder address</p>
+</dd>
+<dt class="field-odd">return<span class="colon">:</span></dt>
+<dd class="field-odd"><p>generated confirm value</p>
+</dd>
+<dt class="field-even">rtype<span class="colon">:</span></dt>
+<dd class="field-even"><p>bytes</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLELinkLayerCrypto</span></span><a class="headerlink" href="#BLELinkLayerCrypto" title="Link to this definition"></a></dt>
+<dd><p>This class provides a API to manipuate the LL encryption used by <code class="docutils literal notranslate"><span class="pre">BLEReceiver</span></code>. It shouldn’t be used directly.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ltk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.__init__" title="Link to this definition"></a></dt>
+<dd><p>This method inits some security parameters</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.provideLTK">
+<span class="sig-name descname"><span class="pre">provideLTK</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ltk</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.provideLTK" title="Link to this definition"></a></dt>
+<dd><p>Set LTK in the single instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ltk</strong> (<em>bytes</em>) – Long term key</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.getInstance">
+<span class="sig-name descname"><span class="pre">getInstance</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.getInstance" title="Link to this definition"></a></dt>
+<dd><p>Get the single instance of the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Single instance of the class</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#BLELinkLayerCrypto" title="BLELinkLayerCrypto">BLELinkLayerCrypto</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.displayDetails">
+<span class="sig-name descname"><span class="pre">displayDetails</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.displayDetails" title="Link to this definition"></a></dt>
+<dd><p>Print the parameters of the class</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.setMasterValues">
+<span class="sig-name descname"><span class="pre">setMasterValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.setMasterValues" title="Link to this definition"></a></dt>
+<dd><p>This method sets session key disversifier and initialization vector from master</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.setSlaveValues">
+<span class="sig-name descname"><span class="pre">setSlaveValues</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iv</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.setSlaveValues" title="Link to this definition"></a></dt>
+<dd><p>This method sets session key disversifier and initialization vector from slave</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.encrypt">
+<span class="sig-name descname"><span class="pre">encrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterToSlave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.encrypt" title="Link to this definition"></a></dt>
+<dd><p>This method encrypts a payload</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>playload</strong> (<em>bytes</em>) – Payload to encrypt</p></li>
+<li><p><strong>masterToSlave</strong> (<em>bool</em>) – If the payload is from master to slave</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Encrypted payload, 2 btyes of playload + ciphertext + message integrity check (MIC)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bytes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.tryToDecrypt">
+<span class="sig-name descname"><span class="pre">tryToDecrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playload</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.tryToDecrypt" title="Link to this definition"></a></dt>
+<dd><p>This method tries to decrypt a payload</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>playload</strong> (<em>bytes</em>) – Payload to decrypt</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Decrypted payload</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bytes, bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.decrypt">
+<span class="sig-name descname"><span class="pre">decrypt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">playload</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterToSlave</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.decrypt" title="Link to this definition"></a></dt>
+<dd><p>This method decrypts a payload</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>playload</strong> (<em>bytes</em>) – Payload to decrypt</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Decrypted payload</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of (bytes, bool)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.incrementMasterCount">
+<span class="sig-name descname"><span class="pre">incrementMasterCount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.incrementMasterCount" title="Link to this definition"></a></dt>
+<dd><p>This method increments the master count</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLELinkLayerCrypto.incrementSlaveCount">
+<span class="sig-name descname"><span class="pre">incrementSlaveCount</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLELinkLayerCrypto.incrementSlaveCount" title="Link to this definition"></a></dt>
+<dd><p>This method increments the slave count</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../dissectors/contents.html" class="btn btn-neutral float-left" title="dissectors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../sc_crypto/contents.html" class="btn btn-neutral float-right" title="sc_crypto" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
