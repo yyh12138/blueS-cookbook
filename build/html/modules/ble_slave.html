@@ -21,8 +21,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="about" href="../about/index.html" />
-    <link rel="prev" title="ble_pair" href="ble_pair.html" /> 
+    <link rel="next" title="ble_full_mitm" href="ble_full_mitm.html" />
+    <link rel="prev" title="ble_sc_pair" href="ble_sc_pair.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -54,7 +54,28 @@
 <li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble_discover.html">ble_discover</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ble_pair.html">ble_pair</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_slave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_sc_pair.html">ble_sc_pair</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_slave</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ble_slave"><code class="docutils literal notranslate"><span class="pre">ble_slave</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.init"><code class="docutils literal notranslate"><span class="pre">ble_slave.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.prerun"><code class="docutils literal notranslate"><span class="pre">ble_slave.prerun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.clear"><code class="docutils literal notranslate"><span class="pre">ble_slave.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.exit"><code class="docutils literal notranslate"><span class="pre">ble_slave.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.load"><code class="docutils literal notranslate"><span class="pre">ble_slave.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.disconnect"><code class="docutils literal notranslate"><span class="pre">ble_slave.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.show"><code class="docutils literal notranslate"><span class="pre">ble_slave.show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.notification"><code class="docutils literal notranslate"><span class="pre">ble_slave.notification()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.advertising"><code class="docutils literal notranslate"><span class="pre">ble_slave.advertising()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.address"><code class="docutils literal notranslate"><span class="pre">ble_slave.address()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.pairing"><code class="docutils literal notranslate"><span class="pre">ble_slave.pairing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_slave.run"><code class="docutils literal notranslate"><span class="pre">ble_slave.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ble_full_mitm.html">ble_full_mitm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_replay.html">ble_replay</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_sniff.html">ble_sniff</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
@@ -87,14 +108,126 @@
              
   <section id="ble-slave">
 <h1>ble_slave<a class="headerlink" href="#ble-slave" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_slave">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_slave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interpreter.Interpreter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave" title="Link to this definition"></a></dt>
+<dd><p>This class provides the BLE device as a slave</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE slave</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>ATT_FILE: “”</p></li>
+<li><p>GATT_FILE: “/tmp/gatt.cfg”</p></li>
+<li><p>SCENARIO: “”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.prerun">
+<span class="sig-name descname"><span class="pre">prerun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.prerun" title="Link to this definition"></a></dt>
+<dd><p>This method inits the interpreter and regists the CMD, such as <code class="docutils literal notranslate"><span class="pre">clear</span></code>, <code class="docutils literal notranslate"><span class="pre">exit</span></code>, <code class="docutils literal notranslate"><span class="pre">show</span></code>, <code class="docutils literal notranslate"><span class="pre">load</span></code>, <code class="docutils literal notranslate"><span class="pre">notification</span></code>, <code class="docutils literal notranslate"><span class="pre">disconnect</span></code>, <code class="docutils literal notranslate"><span class="pre">advertising</span></code>, <code class="docutils literal notranslate"><span class="pre">address</span></code>, <code class="docutils literal notranslate"><span class="pre">pairing</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.clear" title="Link to this definition"></a></dt>
+<dd><p>Clear the screen</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.exit" title="Link to this definition"></a></dt>
+<dd><p>Exit the BLE slave interpreter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.load" title="Link to this definition"></a></dt>
+<dd><p>This method inits the GATT server, then imports the ATT and GATT from the .cfg file, final add attributes to the GATT server</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.disconnect" title="Link to this definition"></a></dt>
+<dd><p>Disconnect the BLE slave device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.show" title="Link to this definition"></a></dt>
+<dd><p>Show the ATT and GATT from .cfg file</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.notification">
+<span class="sig-name descname"><span class="pre">notification</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.notification" title="Link to this definition"></a></dt>
+<dd><p>Send a notification (<code class="docutils literal notranslate"><span class="pre">BLEHandleValueNotification</span></code>) to the BLE master</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.advertising">
+<span class="sig-name descname"><span class="pre">advertising</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.advertising" title="Link to this definition"></a></dt>
+<dd><p>This method sets or get address of the BLE slave</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>address</strong> (<em>str</em>) – The address of the BLE slave</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.address">
+<span class="sig-name descname"><span class="pre">address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type=&quot;ADV_IND&quot;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scanData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMin=&quot;200&quot;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMax=&quot;210&quot;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.address" title="Link to this definition"></a></dt>
+<dd><p>This method starts advertising by excuting <code class="docutils literal notranslate"><span class="pre">ble_adv</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>type</strong> (<em>str</em>) – The type of the advertising</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – The data of the advertising</p></li>
+<li><p><strong>scanData</strong> (<em>bytes</em>) – The scan data of the advertising</p></li>
+<li><p><strong>intervalMin</strong> (<em>str</em>) – The minimum interval of the advertising</p></li>
+<li><p><strong>intervalMax</strong> (<em>str</em>) – The maximum interval of the advertising</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.pairing">
+<span class="sig-name descname"><span class="pre">pairing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'active'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.pairing" title="Link to this definition"></a></dt>
+<dd><p>This method starts pairing by excuting <code class="docutils literal notranslate"><span class="pre">ble_pair</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>active</strong> (<em>str</em>) – The active of the pairing</p></li>
+<li><p><strong>paramters</strong> (<em>str</em>) – The paramters of the pairing</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_slave.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_slave.run" title="Link to this definition"></a></dt>
+<dd><p>This method inits the BLE slave and enter into interpreter loop</p>
+</dd></dl>
+
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ble_pair.html" class="btn btn-neutral float-left" title="ble_pair" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../about/index.html" class="btn btn-neutral float-right" title="about" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ble_sc_pair.html" class="btn btn-neutral float-left" title="ble_sc_pair" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ble_full_mitm.html" class="btn btn-neutral float-right" title="ble_full_mitm" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

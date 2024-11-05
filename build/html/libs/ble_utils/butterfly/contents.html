@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>butterfly &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="bt_utils" href="../../bt_utils/index.html" />
+    <link rel="prev" title="sc_crypto" href="../sc_crypto/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dissectors/contents.html">dissectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crypto/contents.html">crypto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sc_crypto/contents.html">sc_crypto</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">butterfly</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLEButterflyDevice"><code class="docutils literal notranslate"><span class="pre">BLEButterflyDevice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#BLEButterflySubDevice"><code class="docutils literal notranslate"><span class="pre">BLEButterflySubDevice</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">butterfly</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/butterfly/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="butterfly">
+<h1>butterfly<a class="headerlink" href="#butterfly" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEButterflyDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEButterflyDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.ButterflyDevice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice" title="Link to this definition"></a></dt>
+<dd><p>This class represents a BLE Butterfly device, which inherit the <code class="docutils literal notranslate"><span class="pre">ButterflyDevice</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setAccessAddress">
+<span class="sig-name descname"><span class="pre">setAccessAddress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accessAddress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setAccessAddress" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>accessAddress</strong> (<em>bytes</em>) – The access address to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getAccessAddress">
+<span class="sig-name descname"><span class="pre">getAccessAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getAccessAddress" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The access address</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getCrcInit">
+<span class="sig-name descname"><span class="pre">getCrcInit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getCrcInit" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The CRCInit to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getChannelMap">
+<span class="sig-name descname"><span class="pre">getChannelMap</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getChannelMap" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The channel map to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getHopInterval">
+<span class="sig-name descname"><span class="pre">getHopInterval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getHopInterval" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hop interval to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getHopIncrement">
+<span class="sig-name descname"><span class="pre">getHopIncrement</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getHopIncrement" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The hop increment to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setChannel">
+<span class="sig-name descname"><span class="pre">setChannel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">37</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setChannel" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>int</em>) – The channel to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getChannel">
+<span class="sig-name descname"><span class="pre">getChannel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getChannel" title="Link to this definition"></a></dt>
+<dd><p>This method returns the current channel by <code class="docutils literal notranslate"><span class="pre">Butterfly_Get_Channel_Command</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return int<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The channel</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setScanInterval">
+<span class="sig-name descname"><span class="pre">setScanInterval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setScanInterval" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>int</em>) – The scan interval to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setScan">
+<span class="sig-name descname"><span class="pre">setScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setScan" title="Link to this definition"></a></dt>
+<dd><p>This method starts to sniff advertisements by <code class="docutils literal notranslate"><span class="pre">sniffAdvertisements</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – The scan to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.sniffAdvertisements">
+<span class="sig-name descname"><span class="pre">sniffAdvertisements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.sniffAdvertisements" title="Link to this definition"></a></dt>
+<dd><p>This method sniffs advertisements by <code class="docutils literal notranslate"><span class="pre">_setChannel(channel)</span></code>, <code class="docutils literal notranslate"><span class="pre">_setFilter(address)</span></code> and <code class="docutils literal notranslate"><span class="pre">_setFollowMode(False)</span></code></p>
+<p>_setChannel runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Channel_Command</span></code>
+_setFilter runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Filter_Command</span></code>
+_setFollowMode runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Follow_Mode_Command</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>bytes</em>) – The address to sniff</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – The channel to sniff</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.restartsniffMode">
+<span class="sig-name descname"><span class="pre">restartsniffMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.restartsniffMode" title="Link to this definition"></a></dt>
+<dd><p>This method restarts the sniff mode by <code class="docutils literal notranslate"><span class="pre">sniffNewConnections</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.sniffNewConnections">
+<span class="sig-name descname"><span class="pre">sniffNewConnections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.sniffNewConnections" title="Link to this definition"></a></dt>
+<dd><p>This method sniffs new connections by <code class="docutils literal notranslate"><span class="pre">_setChannel(channel)</span></code>, <code class="docutils literal notranslate"><span class="pre">_setFilter(address)</span></code> and <code class="docutils literal notranslate"><span class="pre">_setFollowMode(True)</span></code></p>
+<p>_setChannel runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Channel_Command</span></code>
+_setFilter runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Filter_Command</span></code>
+_setFollowMode runs <code class="docutils literal notranslate"><span class="pre">Butterfly_Set_Follow_Mode_Command</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>bytes</em>) – The address to sniff</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – The channel to sniff</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setHijacking">
+<span class="sig-name descname"><span class="pre">setHijacking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'master'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setHijacking" title="Link to this definition"></a></dt>
+<dd><p>This method starts to hijack a connection by <code class="docutils literal notranslate"><span class="pre">hijackConnection</span></code>.</p>
+<p>If the hijack target is slave, it will inject LL_TERMINATE_IND by <code class="docutils literal notranslate"><span class="pre">Butterfly_Start_Attack_Command(0x02)</span></code>.</p>
+<p>If the hijeck target is master, it will inject LL_CONNECTION_UPDATE_REQ by <code class="docutils literal notranslate"><span class="pre">Butterfly_Start_Attack_Command(0x03)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<em>str</em>) – The target to hijack</p></li>
+<li><p><strong>enable</strong> (<em>bool</em>) – The hijack to set</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.setMitm">
+<span class="sig-name descname"><span class="pre">setMitm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.setMitm" title="Link to this definition"></a></dt>
+<dd><p>This method starts a MitM attack targeting an established connection.</p>
+<p>It will inject LL_CONNECTION_UPDATE_REQ by <code class="docutils literal notranslate"><span class="pre">Butterfly_Start_Attack_Command(0x04)</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – The mitm to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.getCurrentConnection">
+<span class="sig-name descname"><span class="pre">getCurrentConnection</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.getCurrentConnection" title="Link to this definition"></a></dt>
+<dd><p>This method returns the access address, like function <code class="docutils literal notranslate"><span class="pre">getAccessAddress</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The access address</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.isSynchronized">
+<span class="sig-name descname"><span class="pre">isSynchronized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.isSynchronized" title="Link to this definition"></a></dt>
+<dd><p>This method checks if the device is synchronized</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return bool<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the device is synchronized</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.recv" title="Link to this definition"></a></dt>
+<dd><p>This method run the <code class="docutils literal notranslate"><span class="pre">recv</span></code> method of <code class="docutils literal notranslate"><span class="pre">ButterflyDevice</span></code>.</p>
+<p>If the received packet is Butterfly_BLE_Packet, it will return the data packet. If it is BTLE_CONNECT_REQ, it will synchronize the new connection.</p>
+<p>If the received packet is Butterfly_Notification_Hdr, it is the notification packet and return None.</p>
+<p>Notification contains:</p>
+<blockquote>
+<div><ul class="simple">
+<li><ol class="arabic simple">
+<li><p>connection report: connection lost, attack running, attack success, attack failed</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="2">
+<li><p>inejct report: inject success, inject failed</p></li>
+</ol>
+</li>
+<li><ol class="arabic simple" start="3">
+<li><p>debug report: debug message</p></li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Return packet<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The received data</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>libs.wireless_utils.packets.Packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.send" title="Link to this definition"></a></dt>
+<dd><p>This method send packet to the butterfly.</p>
+<p>If the packet is payload packet, it will send by <code class="docutils literal notranslate"><span class="pre">_internalCommand</span></code>.</p>
+<p>If it is synchronized, it will send <code class="docutils literal notranslate"><span class="pre">Butterfly_Start_Attack_Command(0x01)</span></code> by <code class="docutils literal notranslate"><span class="pre">_injectPacket</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflyDevice.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflyDevice.init" title="Link to this definition"></a></dt>
+<dd><p>This method inits the params, set scan interval, select BLE controller and enable it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEButterflySubDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEButterflySubDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice" title="Link to this definition"></a></dt>
+<dd><p>This subDevice is as a software proxy to interact with the butterfly device.</p>
+<p>We can use only one physical ButteRFly Device to interact with the two roles (master and slave) involved in the targeted connection simultaneously by modified WinOffset and WinSize fields in the LL_CONN_UPDATE_IND.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflySubDevice.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interface</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice.__init__" title="Link to this definition"></a></dt>
+<dd><p>This method inits subDevice, like butterfly0:sub0 as master and butterfly0:sub1 as slave.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflySubDevice.isConnected">
+<span class="sig-name descname"><span class="pre">isConnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice.isConnected" title="Link to this definition"></a></dt>
+<dd><p>This method checks if the device is connected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return bool<span class="colon">:</span></dt>
+<dd class="field-odd"><p>if the device is connected</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflySubDevice.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice.recv" title="Link to this definition"></a></dt>
+<dd><p>This method get packet from packet queue</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return packet<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The received data</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>libs.wireless_utils.packets.Packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflySubDevice.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice.send" title="Link to this definition"></a></dt>
+<dd><p>This method sends playload packet to the butterfly</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEButterflySubDevice.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEButterflySubDevice.init" title="Link to this definition"></a></dt>
+<dd><p>This method inits the packet queue</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../sc_crypto/contents.html" class="btn btn-neutral float-left" title="sc_crypto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../bt_utils/index.html" class="btn btn-neutral float-right" title="bt_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

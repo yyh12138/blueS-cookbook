@@ -110,6 +110,8 @@
 </li>
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.__init__">(ATT_Server method)</a>
 </li>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice.__init__">(BLEButterflySubDevice method)</a>
+</li>
         <li><a href="libs/ble.html#BLEEmitter.__init__">(BLEEmitter method)</a>
 </li>
         <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.__init__">(BLELinkLayerCrypto method)</a>
@@ -123,6 +125,8 @@
         <li><a href="libs/bt.html#BluetoothReceiver.__init__">(BluetoothReceiver method)</a>
 </li>
         <li><a href="libs/bt.html#BtHCIDevice.__init__">(BtHCIDevice method)</a>
+</li>
+        <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.__init__">(ButterflyDevice method)</a>
 </li>
         <li><a href="libs/wireless_utils/callback/contents.html#Callback.__init__">(Callback method)</a>
 </li>
@@ -139,6 +143,8 @@
         <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.__init__">(PacketQueue method)</a>
 </li>
         <li><a href="libs/wireless.html#Receiver.__init__">(Receiver method)</a>
+</li>
+        <li><a href="modules/ble_replay.html#replayPacket.__init__">(replayPacket method)</a>
 </li>
         <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance.__init__">(SCCryptoInstance method)</a>
 </li>
@@ -187,6 +193,8 @@
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#GATT_Server.addPrimaryService">addPrimaryService() (GATT_Server method)</a>
 </li>
+      <li><a href="modules/ble_slave.html#ble_slave.address">address() (ble_slave method)</a>
+</li>
       <li><a href="libs/utils.html#addressArg">addressArg()</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#GATT_Server.addSecondaryService">addSecondaryService() (GATT_Server method)</a>
@@ -197,6 +205,8 @@
         <li><a href="core/taskManager/contents.html#TaskManager.addTask">(TaskManager method)</a>
 </li>
       </ul></li>
+      <li><a href="modules/ble_slave.html#ble_slave.advertising">advertising() (ble_slave method)</a>
+</li>
       <li><a href="modules/ble_discover.html#ble_discover.allServicesDiscovery">allServicesDiscovery() (ble_discover method)</a>
 </li>
       <li><a href="core/app/contents.html#App">App (built-in class)</a>
@@ -436,13 +446,19 @@
 </li>
       <li><a href="modules/ble_discover.html#ble_discover">ble_discover (built-in class)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm">ble_no_pairing_mitm (built-in class)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm">ble_full_mitm (built-in class)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair">ble_pair (built-in class)</a>
+</li>
+      <li><a href="modules/ble_replay.html#ble_replay">ble_replay (built-in class)</a>
 </li>
       <li><a href="modules/ble_sc_pair.html#ble_sc_pair">ble_sc_pair (built-in class)</a>
 </li>
       <li><a href="modules/ble_scan.html#ble_scan">ble_scan (built-in class)</a>
+</li>
+      <li><a href="modules/ble_slave.html#ble_slave">ble_slave (built-in class)</a>
+</li>
+      <li><a href="modules/ble_sniff.html#ble_sniff">ble_sniff (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvDirectInd">BLEAdvDirectInd (built-in class)</a>
 </li>
@@ -451,6 +467,10 @@
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvInd">BLEAdvInd (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEAdvNonConnInd">BLEAdvNonConnInd (built-in class)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice">BLEButterflyDevice (built-in class)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice">BLEButterflySubDevice (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEConnect">BLEConnect (built-in class)</a>
 </li>
@@ -486,7 +506,7 @@
 </li>
       <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto">BLELinkLayerCrypto (built-in class)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#BLEMitmStage">BLEMitmStage (built-in class)</a>
+      <li><a href="modules/ble_full_mitm.html#BLEMitmStage">BLEMitmStage (built-in class)</a>
 </li>
       <li><a href="libs/ble_utils/packets/contents.html#BLEPacket">BLEPacket (built-in class)</a>
 </li>
@@ -629,6 +649,8 @@
         <li><a href="core/task/contents.html#task.toList">task.toList()</a>
 </li>
       </ul></li>
+      <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice">ButterflyDevice (built-in class)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -663,10 +685,20 @@
       </ul></li>
       <li><a href="libs/wireless.html#Receiver.clean">clean() (Receiver method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.cloneStage">cloneStage() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_replay.html#ble_replay.clear">clear() (ble_replay method)</a>
+
+      <ul>
+        <li><a href="modules/ble_slave.html#ble_slave.clear">(ble_slave method)</a>
 </li>
-      <li><a href="libs/wireless_utils/device/contents.html#Device.close">close() (Device method)</a>
+      </ul></li>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.cloneStage">cloneStage() (ble_full_mitm method)</a>
 </li>
+      <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.close">close() (ButterflyDevice method)</a>
+
+      <ul>
+        <li><a href="libs/wireless_utils/device/contents.html#Device.close">(Device method)</a>
+</li>
+      </ul></li>
       <li><a href="libs/io.html#colorCode">colorCode()</a>
 </li>
       <li><a href="libs/io.html#colorize">colorize()</a>
@@ -717,6 +749,8 @@
         <li><a href="core/config/contents.html#Config.getShortcuts">built-in function</a>
 </li>
       </ul></li>
+      <li><a href="modules/ble_replay.html#ble_replay.connect">connect() (ble_replay method)</a>
+</li>
       <li><a href="libs/ble.html#BLEEmitter.convert">convert() (BLEEmitter method)</a>
 
       <ul>
@@ -757,12 +791,20 @@
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#dewhiten">dewhiten()</a>
 </li>
+      <li><a href="modules/ble_replay.html#ble_replay.disconnect">disconnect() (ble_replay method)</a>
+
+      <ul>
+        <li><a href="modules/ble_slave.html#ble_slave.disconnect">(ble_slave method)</a>
+</li>
+      </ul></li>
       <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.displayDetails">displayDetails() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="modules/ble_scan.html#ble_scan.displayDevices">displayDevices() (ble_scan method)</a>
 </li>
       <li><a href="libs/io.html#displayPacket">displayPacket()</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble_utils/dissectors/contents.html#AuthReqFlag.dissect">dissect() (AuthReqFlag method)</a>
 
       <ul>
@@ -783,8 +825,6 @@
         <li><a href="libs/ble_utils/dissectors/contents.html#UUID.dissect">(UUID method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/wireless_utils/dissectors/contents.html#Dissector">Dissector (built-in class)</a>
 </li>
   </ul></td>
@@ -803,12 +843,20 @@
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.encryptLink">encryptLink() (BLEHCIDevice method)</a>
 </li>
+      <li><a href="libs/io.html#enterPinCode">enterPinCode()</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="libs/io.html#enterPinCode">enterPinCode()</a>
+      <li><a href="modules/ble_replay.html#ble_replay.exchangeMTURequest">exchangeMTURequest() (ble_replay method)</a>
 </li>
       <li><a href="core/module/contents.html#Module.execute">execute() (Module method)</a>
 </li>
+      <li><a href="modules/ble_replay.html#ble_replay.exit">exit() (ble_replay method)</a>
+
+      <ul>
+        <li><a href="modules/ble_slave.html#ble_slave.exit">(ble_slave method)</a>
+</li>
+      </ul></li>
       <li><a href="libs/utils.html#exitBlues">exitBlues()</a>
 </li>
       <li><a href="modules/ble_discover.html#ble_discover.exportAttributes">exportAttributes() (ble_discover method)</a>
@@ -839,9 +887,9 @@
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.findInformation">(ATT_Server method)</a>
 </li>
       </ul></li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToMaster">forwardToMaster() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.forwardToMaster">forwardToMaster() (ble_full_mitm method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToSlave">forwardToSlave() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.forwardToSlave">forwardToSlave() (ble_full_mitm method)</a>
 </li>
       <li><a href="libs/ble_utils/helpers/contents.html#frequentToChannel">frequentToChannel()</a>
 </li>
@@ -875,16 +923,28 @@
       </ul></li>
       <li><a href="libs/wireless_utils/device/contents.html#Device.get">get() (Device method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getAccessAddress">getAccessAddress() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/bt.html#BtHCIDevice.getAddress">getAddress() (BtHCIDevice method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.getAddressByHandle">getAddressByHandle() (BtHCIDevice method)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.getAddressMode">getAddressMode() (BLEHCIDevice method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getChannel">getChannel() (BLEButterflyDevice method)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getChannelMap">getChannelMap() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/bt.html#BtHCIDevice.getConnections">getConnections() (BtHCIDevice method)</a>
 </li>
-      <li><a href="libs/bt.html#BtHCIDevice.getCurrentConnection">getCurrentConnection() (BtHCIDevice method)</a>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getCrcInit">getCrcInit() (BLEButterflyDevice method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getCurrentConnection">getCurrentConnection() (BLEButterflyDevice method)</a>
+
+      <ul>
+        <li><a href="libs/bt.html#BtHCIDevice.getCurrentConnection">(BtHCIDevice method)</a>
+</li>
+      </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/ble.html#BLEHCIDevice.getCurrentConnectionMode">getCurrentConnectionMode() (BLEHCIDevice method)</a>
@@ -893,7 +953,13 @@
 </li>
       <li><a href="core/module/contents.html#WirelessModule.getEmitter">getEmitter() (WirelessModule method)</a>
 </li>
+      <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.getFirmwareVersion">getFirmwareVersion() (ButterflyDevice method)</a>
+</li>
       <li><a href="libs/utils.html#getHomeDir">getHomeDir()</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getHopIncrement">getHopIncrement() (BLEButterflyDevice method)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.getHopInterval">getHopInterval() (BLEButterflyDevice method)</a>
 </li>
       <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.getInstance">getInstance() (BLELinkLayerCrypto method)</a>
 </li>
@@ -952,17 +1018,29 @@
 </li>
         <li><a href="modules/ble_discover.html#ble_discover.init">(ble_discover method)</a>
 </li>
-        <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.init">(ble_no_pairing_mitm method)</a>
+        <li><a href="modules/ble_full_mitm.html#ble_full_mitm.init">(ble_full_mitm method)</a>
 </li>
         <li><a href="modules/ble_pair.html#ble_pair.init">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_replay.html#ble_replay.init">(ble_replay method)</a>
 </li>
         <li><a href="modules/ble_sc_pair.html#ble_sc_pair.init">(ble_sc_pair method)</a>
 </li>
         <li><a href="modules/ble_scan.html#ble_scan.init">(ble_scan method)</a>
 </li>
+        <li><a href="modules/ble_slave.html#ble_slave.init">(ble_slave method)</a>
+</li>
+        <li><a href="modules/ble_sniff.html#ble_sniff.init">(ble_sniff method)</a>
+</li>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.init">(BLEButterflyDevice method)</a>
+</li>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice.init">(BLEButterflySubDevice method)</a>
+</li>
         <li><a href="libs/ble.html#BLEHCIDevice.init">(BLEHCIDevice method)</a>
 </li>
         <li><a href="libs/bt.html#BtHCIDevice.init">(BtHCIDevice method)</a>
+</li>
+        <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.init">(ButterflyDevice method)</a>
 </li>
         <li><a href="libs/wireless_utils/device/contents.html#Device.init">(Device method)</a>
 </li>
@@ -975,6 +1053,8 @@
 </li>
       <li><a href="core/interpreter/contents.html#Interpreter">Interpreter (built-in class)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Interpreter.__init__()
 
@@ -982,8 +1062,6 @@
         <li><a href="core/interpreter/contents.html#Interpreter.__init__">built-in function</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     Interpreter.evaluateCommand()
 
@@ -1011,8 +1089,12 @@
 </li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.isBusy">isBusy() (PacketQueue method)</a>
 </li>
-      <li><a href="libs/bt.html#BtHCIDevice.isConnected">isConnected() (BtHCIDevice method)</a>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice.isConnected">isConnected() (BLEButterflySubDevice method)</a>
+
+      <ul>
+        <li><a href="libs/bt.html#BtHCIDevice.isConnected">(BtHCIDevice method)</a>
 </li>
+      </ul></li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.isDeviceUp">isDeviceUp() (PacketQueue method)</a>
 </li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.isEmpty">isEmpty() (PacketQueue method)</a>
@@ -1027,11 +1109,15 @@
 </li>
       <li><a href="libs/utils.html#isRoot">isRoot()</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.isSynchronized">isSynchronized() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/wireless.html#Emitter.isTransmitting">isTransmitting() (Emitter method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.isUp">isUp() (BtHCIDevice method)</a>
 
       <ul>
+        <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.isUp">(ButterflyDevice method)</a>
+</li>
         <li><a href="libs/wireless_utils/device/contents.html#Device.isUp">(Device method)</a>
 </li>
       </ul></li>
@@ -1059,6 +1145,8 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_slave.html#ble_slave.load">load() (ble_slave method)</a>
+</li>
       <li><a href="core/loader/contents.html#Loader">Loader (built-in class)</a>
 </li>
       <li>
@@ -1111,9 +1199,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="libs/wireless.html#Receiver.next">next() (Receiver method)</a>
 </li>
+      <li><a href="core/module/contents.html#Module.nok">nok() (Module method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="core/module/contents.html#Module.nok">nok() (Module method)</a>
+      <li><a href="modules/ble_slave.html#ble_slave.notification">notification() (ble_slave method)</a>
 </li>
       <li><a href="libs/utils.html#now">now()</a>
 </li>
@@ -1125,9 +1215,11 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core/module/contents.html#Module.ok">ok() (Module method)</a>
 </li>
+      <li><a href="libs/wireless.html#Receiver.onEvent">onEvent() (Receiver method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="libs/wireless.html#Receiver.onEvent">onEvent() (Receiver method)</a>
+      <li><a href="modules/ble_sniff.html#ble_sniff.onPacket">onPacket() (ble_sniff method)</a>
 </li>
       <li><a href="core/module/contents.html#Module.out">out() (Module method)</a>
 </li>
@@ -1141,6 +1233,12 @@
 </li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue">PacketQueue (built-in class)</a>
 </li>
+      <li><a href="modules/ble_replay.html#ble_replay.pair_lp">pair_lp() (ble_replay method)</a>
+</li>
+      <li><a href="modules/ble_replay.html#ble_replay.pair_sc">pair_sc() (ble_replay method)</a>
+</li>
+      <li><a href="modules/ble_slave.html#ble_slave.pairing">pairing() (ble_slave method)</a>
+</li>
       <li><a href="modules/ble_pair.html#ble_pair.pairingMethodSelection">pairingMethodSelection() (ble_pair method)</a>
 
       <ul>
@@ -1149,14 +1247,20 @@
       </ul></li>
       <li><a href="libs/ble_utils/dissectors/contents.html#PermissionsFlag">PermissionsFlag (built-in class)</a>
 </li>
-      <li><a href="modules/ble_pair.html#ble_pair.pinToTemporaryKey">pinToTemporaryKey() (ble_pair method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_pair.html#ble_pair.pinToTemporaryKey">pinToTemporaryKey() (ble_pair method)</a>
+</li>
       <li><a href="core/module/contents.html#Module.postrun">postrun() (Module method)</a>
 </li>
-      <li><a href="core/module/contents.html#Module.prerun">prerun() (Module method)</a>
+      <li><a href="modules/ble_replay.html#ble_replay.prerun">prerun() (ble_replay method)</a>
+
+      <ul>
+        <li><a href="modules/ble_slave.html#ble_slave.prerun">(ble_slave method)</a>
 </li>
+        <li><a href="core/module/contents.html#Module.prerun">(Module method)</a>
+</li>
+      </ul></li>
       <li><a href="modules/ble_discover.html#ble_discover.printCharacteristics">printCharacteristics() (ble_discover method)</a>
 </li>
       <li><a href="libs/io.html#progress">progress()</a>
@@ -1185,9 +1289,9 @@
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.readByGroupType">(ATT_Server method)</a>
 </li>
       </ul></li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeRequest">readByGroupTypeRequest() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.readByGroupTypeRequest">readByGroupTypeRequest() (ble_full_mitm method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeResponse">readByGroupTypeResponse() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.readByGroupTypeResponse">readByGroupTypeResponse() (ble_full_mitm method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.readByType">readByType() (ATT_Database method)</a>
 
@@ -1195,9 +1299,9 @@
         <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.readByType">(ATT_Server method)</a>
 </li>
       </ul></li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRequest">readRequest() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.readRequest">readRequest() (ble_full_mitm method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRespnse">readRespnse() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.readRespnse">readRespnse() (ble_full_mitm method)</a>
 </li>
       <li><a href="modules/ble_discover.html#ble_discover.receive">receive() (ble_discover method)</a>
 </li>
@@ -1205,23 +1309,35 @@
 </li>
       <li><a href="core/scenario/contents.html#Scenario.receiveSignal">receiveSignal() (Scenario method)</a>
 </li>
-      <li><a href="libs/bt.html#BtHCIDevice.recv">recv() (BtHCIDevice method)</a>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.recv">recv() (BLEButterflyDevice method)</a>
 
       <ul>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice.recv">(BLEButterflySubDevice method)</a>
+</li>
+        <li><a href="libs/bt.html#BtHCIDevice.recv">(BtHCIDevice method)</a>
+</li>
+        <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.recv">(ButterflyDevice method)</a>
+</li>
         <li><a href="libs/wireless_utils/device/contents.html#Device.recv">(Device method)</a>
 </li>
       </ul></li>
       <li><a href="libs/wireless.html#Receiver.recvive">recvive() (Receiver method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="core/module/contents.html#WirelessModule.registerEmitter">registerEmitter() (WirelessModule method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.registerEvents">registerEvents() (ble_no_pairing_mitm method)</a>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.registerEvents">registerEvents() (ble_full_mitm method)</a>
 </li>
       <li><a href="core/module/contents.html#WirelessModule.registerReceiver">registerReceiver() (WirelessModule method)</a>
 </li>
+      <li><a href="modules/ble_replay.html#ble_replay.replay">replay() (ble_replay method)</a>
+</li>
+      <li><a href="modules/ble_replay.html#replayPacket">replayPacket (built-in class)</a>
+</li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.restart">restart() (PacketQueue method)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.restartsniffMode">restartsniffMode() (BLEButterflyDevice method)</a>
 </li>
       <li><a href="core/taskManager/contents.html#TaskManager.restartTask">restartTask() (TaskManager method)</a>
 </li>
@@ -1236,13 +1352,19 @@
 </li>
         <li><a href="modules/ble_discover.html#ble_discover.run">(ble_discover method)</a>
 </li>
-        <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.run">(ble_no_pairing_mitm method)</a>
+        <li><a href="modules/ble_full_mitm.html#ble_full_mitm.run">(ble_full_mitm method)</a>
 </li>
         <li><a href="modules/ble_pair.html#ble_pair.run">(ble_pair method)</a>
+</li>
+        <li><a href="modules/ble_replay.html#ble_replay.run">(ble_replay method)</a>
 </li>
         <li><a href="modules/ble_sc_pair.html#ble_sc_pair.run">(ble_sc_pair method)</a>
 </li>
         <li><a href="modules/ble_scan.html#ble_scan.run">(ble_scan method)</a>
+</li>
+        <li><a href="modules/ble_slave.html#ble_slave.run">(ble_slave method)</a>
+</li>
+        <li><a href="modules/ble_sniff.html#ble_sniff.run">(ble_sniff method)</a>
 </li>
         <li><a href="libs/wireless_utils/callback/contents.html#Callback.run">(Callback method)</a>
 </li>
@@ -1261,7 +1383,7 @@
 </li>
       <li><a href="modules/ble_scan.html#ble_scan.scan">scan() (ble_scan method)</a>
 </li>
-      <li><a href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.scanStage">scanStage() (ble_no_pairing_mitm method)</a>
+      <li><a href="modules/ble_full_mitm.html#ble_full_mitm.scanStage">scanStage() (ble_full_mitm method)</a>
 </li>
       <li><a href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance">SCCryptoInstance (built-in class)</a>
 </li>
@@ -1269,9 +1391,15 @@
 </li>
       <li><a href="core/scenario/contents.html#Scenario.scenarioSignal">scenarioSignal() (Scenario method)</a>
 </li>
-      <li><a href="libs/bt.html#BtHCIDevice.send">send() (BtHCIDevice method)</a>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.send">send() (BLEButterflyDevice method)</a>
 
       <ul>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice.send">(BLEButterflySubDevice method)</a>
+</li>
+        <li><a href="libs/bt.html#BtHCIDevice.send">(BtHCIDevice method)</a>
+</li>
+        <li><a href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice.send">(ButterflyDevice method)</a>
+</li>
         <li><a href="libs/wireless_utils/device/contents.html#Device.send">(Device method)</a>
 </li>
         <li><a href="libs/wireless.html#Emitter.send">(Emitter method)</a>
@@ -1285,6 +1413,8 @@
 </li>
       <li><a href="modules/ble_discover.html#ble_discover.serviceToString">serviceToString() (ble_discover method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setAccessAddress">setAccessAddress() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/ble.html#BLEHCIDevice.setAddress">setAddress() (BLEHCIDevice method)</a>
 
       <ul>
@@ -1297,30 +1427,50 @@
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.setAttribute">setAttribute() (ATT_Database method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setChannel">setChannel() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/ble.html#BLEHCIDevice.setChannelMap">setChannelMap() (BLEHCIDevice method)</a>
+</li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setHijacking">setHijacking() (BLEButterflyDevice method)</a>
 </li>
       <li><a href="libs/bt.html#BtHCIDevice.setLocalName">setLocalName() (BtHCIDevice method)</a>
 </li>
       <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.setMasterValues">setMasterValues() (BLELinkLayerCrypto method)</a>
 </li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setMitm">setMitm() (BLEButterflyDevice method)</a>
+</li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Server.setMtu">setMtu() (ATT_Server method)</a>
 </li>
-      <li><a href="libs/ble.html#BLEHCIDevice.setScan">setScan() (BLEHCIDevice method)</a>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setScan">setScan() (BLEButterflyDevice method)</a>
+
+      <ul>
+        <li><a href="libs/ble.html#BLEHCIDevice.setScan">(BLEHCIDevice method)</a>
+</li>
+      </ul></li>
+      <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.setScanInterval">setScanInterval() (BLEButterflyDevice method)</a>
 </li>
       <li><a href="libs/ble.html#BLEHCIDevice.setScanningParameters">setScanningParameters() (BLEHCIDevice method)</a>
 </li>
       <li><a href="libs/ble_utils/crypto/contents.html#BLELinkLayerCrypto.setSlaveValues">setSlaveValues() (BLELinkLayerCrypto method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.show">show() (ATT_Database method)</a>
+
+      <ul>
+        <li><a href="modules/ble_slave.html#ble_slave.show">(ble_slave method)</a>
 </li>
+      </ul></li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showCharacteristics">showCharacteristics() (ATT_Database method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showGATT">showGATT() (ATT_Database method)</a>
+</li>
+      <li><a href="modules/ble_replay.html#ble_replay.showPackets">showPackets() (ble_replay method)</a>
 </li>
       <li><a href="libs/ble_utils/att_server/contents.html#ATT_Database.showService">showService() (ATT_Database method)</a>
 </li>
       <li><a href="libs/wireless.html#Receiver.skip">skip() (Receiver method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ble_pair.html#ble_pair.slaveEncryptionInformation">slaveEncryptionInformation() (ble_pair method)</a>
 </li>
       <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityAddressInformation">slaveIdentityAddressInformation() (ble_pair method)</a>
@@ -1329,8 +1479,6 @@
         <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveIdentityAddressInformation">(ble_sc_pair method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="modules/ble_pair.html#ble_pair.slaveIdentityInformation">slaveIdentityInformation() (ble_pair method)</a>
 
       <ul>
@@ -1377,6 +1525,20 @@
 
       <ul>
         <li><a href="modules/ble_sc_pair.html#ble_sc_pair.slaveSigningInformation">(ble_sc_pair method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/ble_sniff.html#ble_sniff.sniffAdvertisements">sniffAdvertisements() (ble_sniff method)</a>
+
+      <ul>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.sniffAdvertisements">(BLEButterflyDevice method)</a>
+</li>
+      </ul></li>
+      <li><a href="modules/ble_sniff.html#ble_sniff.sniffExistingConnections">sniffExistingConnections() (ble_sniff method)</a>
+</li>
+      <li><a href="modules/ble_sniff.html#ble_sniff.sniffNewConnections">sniffNewConnections() (ble_sniff method)</a>
+
+      <ul>
+        <li><a href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice.sniffNewConnections">(BLEButterflyDevice method)</a>
 </li>
       </ul></li>
       <li><a href="libs/wireless_utils/packetQueue/contents.html#PacketQueue.start">start() (PacketQueue method)</a>

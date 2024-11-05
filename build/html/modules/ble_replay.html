@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ble_replay &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="about" href="../about/index.html" />
+    <link rel="prev" title="ble_no_pairing_mitm" href="ble_no_pairing_mitm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_adv.html">ble_adv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_scan.html">ble_scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_discover.html">ble_discover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_pair.html">ble_pair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_sc_pair.html">ble_sc_pair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_no_pairing_mitm.html">ble_no_pairing_mitm</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_replay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#replayPacket"><code class="docutils literal notranslate"><span class="pre">replayPacket</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#replayPacket.__init__"><code class="docutils literal notranslate"><span class="pre">replayPacket.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#ble_replay"><code class="docutils literal notranslate"><span class="pre">ble_replay</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.init"><code class="docutils literal notranslate"><span class="pre">ble_replay.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.prerun"><code class="docutils literal notranslate"><span class="pre">ble_replay.prerun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.clear"><code class="docutils literal notranslate"><span class="pre">ble_replay.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.exit"><code class="docutils literal notranslate"><span class="pre">ble_replay.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.disconnect"><code class="docutils literal notranslate"><span class="pre">ble_replay.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.connect"><code class="docutils literal notranslate"><span class="pre">ble_replay.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.showPackets"><code class="docutils literal notranslate"><span class="pre">ble_replay.showPackets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.replay"><code class="docutils literal notranslate"><span class="pre">ble_replay.replay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.exchangeMTURequest"><code class="docutils literal notranslate"><span class="pre">ble_replay.exchangeMTURequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.pair_lp"><code class="docutils literal notranslate"><span class="pre">ble_replay.pair_lp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.pair_sc"><code class="docutils literal notranslate"><span class="pre">ble_replay.pair_sc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_replay.run"><code class="docutils literal notranslate"><span class="pre">ble_replay.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">modules</a></li>
+      <li class="breadcrumb-item active">ble_replay</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/ble_replay.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble-replay">
+<h1>ble_replay<a class="headerlink" href="#ble-replay" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="replayPacket">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">replayPacket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BLEPacket</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#replayPacket" title="Link to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="replayPacket.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#replayPacket.__init__" title="Link to this definition"></a></dt>
+<dd><p>Initialize the replay packet. replayPacket = &lt;packet, source, type&gt;</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>packet</strong> (<a class="reference internal" href="../libs/ble_utils/packets/contents.html#BLEPacket" title="BLEPacket"><em>BLEPacket</em></a>) – The BLE packet to replay</p></li>
+<li><p><strong>source</strong> (<em>str</em>) – The source of the packet. It can be “master” or “slave”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_replay">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_replay</span></span><a class="headerlink" href="#ble_replay" title="Link to this definition"></a></dt>
+<dd><p>This class provides the BLE device master to restore packets and act replay attacks</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.init" title="Link to this definition"></a></dt>
+<dd><p>Initialize the BLE replay</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE: “hci0”</p></li>
+<li><p>MODE: “master”</p></li>
+<li><p>PIN: “000000”</p></li>
+<li><p>TARGET: “”</p></li>
+<li><p>GCONNECTION_TYPE: “random”</p></li>
+<li><p>ADDR: “”</p></li>
+<li><p>ADDR_TYPE: “random”</p></li>
+<li><p>ADVERTISING_STRATEGY: “preconnect”</p></li>
+<li><p>SHOW_SCANNING: “yes”</p></li>
+<li><p>SCENARIO: “”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.prerun">
+<span class="sig-name descname"><span class="pre">prerun</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.prerun" title="Link to this definition"></a></dt>
+<dd><p>This method inits the interpreter and regists the CMD, such as <code class="docutils literal notranslate"><span class="pre">clear</span></code>, <code class="docutils literal notranslate"><span class="pre">exit</span></code>, <code class="docutils literal notranslate"><span class="pre">connect</span></code>, <code class="docutils literal notranslate"><span class="pre">showPackets</span></code>, <code class="docutils literal notranslate"><span class="pre">disconnect</span></code>, <code class="docutils literal notranslate"><span class="pre">replay</span></code>, <code class="docutils literal notranslate"><span class="pre">exchangeMTURequest</span></code>, <code class="docutils literal notranslate"><span class="pre">pair_lp</span></code>, <code class="docutils literal notranslate"><span class="pre">pair_sc</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.clear" title="Link to this definition"></a></dt>
+<dd><p>Clear the screen</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.exit">
+<span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.exit" title="Link to this definition"></a></dt>
+<dd><p>Exit the BLE replay interpreter</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.disconnect">
+<span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.disconnect" title="Link to this definition"></a></dt>
+<dd><p>Disconnect the BLE master device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.connect" title="Link to this definition"></a></dt>
+<dd><p>Connect the BLE master device by excuting <code class="docutils literal notranslate"><span class="pre">ble_connect</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.showPackets">
+<span class="sig-name descname"><span class="pre">showPackets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.showPackets" title="Link to this definition"></a></dt>
+<dd><p>This method shows the packets from packet buffer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.replay">
+<span class="sig-name descname"><span class="pre">replay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.replay" title="Link to this definition"></a></dt>
+<dd><p>This method replays the packets from packet buffer</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.exchangeMTURequest">
+<span class="sig-name descname"><span class="pre">exchangeMTURequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mtu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.exchangeMTURequest" title="Link to this definition"></a></dt>
+<dd><p>This method sends the exchange MTU request</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>mtu</strong> (<em>int</em>) – The MTU value</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.pair_lp">
+<span class="sig-name descname"><span class="pre">pair_lp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.pair_lp" title="Link to this definition"></a></dt>
+<dd><p>This method starts pairing by excuting <code class="docutils literal notranslate"><span class="pre">ble_pair</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.pair_sc">
+<span class="sig-name descname"><span class="pre">pair_sc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.pair_sc" title="Link to this definition"></a></dt>
+<dd><p>This method starts pairing by excuting <code class="docutils literal notranslate"><span class="pre">ble_sc_pair</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_replay.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_replay.run" title="Link to this definition"></a></dt>
+<dd><p>This method inits the BLE replay and enter into interpreter loop</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ble_no_pairing_mitm.html" class="btn btn-neutral float-left" title="ble_no_pairing_mitm" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../about/index.html" class="btn btn-neutral float-right" title="about" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ble_full_mitm &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ble_replay" href="ble_replay.html" />
+    <link rel="prev" title="ble_slave" href="ble_slave.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">modules</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ble_adv.html">ble_adv</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_scan.html">ble_scan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_connect.html">ble_connect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_discover.html">ble_discover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_pair.html">ble_pair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_sc_pair.html">ble_sc_pair</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ble_slave.html">ble_slave</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ble_full_mitm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#BLEMitmStage"><code class="docutils literal notranslate"><span class="pre">BLEMitmStage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ble_full_mitm"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.init"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.registerEvents"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.registerEvents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.run"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.scanStage"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.scanStage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.cloneStage"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.cloneStage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.forwardToSlave"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.forwardToSlave()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.forwardToMaster"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.forwardToMaster()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.readRequest"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.readRespnse"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readRespnse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.readByGroupTypeRequest"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readByGroupTypeRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ble_full_mitm.readByGroupTypeResponse"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readByGroupTypeResponse()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ble_replay.html">ble_replay</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">modules</a></li>
+      <li class="breadcrumb-item active">ble_full_mitm</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/modules/ble_full_mitm.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ble-full-mitm">
+<h1>ble_full_mitm<a class="headerlink" href="#ble-full-mitm" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEMitmStage">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEMitmStage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">IntEnum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEMitmStage" title="Link to this definition"></a></dt>
+<dd><p>This class defines five MITM stages: SCAN, CLONE, WAIT_CONNECTION, ACTIVE_MITM, STOP</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="ble_full_mitm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_full_mitm</span></span><a class="headerlink" href="#ble_full_mitm" title="Link to this definition"></a></dt>
+<dd><p>This class is used to demonstrate the MITM attack on BLE devices.
+It uses 2 hci sockets, hci0 is used to scan, connect and clone the slave, hci1 is used to advertise and connect to the master</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.init">
+<span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.init" title="Link to this definition"></a></dt>
+<dd><p>This method initializes the class</p>
+<dl class="field-list simple">
+<dt class="field-odd">Args<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>INTERFACE1: “hci0”</p></li>
+<li><p>INTERFACE2: “hci1”</p></li>
+<li><p>TARGET: “xx:xx:xx:xx:xx:xx”</p></li>
+<li><p>CONNECTION_TYPE: “random”</p></li>
+<li><p>SLAVE_SPOFFING: “yes”</p></li>
+<li><p>MITM_STRATEGY: “preconnect”</p></li>
+<li><p>SHOW_SCANNING: “yes”</p></li>
+<li><p>LTK: “”</p></li>
+<li><p>INTERFACE: “”</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.registerEvents">
+<span class="sig-name descname"><span class="pre">registerEvents</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.registerEvents" title="Link to this definition"></a></dt>
+<dd><p>This method registers the events and the callback functions</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.run" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.scanStage">
+<span class="sig-name descname"><span class="pre">scanStage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.scanStage" title="Link to this definition"></a></dt>
+<dd><p>This method scans for the target device.
+If it collects the ADV_IND and SCAN_RSP, it will start the clone stage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEAdvertisement</em>) – The adv packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.cloneStage">
+<span class="sig-name descname"><span class="pre">cloneStage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataResponse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intervalMax</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">addrType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.cloneStage" title="Link to this definition"></a></dt>
+<dd><p>This method clones the target device on hci1 and sets the advertising parameters to connect to the master</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – The address of the target device</p></li>
+<li><p><strong>data</strong> (<em>bytes</em>) – The data of the target device</p></li>
+<li><p><strong>dataResponse</strong> (<em>bytes</em>) – The data response of the target device</p></li>
+<li><p><strong>intervalMin</strong> (<em>int</em>) – The minimum interval of the target device</p></li>
+<li><p><strong>intervalMax</strong> (<em>int</em>) – The maximum interval of the target device</p></li>
+<li><p><strong>addrType</strong> (<em>str</em>) – The address type of the target device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.forwardToSlave">
+<span class="sig-name descname"><span class="pre">forwardToSlave</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.forwardToSlave" title="Link to this definition"></a></dt>
+<dd><p>This method forwards the packets to the slave by hci0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEPacket</em>) – The packet to forward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.forwardToMaster">
+<span class="sig-name descname"><span class="pre">forwardToMaster</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.forwardToMaster" title="Link to this definition"></a></dt>
+<dd><p>This method forwards the packets to the master by hci1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEPacket</em>) – The packet to forward</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.readRequest">
+<span class="sig-name descname"><span class="pre">readRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.readRequest" title="Link to this definition"></a></dt>
+<dd><p>This method gets the read request from the master and forwards packets to the slave</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEReadRequest</em>) – The packet to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.readRespnse">
+<span class="sig-name descname"><span class="pre">readRespnse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.readRespnse" title="Link to this definition"></a></dt>
+<dd><p>This method gets the read response from the slave and forwards packets to the master</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEReadResponse</em>) – The packet to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.readByGroupTypeRequest">
+<span class="sig-name descname"><span class="pre">readByGroupTypeRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.readByGroupTypeRequest" title="Link to this definition"></a></dt>
+<dd><p>This method gets the read by group type request from the master and forwards packets to the slave</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEReadByGroupTypeRequest</em>) – The packet to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ble_full_mitm.readByGroupTypeResponse">
+<span class="sig-name descname"><span class="pre">readByGroupTypeResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_full_mitm.readByGroupTypeResponse" title="Link to this definition"></a></dt>
+<dd><p>This method gets the read by group type response from the slave and forwards packets to the master.
+This method should send response to the master with one attribute</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>libs.ble_utils.packets.Packet.BLEReadByGroupTypeResponse</em>) – The packet to handle</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ble_slave.html" class="btn btn-neutral float-left" title="ble_slave" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ble_replay.html" class="btn btn-neutral float-right" title="ble_replay" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

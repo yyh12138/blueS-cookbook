@@ -9,5 +9,8 @@ modules
    ble_connect
    ble_discover
    ble_pair
+   ble_sc_pair
    ble_slave
-   ble_no_pairing_mitm
+   ble_full_mitm
+   ble_replay
+   ble_sniff

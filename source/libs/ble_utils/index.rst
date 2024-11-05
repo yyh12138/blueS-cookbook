@@ -10,3 +10,4 @@ ble_utils
    dissectors/contents
    crypto/contents
    sc_crypto/contents
+   butterfly/contents

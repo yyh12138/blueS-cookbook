@@ -284,6 +284,11 @@
 <li class="toctree-l4"><a class="reference internal" href="libs/ble_utils/sc_crypto/contents.html#SCCryptoInstance"><code class="docutils literal notranslate"><span class="pre">SCCryptoInstance</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="libs/ble_utils/butterfly/contents.html">butterfly</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libs/ble_utils/butterfly/contents.html#BLEButterflyDevice"><code class="docutils literal notranslate"><span class="pre">BLEButterflyDevice</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="libs/ble_utils/butterfly/contents.html#BLEButterflySubDevice"><code class="docutils literal notranslate"><span class="pre">BLEButterflySubDevice</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="libs/bt_utils/index.html">bt_utils</a></li>
@@ -308,6 +313,10 @@
 <li class="toctree-l3"><a class="reference internal" href="libs/wireless_utils/packetQueue/contents.html">packetQueue</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="libs/wireless_utils/packetQueue/contents.html#PacketQueue"><code class="docutils literal notranslate"><span class="pre">PacketQueue</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="libs/wireless_utils/packetQueue/contents.html#StoppableThread"><code class="docutils literal notranslate"><span class="pre">StoppableThread</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="libs/wireless_utils/butterfly/contents.html">butterfly</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="libs/wireless_utils/butterfly/contents.html#ButterflyDevice"><code class="docutils literal notranslate"><span class="pre">ButterflyDevice</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -514,21 +523,93 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="modules/ble_slave.html">ble_slave</a></li>
-<li class="toctree-l2"><a class="reference internal" href="modules/ble_no_pairing_mitm.html">ble_no_pairing_mitm</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#BLEMitmStage"><code class="docutils literal notranslate"><span class="pre">BLEMitmStage</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm</span></code></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.init"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.init()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.registerEvents"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.registerEvents()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.run"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.scanStage"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.scanStage()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.cloneStage"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.cloneStage()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToSlave"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.forwardToSlave()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.forwardToMaster"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.forwardToMaster()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRequest"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.readRequest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readRespnse"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.readRespnse()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeRequest"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.readByGroupTypeRequest()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="modules/ble_no_pairing_mitm.html#ble_no_pairing_mitm.readByGroupTypeResponse"><code class="docutils literal notranslate"><span class="pre">ble_no_pairing_mitm.readByGroupTypeResponse()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ble_sc_pair.html">ble_sc_pair</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.init"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.run"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.pairingMethodSelection"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.pairingMethodSelection()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slaveSecurityRequest"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slaveSecurityRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingResponse"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePairingResponse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePublicKey"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePublicKey()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingConfirm"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePairingConfirm()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingRandom"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePairingRandom()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingDHKeyCheck"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePairingDHKeyCheck()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slavePairingFailed"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slavePairingFailed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slaveIdentityInformation"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slaveIdentityInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slaveIdentityAddressInformation"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slaveIdentityAddressInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slaveSigningInformation"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slaveSigningInformation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.slaveKeyEncryptionChange"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.slaveKeyEncryptionChange()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sc_pair.html#ble_sc_pair.keyDistribution"><code class="docutils literal notranslate"><span class="pre">ble_sc_pair.keyDistribution()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ble_slave.html">ble_slave</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_slave.html#ble_slave"><code class="docutils literal notranslate"><span class="pre">ble_slave</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.init"><code class="docutils literal notranslate"><span class="pre">ble_slave.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.prerun"><code class="docutils literal notranslate"><span class="pre">ble_slave.prerun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.clear"><code class="docutils literal notranslate"><span class="pre">ble_slave.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.exit"><code class="docutils literal notranslate"><span class="pre">ble_slave.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.load"><code class="docutils literal notranslate"><span class="pre">ble_slave.load()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.disconnect"><code class="docutils literal notranslate"><span class="pre">ble_slave.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.show"><code class="docutils literal notranslate"><span class="pre">ble_slave.show()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.notification"><code class="docutils literal notranslate"><span class="pre">ble_slave.notification()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.advertising"><code class="docutils literal notranslate"><span class="pre">ble_slave.advertising()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.address"><code class="docutils literal notranslate"><span class="pre">ble_slave.address()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.pairing"><code class="docutils literal notranslate"><span class="pre">ble_slave.pairing()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_slave.html#ble_slave.run"><code class="docutils literal notranslate"><span class="pre">ble_slave.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ble_full_mitm.html">ble_full_mitm</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_full_mitm.html#BLEMitmStage"><code class="docutils literal notranslate"><span class="pre">BLEMitmStage</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.init"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.registerEvents"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.registerEvents()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.run"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.scanStage"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.scanStage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.cloneStage"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.cloneStage()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.forwardToSlave"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.forwardToSlave()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.forwardToMaster"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.forwardToMaster()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.readRequest"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.readRespnse"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readRespnse()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.readByGroupTypeRequest"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readByGroupTypeRequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_full_mitm.html#ble_full_mitm.readByGroupTypeResponse"><code class="docutils literal notranslate"><span class="pre">ble_full_mitm.readByGroupTypeResponse()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ble_replay.html">ble_replay</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_replay.html#replayPacket"><code class="docutils literal notranslate"><span class="pre">replayPacket</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#replayPacket.__init__"><code class="docutils literal notranslate"><span class="pre">replayPacket.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_replay.html#ble_replay"><code class="docutils literal notranslate"><span class="pre">ble_replay</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.init"><code class="docutils literal notranslate"><span class="pre">ble_replay.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.prerun"><code class="docutils literal notranslate"><span class="pre">ble_replay.prerun()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.clear"><code class="docutils literal notranslate"><span class="pre">ble_replay.clear()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.exit"><code class="docutils literal notranslate"><span class="pre">ble_replay.exit()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.disconnect"><code class="docutils literal notranslate"><span class="pre">ble_replay.disconnect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.connect"><code class="docutils literal notranslate"><span class="pre">ble_replay.connect()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.showPackets"><code class="docutils literal notranslate"><span class="pre">ble_replay.showPackets()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.replay"><code class="docutils literal notranslate"><span class="pre">ble_replay.replay()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.exchangeMTURequest"><code class="docutils literal notranslate"><span class="pre">ble_replay.exchangeMTURequest()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.pair_lp"><code class="docutils literal notranslate"><span class="pre">ble_replay.pair_lp()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.pair_sc"><code class="docutils literal notranslate"><span class="pre">ble_replay.pair_sc()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_replay.html#ble_replay.run"><code class="docutils literal notranslate"><span class="pre">ble_replay.run()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="modules/ble_sniff.html">ble_sniff</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff"><code class="docutils literal notranslate"><span class="pre">ble_sniff</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.init"><code class="docutils literal notranslate"><span class="pre">ble_sniff.init()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.onPacket"><code class="docutils literal notranslate"><span class="pre">ble_sniff.onPacket()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.run"><code class="docutils literal notranslate"><span class="pre">ble_sniff.run()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.sniffNewConnections"><code class="docutils literal notranslate"><span class="pre">ble_sniff.sniffNewConnections()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.sniffExistingConnections"><code class="docutils literal notranslate"><span class="pre">ble_sniff.sniffExistingConnections()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="modules/ble_sniff.html#ble_sniff.sniffAdvertisements"><code class="docutils literal notranslate"><span class="pre">ble_sniff.sniffAdvertisements()</span></code></a></li>
 </ul>
 </li>
 </ul>

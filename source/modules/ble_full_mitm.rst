@@ -1,4 +1,4 @@
-ble_no_pairing_mitm
+ble_full_mitm
 ===================
 
 
@@ -6,7 +6,7 @@ ble_no_pairing_mitm
 
     This class defines five MITM stages: SCAN, CLONE, WAIT_CONNECTION, ACTIVE_MITM, STOP
 
-.. py:class:: ble_no_pairing_mitm
+.. py:class:: ble_full_mitm
 
     This class is used to demonstrate the MITM attack on BLE devices. 
     It uses 2 hci sockets, hci0 is used to scan, connect and clone the slave, hci1 is used to advertise and connect to the master
