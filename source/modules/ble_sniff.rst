@@ -36,14 +36,14 @@ ble_sniff
     .. py:method:: sniffNewConnections(target, channel)
 
         This method sniffs new connections in channel 36, 37 or 38 by ``sniffNewConnections`` function from nRF52840Dongle.
-        When the receiver is synchronized, it will hijack slave by ``setHijacking`` function
+        When the receiver is synchronized, it will hijack slave by ``setHijacking`` function from nRF52840Dongle.
 
         :param str target: the target address
         :param str channel: the channel number
 
     .. py:method:: sniffExistingConnections(receiver, accessAddress, crcInit, channelMap)
 
-        This method can set jamming by ``setJamming`` function or not, and calls ``sniffExistingConnections`` function from nRF52840Dongle
+        This method can set jamming by ``setJamming`` function or not, and calls ``sniffExistingConnections`` function from Ubertooth One.
 
         :param receiver: the receiver
         :type receiver: libs.ble_utils.butterfly.BLEButterflyDevice
