@@ -14,3 +14,5 @@ modules
    ble_full_mitm
    ble_replay
    ble_sniff
+   ble_hijack
+   ble_jam
