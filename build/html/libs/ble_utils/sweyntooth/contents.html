@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>sweyntooth &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="bt_utils" href="../../bt_utils/index.html" />
+    <link rel="prev" title="butterfly" href="../butterfly/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dissectors/contents.html">dissectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crypto/contents.html">crypto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sc_crypto/contents.html">sc_crypto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../butterfly/contents.html">butterfly</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">sweyntooth</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#SweyntoothDevice"><code class="docutils literal notranslate"><span class="pre">SweyntoothDevice</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi_utils/index.html">wifi_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">sweyntooth</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/sweyntooth/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sweyntooth">
+<h1>sweyntooth<a class="headerlink" href="#sweyntooth" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="SweyntoothDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">SweyntoothDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wireless.Device</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice" title="Link to this definition"></a></dt>
+<dd><p>This class represents a BLE device by Sweyntooth, which inherit the <code class="docutils literal notranslate"><span class="pre">Device</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.setAccessAddress">
+<span class="sig-name descname"><span class="pre">setAccessAddress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accessAddress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.setAccessAddress" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>accessAddress</strong> (<em>bytes</em>) – The access address to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.getAccessAddress">
+<span class="sig-name descname"><span class="pre">getAccessAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.getAccessAddress" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The access address</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.set_nesnsn">
+<span class="sig-name descname"><span class="pre">set_nesnsn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.set_nesnsn" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>value</strong> (<em>bytes</em>) – nesn &amp; sn value to set</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.recv" title="Link to this definition"></a></dt>
+<dd><p>This method receives the packet by <code class="docutils literal notranslate"><span class="pre">_recv</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Return bytes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The packet</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">packet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.send" title="Link to this definition"></a></dt>
+<dd><p>This method sends the packet by <code class="docutils literal notranslate"><span class="pre">_send</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>packet</strong> (<em>bytes</em>) – The packet to send</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.connection">
+<span class="sig-name descname"><span class="pre">connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.connection" title="Link to this definition"></a></dt>
+<dd><p>This method connects to the device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to connect</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to connect</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to connect</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.fuzzPackets">
+<span class="sig-name descname"><span class="pre">fuzzPackets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.fuzzPackets" title="Link to this definition"></a></dt>
+<dd><p>This method fuzzes packets and sends to the connection device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to fuzz</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to fuzz</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to fuzz</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.malformConnRequest">
+<span class="sig-name descname"><span class="pre">malformConnRequest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'length'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.malformConnRequest" title="Link to this definition"></a></dt>
+<dd><p>This method malforms connection request packets and tries to connect</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to malform</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to malform</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to malform</p></li>
+<li><p><strong>part</strong> (<em>str</em>) – The part to malform, such as length, interval, timeout, chM</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.readATTOverfloe">
+<span class="sig-name descname"><span class="pre">readATTOverfloe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.readATTOverfloe" title="Link to this definition"></a></dt>
+<dd><p>This method reads ATT overflow packets and tries to connect</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to read</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to read</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to read</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.mutipleVersions">
+<span class="sig-name descname"><span class="pre">mutipleVersions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.mutipleVersions" title="Link to this definition"></a></dt>
+<dd><p>This method sends multiple versions packets to the connection device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to send</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to send</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to send</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.packetLengthChange">
+<span class="sig-name descname"><span class="pre">packetLengthChange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.packetLengthChange" title="Link to this definition"></a></dt>
+<dd><p>This method changes the packet length and sends to the connection device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to change</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to change</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to change</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.invalidSequence">
+<span class="sig-name descname"><span class="pre">invalidSequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.invalidSequence" title="Link to this definition"></a></dt>
+<dd><p>This method sends mutiple packets while inits the anchor point to the connection device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to send</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to send</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to send</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="SweyntoothDevice.changePHY">
+<span class="sig-name descname"><span class="pre">changePHY</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slaveAddr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">masterAddrType</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'random'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">running</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#SweyntoothDevice.changePHY" title="Link to this definition"></a></dt>
+<dd><p>This method changes the PHY and sends to the connection device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>slaveAddr</strong> (<em>string</em>) – The slave address to change</p></li>
+<li><p><strong>masterAddrType</strong> (<em>str</em>) – The master address type to change</p></li>
+<li><p><strong>running</strong> (<em>int</em>) – The running times to change</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../butterfly/contents.html" class="btn btn-neutral float-left" title="butterfly" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../bt_utils/index.html" class="btn btn-neutral float-right" title="bt_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

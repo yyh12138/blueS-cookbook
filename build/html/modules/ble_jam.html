@@ -64,9 +64,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#ble_jam"><code class="docutils literal notranslate"><span class="pre">ble_jam</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#ble_jam.init"><code class="docutils literal notranslate"><span class="pre">ble_jam.init()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ble_jam.run"><code class="docutils literal notranslate"><span class="pre">ble_jam.run()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ble_jam.jamAdvertisements"><code class="docutils literal notranslate"><span class="pre">ble_jam.jamAdvertisements()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ble_jam.jamNewConnections"><code class="docutils literal notranslate"><span class="pre">ble_jam.jamNewConnections()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#ble_jam.jamExistingConnections"><code class="docutils literal notranslate"><span class="pre">ble_jam.jamExistingConnections()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -106,21 +103,24 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="ble_jam">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ble_jam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module.WirelessModule</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam" title="Link to this definition"></a></dt>
-<dd><p>This class jam the BLE connection</p>
+<dd><p>This class jam the BLE connection by WiFi</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ble_jam.init">
 <span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam.init" title="Link to this definition"></a></dt>
-<dd><p>This method will initialize the BLE jam module.
-JAMMING_MODE is in <code class="docutils literal notranslate"><span class="pre">advertisements</span></code>, <code class="docutils literal notranslate"><span class="pre">newConnections</span></code>, <code class="docutils literal notranslate"><span class="pre">existingConnections</span></code></p>
+<dd><p>This method will initialize the BLE jam module.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mon0</span></code> needs to be set in monitor mode before running this module by using nexutil. Check by using <code class="docutils literal notranslate"><span class="pre">ifconfig</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">POWER</span></code> is the power level of the jamming signal. It ranges [-128, 127].</p>
+<p><code class="docutils literal notranslate"><span class="pre">LENGTH</span></code> is the length of the jamming packet. It ranges [0, 1500].</p>
+<p><code class="docutils literal notranslate"><span class="pre">PSR</span></code> is the packet send rate. It ranges (0, 1].</p>
+<p><code class="docutils literal notranslate"><span class="pre">CONF_FILE</span></code> is the configuration file for the BLE jam module in order to more detailed operating.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Args<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p>INTERFACE: “butterfly0”</p></li>
-<li><p>TARGET: “”</p></li>
-<li><p>CHANNEL: “37”</p></li>
-<li><p>JAMMING_MODE: “advertisements”</p></li>
-<li><p>ACCESS_ADDRESS: “”</p></li>
-<li><p>CRC_INIT: “”</p></li>
+<li><p>INTERFACE: “mon0”</p></li>
+<li><p>POWER: “120”</p></li>
+<li><p>LENGTH: “1200”</p></li>
+<li><p>PSR: “1”</p></li>
+<li><p>CONF_FILE: “/root/blueS/blues/libs/wifi_utils/jelly.conf”</p></li>
 </ul>
 </dd>
 </dl>
@@ -129,25 +129,7 @@ JAMMING_MODE is in <code class="docutils literal notranslate"><span class="pre">
 <dl class="py method">
 <dt class="sig sig-object py" id="ble_jam.run">
 <span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam.run" title="Link to this definition"></a></dt>
-<dd><p>This method will start the BLE jam module by excuting <code class="docutils literal notranslate"><span class="pre">ble_sniff</span></code></p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ble_jam.jamAdvertisements">
-<span class="sig-name descname"><span class="pre">jamAdvertisements</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam.jamAdvertisements" title="Link to this definition"></a></dt>
-<dd><p>This method uses emiter’s jamAdvertisements to jam the channel by <a href="#id1"><span class="problematic" id="id2">``</span></a>JAMMING_MODE``=”advertisements”</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ble_jam.jamNewConnections">
-<span class="sig-name descname"><span class="pre">jamNewConnections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam.jamNewConnections" title="Link to this definition"></a></dt>
-<dd><p>This method excutes <code class="docutils literal notranslate"><span class="pre">ble_sniff</span></code> by <a href="#id3"><span class="problematic" id="id4">``</span></a>JAMMING``=yes,  <a href="#id5"><span class="problematic" id="id6">``</span></a>HIJACKING``=no, <a href="#id7"><span class="problematic" id="id8">``</span></a>SNIFFING_MODE``=”newConnections”</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="ble_jam.jamExistingConnections">
-<span class="sig-name descname"><span class="pre">jamExistingConnections</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ble_jam.jamExistingConnections" title="Link to this definition"></a></dt>
-<dd><p>This method excutes <code class="docutils literal notranslate"><span class="pre">ble_sniff</span></code> by <a href="#id9"><span class="problematic" id="id10">``</span></a>JAMMING``=yes,  <a href="#id11"><span class="problematic" id="id12">``</span></a>HIJACKING``=no, <a href="#id13"><span class="problematic" id="id14">``</span></a>SNIFFING_MODE``=”existingConnections”</p>
+<dd><p>This method will start the BLE jam module by excuting <code class="docutils literal notranslate"><span class="pre">jamAllChannels</span></code>.</p>
 </dd></dl>
 
 </dd></dl>
