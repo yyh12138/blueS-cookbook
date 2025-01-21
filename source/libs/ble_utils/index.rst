@@ -12,3 +12,4 @@ ble_utils
    sc_crypto/contents
    butterfly/contents
    sweyntooth/contents
+   ubertooth/contents

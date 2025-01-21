@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ubertooth &mdash; blueS 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="bt_utils" href="../../bt_utils/index.html" />
+    <link rel="prev" title="sweyntooth" href="../sweyntooth/contents.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../core/index.html">core</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">libs</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">ble_utils</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../att_server/contents.html">att_server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../packets/contents.html">packets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../helpers/contents.html">helpers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../dissectors/contents.html">dissectors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../crypto/contents.html">crypto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sc_crypto/contents.html">sc_crypto</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../butterfly/contents.html">butterfly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../sweyntooth/contents.html">sweyntooth</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ubertooth</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#BLEUbertoothDevice"><code class="docutils literal notranslate"><span class="pre">BLEUbertoothDevice</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt_utils/index.html">bt_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless_utils/index.html">wireless_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wifi_utils/index.html">wifi_utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../ble.html">ble</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../bt.html">bt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../wireless.html">wireless</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../io.html">io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../utils.html">utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/index.html">modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../about/index.html">about</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">libs</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">ble_utils</a></li>
+      <li class="breadcrumb-item active">ubertooth</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/libs/ble_utils/ubertooth/contents.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ubertooth">
+<h1>ubertooth<a class="headerlink" href="#ubertooth" title="Link to this heading"></a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="BLEUbertoothDevice">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">BLEUbertoothDevice</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">BtUbertoothDevice</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice" title="Link to this definition"></a></dt>
+<dd><p>This class represents a BLE device by Ubertooth, which inherit the <code class="docutils literal notranslate"><span class="pre">BtUbertoothDevice</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.getAccessAddress">
+<span class="sig-name descname"><span class="pre">getAccessAddress</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.getAccessAddress" title="Link to this definition"></a></dt>
+<dd><p>This method gets the access address of the BLE device</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.setSweepingMode">
+<span class="sig-name descname"><span class="pre">setSweepingMode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[37,</span> <span class="pre">38,</span> <span class="pre">39]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.setSweepingMode" title="Link to this definition"></a></dt>
+<dd><p>This method sets the sweeping mode of the Ubertooth device. It allows to provide a subset of advertising channels to monitor sequentially</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>enable</strong> (<em>bool</em>) – Enable or disable the sweeping mode</p></li>
+<li><p><strong>sequence</strong> (<em>list</em>) – The sequence of the channels to sweep</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.setJamming">
+<span class="sig-name descname"><span class="pre">setJamming</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.setJamming" title="Link to this definition"></a></dt>
+<dd><p>This method sets the jamming mode of the Ubertooth device.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – Enable or disable the jamming mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.restartSniffingMode">
+<span class="sig-name descname"><span class="pre">restartSniffingMode</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.restartSniffingMode" title="Link to this definition"></a></dt>
+<dd><p>This method restarts the sniffing mode of the Ubertooth device by <code class="docutils literal notranslate"><span class="pre">sniffNewConnections</span></code> or <code class="docutils literal notranslate"><span class="pre">sniffExistingConnections</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.sniffAdvertisements">
+<span class="sig-name descname"><span class="pre">sniffAdvertisements</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'00:00:00:00:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.sniffAdvertisements" title="Link to this definition"></a></dt>
+<dd><p>This method sniffs the advertisements of the BLE device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – The address of the BLE device</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – The channel of the BLE device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.sniffNewConnections">
+<span class="sig-name descname"><span class="pre">sniffNewConnections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'00:00:00:00:00:00'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.sniffNewConnections" title="Link to this definition"></a></dt>
+<dd><p>This method sniffs the new connections of the BLE device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>address</strong> (<em>str</em>) – The address of the BLE device</p></li>
+<li><p><strong>channel</strong> (<em>int</em>) – The channel of the BLE device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.sniffExistingConnections">
+<span class="sig-name descname"><span class="pre">sniffExistingConnections</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">accessAddress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crcInit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channelMap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.sniffExistingConnections" title="Link to this definition"></a></dt>
+<dd><p>This method sniffs the existing connections of the BLE device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>accessAddress</strong> (<em>int</em>) – The access address of the BLE device</p></li>
+<li><p><strong>crcInit</strong> (<em>int</em>) – The CRC initialization value of the BLE device</p></li>
+<li><p><strong>channelMap</strong> (<em>int</em>) – The channel map of the BLE device</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.setScan">
+<span class="sig-name descname"><span class="pre">setScan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">enable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.setScan" title="Link to this definition"></a></dt>
+<dd><p>This method sets the scanning mode of the Ubertooth device</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>enable</strong> (<em>bool</em>) – Enable or disable the scanning mode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="BLEUbertoothDevice.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#BLEUbertoothDevice.recv" title="Link to this definition"></a></dt>
+<dd><p>This method receives and returns the data from the Ubertooth device</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../sweyntooth/contents.html" class="btn btn-neutral float-left" title="sweyntooth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../bt_utils/index.html" class="btn btn-neutral float-right" title="bt_utils" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
