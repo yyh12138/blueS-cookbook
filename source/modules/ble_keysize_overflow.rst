@@ -1,0 +1,16 @@
+ble_keysize_overflow
+================
+
+.. py:class:: ble_keysize_overflow(module.WirelessModule)
+
+    This class sends max key size=253 which usual is 16 in pairing request
+
+    .. py:method:: init()
+
+        This method will initialize the BLE module.
+
+        :args:
+            - INTERFACE: "sweyntooth"
+            - MASTER_TYPE: "random"
+            - TARGET: ""
+            - SLAVE_TYPE: "random"

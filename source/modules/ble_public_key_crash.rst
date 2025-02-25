@@ -1,0 +1,16 @@
+ble_public_key_crash
+================
+
+.. py:class:: ble_public_key_crash(module.WirelessModule)
+
+    This class sends all public key request after pairing response
+
+    .. py:method:: init()
+
+        This method will initialize the BLE module.
+
+        :args:
+            - INTERFACE: "hci0"
+            - MASTER_TYPE: "random"
+            - TARGET: ""
+            - SLAVE_TYPE: "random"
