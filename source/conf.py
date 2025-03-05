@@ -7,9 +7,9 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'blueS'
-copyright = '2024, yyy'
+copyright = '2025, yyy'
 author = 'yyy'
-release = '0.1'
+release = '2.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration

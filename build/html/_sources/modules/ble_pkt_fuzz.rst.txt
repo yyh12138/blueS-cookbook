@@ -1,9 +1,9 @@
-ble_phy_change
-===================
+ble_pkt_fuzz
+================
 
-.. py:class:: ble_phy_change(module.WirelessModule)
+.. py:class:: ble_pkt_fuzz(module.WirelessModule)
 
-    This class changes the PHY of the BLE connection.
+    This class fuzzes packets and see how many packets can be affected
 
     .. py:method:: init()
 
@@ -12,11 +12,12 @@ ble_phy_change
         ``PART`` has 4 options: "timeout", "length", "chm", "interval"
 
         :args:
-            - INTERFACE: "hci0"
+            - INTERFACE: "sweyntooth"
             - MASTER_TYPE: "random"
             - TARGET: ""
             - SLAVE_TYPE: "random"
+            - SUSTAINABLE: "100"
     
     .. py:method:: run()
 
-        This method runs ``Sweyntooth`` changePHY function
+        This method runs ``Sweyntooth`` fuzzPackets function
