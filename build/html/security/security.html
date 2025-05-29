@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Overview &mdash; blueS 2.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=c4a36953"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="flash-encryption" href="flash-encryption.html" />
+    <link rel="prev" title="Secruity Guides" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            blueS
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../core/index.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../libs/index.html">libs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../modules/index.html">modules</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Secruity Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Security Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#platform-security">Platform Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#secure-boot">Secure Boot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#flash-encryption">Flash Encryption</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#network-security">Network Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#ble">BLE</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#product-security">Product Security</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#secure-ota-over-the-air-updates">Secure OTA (Over-the-air) Updates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#secure-storage">Secure Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#security-policy">Security Policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#advisories">Advisories</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-updates">Software Updates</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="flash-encryption.html">flash-encryption</a></li>
+<li class="toctree-l2"><a class="reference internal" href="secure-boot.html">secure-boot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vulnerabilities.html">vulnerabilities</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">blueS</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Secruity Guides</a></li>
+      <li class="breadcrumb-item active">Security Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/security/security.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="security-overview">
+<h1>Security Overview<a class="headerlink" href="#security-overview" title="Link to this heading"></a></h1>
+<p>This guide provides an overview of the overall security features available in various solutions.
+It is highly recommended to consider this guide while designing the products with the platform software stack from the <strong>security</strong> perspective.</p>
+<section id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Link to this heading"></a></h2>
+<p>High level security goals are as follows:</p>
+<ol class="arabic simple">
+<li><p>Preventing untrustworthy code from being executed</p></li>
+<li><p>Protecting the identity and integrity of the code stored in the off-chip flash memory</p></li>
+<li><p>Securing device identity</p></li>
+<li><p>Secure storage for confidential data</p></li>
+<li><p>Authenticated and encrypted communication from the device</p></li>
+</ol>
+</section>
+<section id="platform-security">
+<h2>Platform Security<a class="headerlink" href="#platform-security" title="Link to this heading"></a></h2>
+<section id="secure-boot">
+<span id="secure-boot-guide"></span><h3>Secure Boot<a class="headerlink" href="#secure-boot" title="Link to this heading"></a></h3>
+<p>The Secure Boot feature ensures that only authenticated software can execute on the device.
+The Secure Boot process forms a chain of trust by verifying all <strong>mutable</strong> software entities involved in the application startup flow. Signature verification happens during both boot-up as well as in OTA updates.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>It is highly recommended that Secure Boot be enabled on all production devices.</p>
+</div>
+<section id="secure-boot-best-practices">
+<h4>Secure Boot Best Practices<a class="headerlink" href="#secure-boot-best-practices" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>Generate the signing key on a system with a quality source of entropy.</p></li>
+<li><p>Always keep the signing key private. A leak of this key will compromise the Secure Boot system.</p></li>
+<li><p>Do not allow any third party to observe any aspects of the key generation or signing process. Both processes are vulnerable to timing or other side-channel attacks.</p></li>
+<li><p>Ensure that all security eFuses have been correctly programmed, including disabling of the debug interfaces, non-required boot mediums (e.g., UART DL mode), etc.</p></li>
+</ul>
+</section>
+</section>
+<section id="flash-encryption">
+<span id="flash-enc-guide"></span><h3>Flash Encryption<a class="headerlink" href="#flash-encryption" title="Link to this heading"></a></h3>
+<p>The Flash Encryption feature helps to encrypt the contents on the off-chip flash memory and thus provides the <strong>confidentiality</strong> aspect to the software or data stored in the flash memory.</p>
+<section id="flash-encryption-best-practices">
+<h4>Flash Encryption Best Practices<a class="headerlink" href="#flash-encryption-best-practices" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p>It is recommended to use flash Encryption release mode for the production use-cases.</p></li>
+<li><p>It is recommended to have a unique flash encryption key per device.</p></li>
+<li><p>Enable <a class="reference internal" href="#secure-boot-guide"><span class="std std-ref">Secure Boot</span></a> as an extra layer of protection, and to prevent an attacker from selectively corrupting any part of the flash before boot.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="network-security">
+<h2>Network Security<a class="headerlink" href="#network-security" title="Link to this heading"></a></h2>
+<section id="ble">
+<h3>BLE<a class="headerlink" href="#ble" title="Link to this heading"></a></h3>
+<p>BLE is a low-power wireless communication protocol that is widely used in IoT devices. It provides a secure communication channel between devices, ensuring data integrity and confidentiality.</p>
+</section>
+</section>
+<section id="product-security">
+<h2>Product Security<a class="headerlink" href="#product-security" title="Link to this heading"></a></h2>
+<section id="secure-ota-over-the-air-updates">
+<h3>Secure OTA (Over-the-air) Updates<a class="headerlink" href="#secure-ota-over-the-air-updates" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>OTA Updates must happen over secure transport, e.g., HTTPS.</p></li>
+<li><p>If <a class="reference internal" href="#secure-boot-guide"><span class="std std-ref">Secure Boot</span></a> is enabled, then the server should host the signed application image.</p></li>
+<li><p>If <a class="reference internal" href="#flash-enc-guide"><span class="std std-ref">Flash Encryption</span></a> is enabled, then no additional steps are required on the server side, encryption shall be taken care on the device itself during flash write.</p></li>
+<li><p>OTA update <span class="xref std std-ref">ota_rollback</span> can help to switch the application as <code class="docutils literal notranslate"><span class="pre">active</span></code> only after its functionality has been verified.</p></li>
+</ul>
+<section id="anti-rollback-protection">
+<h4>Anti-Rollback Protection<a class="headerlink" href="#anti-rollback-protection" title="Link to this heading"></a></h4>
+<p>Anti-rollback protection feature ensures that device only executes the application that meets the security version criteria as stored in its eFuse. So even though the application is trusted and signed by legitimate key, it may contain some revoked security feature or credential. Hence, device must reject any such application.</p>
+</section>
+<section id="encrypted-firmware-distribution">
+<h4>Encrypted Firmware Distribution<a class="headerlink" href="#encrypted-firmware-distribution" title="Link to this heading"></a></h4>
+<p>Encrypted firmware distribution during over-the-air updates ensures that the application stays encrypted <strong>in transit</strong> from the server to the the device. This can act as an additional layer of protection on top of the TLS communication during OTA updates and protect the identity of the application.</p>
+</section>
+</section>
+<section id="secure-storage">
+<h3>Secure Storage<a class="headerlink" href="#secure-storage" title="Link to this heading"></a></h3>
+<p>Secure storage refers to the application-specific data that can be stored in a secure manner on the device, i.e., off-chip flash memory. This is typically a read-write flash partition and holds device specific configuration data.</p>
+</section>
+</section>
+<section id="security-policy">
+<h2>Security Policy<a class="headerlink" href="#security-policy" title="Link to this heading"></a></h2>
+<section id="advisories">
+<h3>Advisories<a class="headerlink" href="#advisories" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Espressif publishes critical <a href="#id1"><span class="problematic" id="id2">`Security Advisories`_</span></a>, which includes security advisories regarding both hardware and software.</p></li>
+</ul>
+</section>
+<section id="software-updates">
+<h3>Software Updates<a class="headerlink" href="#software-updates" title="Link to this heading"></a></h3>
+<p>Critical security issues in the components, and third-party libraries are fixed as and when we find them or when they are reported to us. Gradually, we make the fixes available in all applicable release branches.</p>
+<p>Applicable security issues and CVEs, third-party libraries are mentioned in the release notes.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Secruity Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="flash-encryption.html" class="btn btn-neutral float-right" title="flash-encryption" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, yyy.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

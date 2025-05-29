@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-blueS 开发文档
+BlueS Development document
 ============================
-blueS 是一个基于蓝牙的标准化安全评估框架，提供了一系列的关于低功耗蓝牙的评测工具和库。
-它包含了core核心库、libs外部依赖库、modules自定义模块。
+BlueS is a standardized security assessment framework based on Bluetooth, providing a series of evaluation tools and libraries for low-power Bluetooth.
+It includes the core library, libs external dependency library, and modules custom module.
 
 
 .. toctree::
@@ -16,7 +16,7 @@ blueS 是一个基于蓝牙的标准化安全评估框架，提供了一系列�
    core/index
    libs/index
    modules/index
-   about/index
+   security/index
    
    
 
